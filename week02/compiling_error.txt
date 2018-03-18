@@ -1,0 +1,5 @@
+In file included from /usr/include/c++/5/random:35:0,
+                 from /home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/week02/classes.cpp:17:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^

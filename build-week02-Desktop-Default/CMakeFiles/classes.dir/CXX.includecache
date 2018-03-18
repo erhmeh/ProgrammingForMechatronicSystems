@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/week02/classes.cpp
+random
+-
+cstdlib
+-
+iostream
+-
+

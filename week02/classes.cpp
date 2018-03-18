@@ -12,19 +12,22 @@
  *
  *********************************************************************************/
 
-#include <iostream>
 #include <random>
+#include <cstdlib>
+#include <iostream>
 using namespace std;
 
 // Rectangle Class
 class Rectangle {
 public:
-void setWidthHeight (int,int);
-int area (void);
-int perimeter(void);
+bool setWidthHeight (double i,double j);
+double getWidth();
+double getHeight();
+double area ();
+double perimeter();
 
 private:
-int width_, height_;
+double width_, height_;
 };
 
 // Random array Class
@@ -38,17 +41,31 @@ void setArraySize(int);
 void generate(void);
 };
 
-int Rectangle::area(void){
+double Rectangle::area(void){
         return (width_*height_);
 }
 
-int Rectangle::perimeter(void){
+double Rectangle::perimeter(void){
         return (2*width_ + 2*height_);
 }
 
-void Rectangle::setWidthHeight(int i, int j){
+bool Rectangle::setWidthHeight(double i, double j){
+        if(i > 0 && j > 0){
         width_ = i;
         height_ = j;
+        return true;
+      }
+      else {
+        return false;
+      }
+}
+
+double Rectangle::getHeight(){
+  return height_;
+}
+
+double Rectangle::getWidth(){
+  return width_;
 }
 
 void RandomArray::setSeed(int i){
@@ -71,13 +88,13 @@ void RandomArray::generate(void){
 int main() {
         Rectangle squareBoi;
         RandomArray randBoi;
-        int width;
-        int height;
+        double width;
+        double height;
         int seed;
         int arraySize;
         while (true) {
                 char option;
-                std::cout << "Please choose the Class to demonstrate. For rectangle press 'r', for array 'a' or for sum of rectangles 's'" << std::endl;
+                std::cout << "Please choose the Class to demonstrate. For rectangle press 'r', for array 'a' or for sum of rectangles 's'\n" << std::endl;
                 cin >> option;
                 switch(option) {
                 case 'r':
@@ -85,8 +102,12 @@ int main() {
                         cin >> height;
                         std::cout << "Please enter an integer value for width. " << std::endl;
                         cin >> width;
-                        squareBoi.setWidthHeight(width, height);
+                        if (squareBoi.setWidthHeight(width, height)){
                         std::cout << "\n With a width of " << width << " and a height of " << height << " the area is " << squareBoi.area() << " and the perimeter is "<< squareBoi.perimeter() << " \n\n" << std::endl;
+                      }
+                      else{
+                        cout << "Invalid width or height" << endl;
+                      }
                         break;
                 case 'a':
                         std::cout << "Please enter an integer value for the seed. " << std::endl;
@@ -99,7 +120,7 @@ int main() {
                         for(int i = 0; i < arraySize; i++) {
                                 std::cout << "[" << randBoi.randDoub_[i] << "] ";
                         }
-                        std::cout << "\n" << std::endl
+                        std::cout << "\n" << std::endl;
                         break;
                 }
         }

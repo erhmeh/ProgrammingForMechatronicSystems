@@ -1,0 +1,5 @@
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/build-week02-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/build-week02-Desktop-Default/CMakeFiles/pointers.dir
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/build-week02-Desktop-Default/CMakeFiles/edit_cache.dir
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/build-week02-Desktop-Default/CMakeFiles/classes.dir
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/build-week02-Desktop-Default/CMakeFiles/functions.dir

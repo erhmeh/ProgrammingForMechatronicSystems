@@ -1,4 +1,4 @@
-// Includes std::cout and friends so we can output to console
+ // Includes std::cout and friends so we can output to console
 #include <iostream>
 
 // Create a macro (#define) to represent the array size

@@ -1,0 +1,1 @@
+/usr/bin/g++    -std=c++11   CMakeFiles/functions.dir/functions.cpp.o  -o functions -rdynamic 
