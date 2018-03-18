@@ -19,6 +19,17 @@ bool Rectangle::setWidthHeight(double i, double j){
       }
 }
 
+bool Rectangle::setWidthHeight(double i){
+        if(i > 0){
+        width_ = i;
+        height_ = i;
+        return true;
+      }
+      else {
+        return false;
+      }
+}
+
 double Rectangle::getHeight(){
   return height_;
 }

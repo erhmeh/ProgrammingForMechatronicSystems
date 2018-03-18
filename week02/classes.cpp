@@ -29,7 +29,7 @@ int main() {
         int arraySize;
         while (true) {
                 char option;
-                std::cout << "Please choose the Class to demonstrate. For rectangle press 'r', for array 'a' or for sum of rectangles 's'\n" << std::endl;
+                std::cout << "Please choose the Class to demonstrate. For rectangle press 'r', for square press 's', for array 'a' or for sum of rectangles 's'\n" << std::endl;
                 cin >> option;
                 switch(option) {
                 case 'r':
@@ -44,6 +44,16 @@ int main() {
                         cout << "Invalid width or height" << endl;
                       }
                         break;
+                case 's':
+                                std::cout << "Please enter an integer value for height & width. " << std::endl;
+                                cin >> height;
+                                if (squareBoi.setWidthHeight(height)){
+                                std::cout << "\n With a width of and a height of " << height << " the area is " << squareBoi.area() << " and the perimeter is "<< squareBoi.perimeter() << " \n\n" << std::endl;
+                              }
+                              else{
+                                cout << "Invalid width or height" << endl;
+                              }
+                                break;
                 case 'a':
                         std::cout << "Please enter an integer value for the seed. " << std::endl;
                         cin >> seed;
