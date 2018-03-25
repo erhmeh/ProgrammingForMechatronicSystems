@@ -7,7 +7,7 @@ int main () {
     double x = 41012.0;
 
     // Use a pointer ip to point to x
-    double * ip = &x;
+    double *ip = &x;
 
     // Print the value of what ip is pointing to
     std::cout << "value pointed to by ip is " << *ip << std::endl;
