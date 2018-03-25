@@ -1,13 +1,14 @@
 class Accelerometer {
 public:
   Accelerometer();
-  void initAccelerometer();
   bool setBaud(int i);
   int getBaud();
   bool setUSB(int i);
   int getUSB();
   bool setMaxAcceleration(int i);
   int getMaxAcceleration();
+  int getSampleTime();
+  int getResolution();
   void takeSample();
   void convSample();
   double getX();

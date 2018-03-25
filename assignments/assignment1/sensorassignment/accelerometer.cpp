@@ -4,10 +4,6 @@
 
 Accelerometer::Accelerometer(){}
 
-void Accelerometer::initAccelerometer(){
-    srand(time(NULL));
-}
-
 bool Accelerometer::setBaud(int i){
     if (i == 19200 || i == 38400){
         baud_ = i;
@@ -76,9 +72,14 @@ void Accelerometer::convSample(){
     else{
         zConv_ = (-zRaw_*maxAcceleration_)/512;
     }
-//    xConv_ = xRaw_;
-//    yConv_ = yRaw_;
-//    zConv_ = zRaw_;
+}
+
+int Accelerometer::getSampleTime(){
+    return 10;
+}
+
+int Accelerometer::getResolution(){
+    return 1024;
 }
 
 double Accelerometer::getX(){
