@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/in_class/week02/answers/rectangle.cpp
+rectangle.h
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/in_class/week02/answers/rectangle.h
+
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/in_class/week02/answers/rectangle.h
+
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/in_class/week02/answers/rectangle_main.cpp
+rectangle.h
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/in_class/week02/answers/rectangle.h
+iostream
+-
+

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/in_class/week02/answers/rand_func.cpp
+iostream
+-
+random
+-
+chrono
+-
+

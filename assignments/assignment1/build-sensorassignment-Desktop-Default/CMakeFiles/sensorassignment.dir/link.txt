@@ -1,0 +1,1 @@
+/usr/bin/g++    -std=c++11   CMakeFiles/sensorassignment.dir/main.cpp.o  -o sensorassignment -rdynamic 

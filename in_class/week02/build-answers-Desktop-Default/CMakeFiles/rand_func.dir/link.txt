@@ -1,0 +1,1 @@
+/usr/bin/g++    -std=c++11   CMakeFiles/rand_func.dir/rand_func.cpp.o  -o rand_func -rdynamic 
