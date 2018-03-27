@@ -1,3 +1,11 @@
+/* accelerometer.cpp
+ * Programming for Mechatronic systems
+ * Assignment 1
+ *
+ * @author: Jamin Early 99133391
+ * @date: Week 3 Autumn Semester 2018
+ */
+
 #include "accelerometer.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
@@ -10,6 +18,7 @@ bool Accelerometer::setBaud(int i){
         return true;
     }
     else{
+        baud_ = 19200;
         return false;
     }
 }
@@ -18,14 +27,9 @@ int Accelerometer::getBaud(){
     return baud_;
 }
 
-bool Accelerometer::setUSB(int i){
-    if (i == 0 || i == 1 || i == 2){
-        ttyl_ = i;
-        return true;
-    }
-    else {
-        return false;
-    }
+void Accelerometer::setUSB(){
+    srand(time(NULL));
+    ttyl_ = rand%3;
 }
 
 int Accelerometer::getUSB(){
@@ -38,6 +42,7 @@ bool Accelerometer::setMaxAcceleration(int i){
         return true;
     }
     else{
+        maxAcceleration_ = 50;
         return false;
     }
 }
@@ -47,6 +52,7 @@ int Accelerometer::getMaxAcceleration(){
 }
 
 void Accelerometer::takeSample(){
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     srand(time(NULL));
     xRaw_ = rand()%1024;
     yRaw_ = rand()%1024;
@@ -74,12 +80,26 @@ void Accelerometer::convSample(){
     }
 }
 
+void Accelerometer::setSampleTime(){
+  sampleTime_ = 10;
+}
+
 int Accelerometer::getSampleTime(){
-    return 10;
+    return sampleTime_;
+}
+
+int Accelerometer::setResolution(){
+  resolution_ = 1024;
 }
 
 int Accelerometer::getResolution(){
-    return 1024;
+    return resolution_;
+}
+
+void Accelerometer::setupFixed(){
+  this.setUSB();
+  this.setSampleTime();
+  this.setResolution();
 }
 
 double Accelerometer::getX(){
