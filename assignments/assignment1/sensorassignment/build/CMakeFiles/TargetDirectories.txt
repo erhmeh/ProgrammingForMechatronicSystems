@@ -1,3 +1,0 @@
-C:/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment1/sensorassignment/build/CMakeFiles/accelerometer.dir
-C:/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment1/sensorassignment/build/CMakeFiles/edit_cache.dir
-C:/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment1/sensorassignment/build/CMakeFiles/rebuild_cache.dir
