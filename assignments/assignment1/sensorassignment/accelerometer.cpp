@@ -69,14 +69,14 @@ int Accelerometer::getMaxAcceleration(){
 
 // takes a 'sample' by randomly selecting a value for X, Y and Z between 0 - 1024.
 void Accelerometer::takeSample(){
-    // in order to simulate the sampling time, a delay is added so the
-    //std::this_thread::sleep_for(std::chrono::milliseconds(1000/sampleTime_));
-    __int64 start = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
-    srand(time(NULL));
+    // in order to simulate the sampling time, a delay is added so the takeSample() method takes as long as specified by the
+    long long int start = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    srand(start);
+
     xRaw_ = rand()%1024;
     yRaw_ = rand()%1024;
     zRaw_ = rand()%1024;
-    while (!(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() >= (start + 100))) {
+    while (!(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() >= (start + (1000)/sampleTime_))) {
       // do nothing
     }
 }

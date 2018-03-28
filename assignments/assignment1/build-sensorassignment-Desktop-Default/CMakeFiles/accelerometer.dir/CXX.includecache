@@ -13,6 +13,12 @@ stdlib.h
 -
 time.h
 -
+iostream
+-
+thread
+-
+chrono
+-
 
 /home/solo/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment1/sensorassignment/accelerometer.h
 
