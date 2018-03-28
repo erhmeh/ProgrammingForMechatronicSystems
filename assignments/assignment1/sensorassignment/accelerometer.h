@@ -29,7 +29,7 @@ private:
   int baud_;
   int resolution_;
   int maxAcceleration_;
-  int ttyl_;
+  int tty_;
   int sampleTime_;
   double xRaw_, yRaw_, zRaw_;
   double xConv_, yConv_, zConv_;

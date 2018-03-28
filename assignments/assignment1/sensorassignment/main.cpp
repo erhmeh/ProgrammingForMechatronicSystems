@@ -35,7 +35,7 @@ int main()
     }
     // print configuration values to serial monitor
     cout << "Baud Rate: " << sensor.getBaud() << endl;
-    cout << "Device attached at /dev/tty" << sensor.getUSB() << endl;
+    cout << "Device attached at /dev/ttyUSB" << sensor.getUSB() << endl;
     cout << "Sampling time set to " << sensor.getSampleTime() << "Hz" << endl;
     cout << "Max acceleration is set to " << sensor.getMaxAcceleration() << endl;
     cout << "Sensor Resolution is " << sensor.getResolution() << " m/s^2" << endl;

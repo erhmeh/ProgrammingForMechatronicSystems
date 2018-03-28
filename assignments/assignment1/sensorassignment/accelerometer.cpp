@@ -9,9 +9,16 @@
 #include "accelerometer.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <iostream>
+#include <thread>
+#include <chrono>
 
+using namespace std;
+
+// accelerometer object
 Accelerometer::Accelerometer(){}
 
+// sets baud rate, returns true if you parse a valid value or otherwise false. Defaults to 19200.
 bool Accelerometer::setBaud(int i){
     if (i == 19200 || i == 38400){
         baud_ = i;
@@ -23,19 +30,27 @@ bool Accelerometer::setBaud(int i){
     }
 }
 
+// getter method for baud rate
 int Accelerometer::getBaud(){
     return baud_;
 }
 
+/* randomly selects ttylX. To simulate a real life device, I have randomised this
+ * value (0, 1 or 2) as it is rare that the user chooses where on the device tree the device
+ * is attached without going out of your way to create a udev rule for the specific
+ * uuid or other device property.
+ */
 void Accelerometer::setUSB(){
     srand(time(NULL));
-    ttyl_ = rand%3;
+    tty_ = rand()%2;
 }
 
+// getter method that returns the USB port that the sensor is attached to
 int Accelerometer::getUSB(){
-    return ttyl_;
+    return tty_;
 }
 
+// sets max acceleration. Returns true if valid and false otherwise. Defaults to 50.
 bool Accelerometer::setMaxAcceleration(int i){
     if (i == 10 || i == 20 || i == 50){
         maxAcceleration_ = i;
@@ -47,16 +62,23 @@ bool Accelerometer::setMaxAcceleration(int i){
     }
 }
 
+// getter method that returns the maxAcceleration
 int Accelerometer::getMaxAcceleration(){
     return maxAcceleration_;
 }
 
+// takes a 'sample' by randomly selecting a value for X, Y and Z between 0 - 1024.
 void Accelerometer::takeSample(){
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    // in order to simulate the sampling time, a delay is added so the
+    //std::this_thread::sleep_for(std::chrono::milliseconds(1000/sampleTime_));
+    __int64 start = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
     srand(time(NULL));
     xRaw_ = rand()%1024;
     yRaw_ = rand()%1024;
     zRaw_ = rand()%1024;
+    while (!(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() >= (start + 100))) {
+      // do nothing
+    }
 }
 
 void Accelerometer::convSample(){
@@ -88,7 +110,7 @@ int Accelerometer::getSampleTime(){
     return sampleTime_;
 }
 
-int Accelerometer::setResolution(){
+void Accelerometer::setResolution(){
   resolution_ = 1024;
 }
 
@@ -97,9 +119,9 @@ int Accelerometer::getResolution(){
 }
 
 void Accelerometer::setupFixed(){
-  this.setUSB();
-  this.setSampleTime();
-  this.setResolution();
+  setUSB();
+  setSampleTime();
+  setResolution();
 }
 
 double Accelerometer::getX(){
