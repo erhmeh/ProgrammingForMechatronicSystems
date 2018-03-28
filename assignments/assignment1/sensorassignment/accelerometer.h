@@ -17,7 +17,7 @@ bool setMaxAcceleration(int i);
 int getMaxAcceleration();
 int getSampleTime();
 int getResolution();
-void takeSample();
+bool takeSample();
 void convSample();
 void setupFixed();
 double getX();

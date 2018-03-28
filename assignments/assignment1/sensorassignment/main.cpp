@@ -42,7 +42,7 @@ int main()
         // Infinite loop printing the sensor output
         while(true) {
                 // take a reading of the sensor
-                sensor.takeSample();
+                if(sensor.takeSample()){
                 // convert sensor value to m/s^2
                 sensor.convSample();
                 // print converted values
@@ -51,6 +51,7 @@ int main()
                 cout << "Z = " << sensor.getZ() << endl;
                 // blank line for readabiity
                 cout << "" << endl;
+              }
         }
         return 0;
 }
