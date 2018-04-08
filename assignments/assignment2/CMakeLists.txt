@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(assignment1)
+project(assignment2)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-add_executable(accelerometer main.cpp accelerometer.cpp)
+add_executable(ranger main.cpp ranger.cpp)
