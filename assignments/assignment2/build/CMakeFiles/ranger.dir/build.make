@@ -49,173 +49,173 @@ CMAKE_SOURCE_DIR = /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assig
 CMAKE_BINARY_DIR = /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build
 
 # Include any dependencies generated for this target.
-include CMakeFiles/ranger.dir/depend.make
+include CMakeFiles/Ranger.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/ranger.dir/progress.make
+include CMakeFiles/Ranger.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/ranger.dir/flags.make
+include CMakeFiles/Ranger.dir/flags.make
 
-CMakeFiles/ranger.dir/laser.cpp.o: CMakeFiles/ranger.dir/flags.make
-CMakeFiles/ranger.dir/laser.cpp.o: ../laser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ranger.dir/laser.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ranger.dir/laser.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.cpp
+CMakeFiles/Ranger.dir/Laser.cpp.o: CMakeFiles/Ranger.dir/flags.make
+CMakeFiles/Ranger.dir/Laser.cpp.o: ../Laser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Ranger.dir/Laser.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ranger.dir/Laser.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.cpp
 
-CMakeFiles/ranger.dir/laser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ranger.dir/laser.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.cpp > CMakeFiles/ranger.dir/laser.cpp.i
+CMakeFiles/Ranger.dir/Laser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ranger.dir/Laser.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.cpp > CMakeFiles/Ranger.dir/Laser.cpp.i
 
-CMakeFiles/ranger.dir/laser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ranger.dir/laser.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.cpp -o CMakeFiles/ranger.dir/laser.cpp.s
+CMakeFiles/Ranger.dir/Laser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ranger.dir/Laser.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.cpp -o CMakeFiles/Ranger.dir/Laser.cpp.s
 
-CMakeFiles/ranger.dir/laser.cpp.o.requires:
+CMakeFiles/Ranger.dir/Laser.cpp.o.requires:
 
-.PHONY : CMakeFiles/ranger.dir/laser.cpp.o.requires
+.PHONY : CMakeFiles/Ranger.dir/Laser.cpp.o.requires
 
-CMakeFiles/ranger.dir/laser.cpp.o.provides: CMakeFiles/ranger.dir/laser.cpp.o.requires
-	$(MAKE) -f CMakeFiles/ranger.dir/build.make CMakeFiles/ranger.dir/laser.cpp.o.provides.build
-.PHONY : CMakeFiles/ranger.dir/laser.cpp.o.provides
+CMakeFiles/Ranger.dir/Laser.cpp.o.provides: CMakeFiles/Ranger.dir/Laser.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Ranger.dir/build.make CMakeFiles/Ranger.dir/Laser.cpp.o.provides.build
+.PHONY : CMakeFiles/Ranger.dir/Laser.cpp.o.provides
 
-CMakeFiles/ranger.dir/laser.cpp.o.provides.build: CMakeFiles/ranger.dir/laser.cpp.o
-
-
-CMakeFiles/ranger.dir/radar1.cpp.o: CMakeFiles/ranger.dir/flags.make
-CMakeFiles/ranger.dir/radar1.cpp.o: ../radar1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ranger.dir/radar1.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ranger.dir/radar1.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.cpp
-
-CMakeFiles/ranger.dir/radar1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ranger.dir/radar1.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.cpp > CMakeFiles/ranger.dir/radar1.cpp.i
-
-CMakeFiles/ranger.dir/radar1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ranger.dir/radar1.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.cpp -o CMakeFiles/ranger.dir/radar1.cpp.s
-
-CMakeFiles/ranger.dir/radar1.cpp.o.requires:
-
-.PHONY : CMakeFiles/ranger.dir/radar1.cpp.o.requires
-
-CMakeFiles/ranger.dir/radar1.cpp.o.provides: CMakeFiles/ranger.dir/radar1.cpp.o.requires
-	$(MAKE) -f CMakeFiles/ranger.dir/build.make CMakeFiles/ranger.dir/radar1.cpp.o.provides.build
-.PHONY : CMakeFiles/ranger.dir/radar1.cpp.o.provides
-
-CMakeFiles/ranger.dir/radar1.cpp.o.provides.build: CMakeFiles/ranger.dir/radar1.cpp.o
+CMakeFiles/Ranger.dir/Laser.cpp.o.provides.build: CMakeFiles/Ranger.dir/Laser.cpp.o
 
 
-CMakeFiles/ranger.dir/radar2.cpp.o: CMakeFiles/ranger.dir/flags.make
-CMakeFiles/ranger.dir/radar2.cpp.o: ../radar2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ranger.dir/radar2.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ranger.dir/radar2.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.cpp
+CMakeFiles/Ranger.dir/Radar1.cpp.o: CMakeFiles/Ranger.dir/flags.make
+CMakeFiles/Ranger.dir/Radar1.cpp.o: ../Radar1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ranger.dir/Radar1.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ranger.dir/Radar1.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp
 
-CMakeFiles/ranger.dir/radar2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ranger.dir/radar2.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.cpp > CMakeFiles/ranger.dir/radar2.cpp.i
+CMakeFiles/Ranger.dir/Radar1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ranger.dir/Radar1.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp > CMakeFiles/Ranger.dir/Radar1.cpp.i
 
-CMakeFiles/ranger.dir/radar2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ranger.dir/radar2.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.cpp -o CMakeFiles/ranger.dir/radar2.cpp.s
+CMakeFiles/Ranger.dir/Radar1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ranger.dir/Radar1.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp -o CMakeFiles/Ranger.dir/Radar1.cpp.s
 
-CMakeFiles/ranger.dir/radar2.cpp.o.requires:
+CMakeFiles/Ranger.dir/Radar1.cpp.o.requires:
 
-.PHONY : CMakeFiles/ranger.dir/radar2.cpp.o.requires
+.PHONY : CMakeFiles/Ranger.dir/Radar1.cpp.o.requires
 
-CMakeFiles/ranger.dir/radar2.cpp.o.provides: CMakeFiles/ranger.dir/radar2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/ranger.dir/build.make CMakeFiles/ranger.dir/radar2.cpp.o.provides.build
-.PHONY : CMakeFiles/ranger.dir/radar2.cpp.o.provides
+CMakeFiles/Ranger.dir/Radar1.cpp.o.provides: CMakeFiles/Ranger.dir/Radar1.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Ranger.dir/build.make CMakeFiles/Ranger.dir/Radar1.cpp.o.provides.build
+.PHONY : CMakeFiles/Ranger.dir/Radar1.cpp.o.provides
 
-CMakeFiles/ranger.dir/radar2.cpp.o.provides.build: CMakeFiles/ranger.dir/radar2.cpp.o
-
-
-CMakeFiles/ranger.dir/main.cpp.o: CMakeFiles/ranger.dir/flags.make
-CMakeFiles/ranger.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ranger.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ranger.dir/main.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
-
-CMakeFiles/ranger.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ranger.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp > CMakeFiles/ranger.dir/main.cpp.i
-
-CMakeFiles/ranger.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ranger.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp -o CMakeFiles/ranger.dir/main.cpp.s
-
-CMakeFiles/ranger.dir/main.cpp.o.requires:
-
-.PHONY : CMakeFiles/ranger.dir/main.cpp.o.requires
-
-CMakeFiles/ranger.dir/main.cpp.o.provides: CMakeFiles/ranger.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/ranger.dir/build.make CMakeFiles/ranger.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/ranger.dir/main.cpp.o.provides
-
-CMakeFiles/ranger.dir/main.cpp.o.provides.build: CMakeFiles/ranger.dir/main.cpp.o
+CMakeFiles/Ranger.dir/Radar1.cpp.o.provides.build: CMakeFiles/Ranger.dir/Radar1.cpp.o
 
 
-CMakeFiles/ranger.dir/ranger.cpp.o: CMakeFiles/ranger.dir/flags.make
-CMakeFiles/ranger.dir/ranger.cpp.o: ../ranger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ranger.dir/ranger.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ranger.dir/ranger.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.cpp
+CMakeFiles/Ranger.dir/Radar2.cpp.o: CMakeFiles/Ranger.dir/flags.make
+CMakeFiles/Ranger.dir/Radar2.cpp.o: ../Radar2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ranger.dir/Radar2.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ranger.dir/Radar2.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp
 
-CMakeFiles/ranger.dir/ranger.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ranger.dir/ranger.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.cpp > CMakeFiles/ranger.dir/ranger.cpp.i
+CMakeFiles/Ranger.dir/Radar2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ranger.dir/Radar2.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp > CMakeFiles/Ranger.dir/Radar2.cpp.i
 
-CMakeFiles/ranger.dir/ranger.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ranger.dir/ranger.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.cpp -o CMakeFiles/ranger.dir/ranger.cpp.s
+CMakeFiles/Ranger.dir/Radar2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ranger.dir/Radar2.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp -o CMakeFiles/Ranger.dir/Radar2.cpp.s
 
-CMakeFiles/ranger.dir/ranger.cpp.o.requires:
+CMakeFiles/Ranger.dir/Radar2.cpp.o.requires:
 
-.PHONY : CMakeFiles/ranger.dir/ranger.cpp.o.requires
+.PHONY : CMakeFiles/Ranger.dir/Radar2.cpp.o.requires
 
-CMakeFiles/ranger.dir/ranger.cpp.o.provides: CMakeFiles/ranger.dir/ranger.cpp.o.requires
-	$(MAKE) -f CMakeFiles/ranger.dir/build.make CMakeFiles/ranger.dir/ranger.cpp.o.provides.build
-.PHONY : CMakeFiles/ranger.dir/ranger.cpp.o.provides
+CMakeFiles/Ranger.dir/Radar2.cpp.o.provides: CMakeFiles/Ranger.dir/Radar2.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Ranger.dir/build.make CMakeFiles/Ranger.dir/Radar2.cpp.o.provides.build
+.PHONY : CMakeFiles/Ranger.dir/Radar2.cpp.o.provides
 
-CMakeFiles/ranger.dir/ranger.cpp.o.provides.build: CMakeFiles/ranger.dir/ranger.cpp.o
+CMakeFiles/Ranger.dir/Radar2.cpp.o.provides.build: CMakeFiles/Ranger.dir/Radar2.cpp.o
 
 
-# Object files for target ranger
-ranger_OBJECTS = \
-"CMakeFiles/ranger.dir/laser.cpp.o" \
-"CMakeFiles/ranger.dir/radar1.cpp.o" \
-"CMakeFiles/ranger.dir/radar2.cpp.o" \
-"CMakeFiles/ranger.dir/main.cpp.o" \
-"CMakeFiles/ranger.dir/ranger.cpp.o"
+CMakeFiles/Ranger.dir/main.cpp.o: CMakeFiles/Ranger.dir/flags.make
+CMakeFiles/Ranger.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ranger.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ranger.dir/main.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
 
-# External object files for target ranger
-ranger_EXTERNAL_OBJECTS =
+CMakeFiles/Ranger.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ranger.dir/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp > CMakeFiles/Ranger.dir/main.cpp.i
 
-ranger: CMakeFiles/ranger.dir/laser.cpp.o
-ranger: CMakeFiles/ranger.dir/radar1.cpp.o
-ranger: CMakeFiles/ranger.dir/radar2.cpp.o
-ranger: CMakeFiles/ranger.dir/main.cpp.o
-ranger: CMakeFiles/ranger.dir/ranger.cpp.o
-ranger: CMakeFiles/ranger.dir/build.make
-ranger: CMakeFiles/ranger.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ranger"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ranger.dir/link.txt --verbose=$(VERBOSE)
+CMakeFiles/Ranger.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ranger.dir/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp -o CMakeFiles/Ranger.dir/main.cpp.s
+
+CMakeFiles/Ranger.dir/main.cpp.o.requires:
+
+.PHONY : CMakeFiles/Ranger.dir/main.cpp.o.requires
+
+CMakeFiles/Ranger.dir/main.cpp.o.provides: CMakeFiles/Ranger.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Ranger.dir/build.make CMakeFiles/Ranger.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/Ranger.dir/main.cpp.o.provides
+
+CMakeFiles/Ranger.dir/main.cpp.o.provides.build: CMakeFiles/Ranger.dir/main.cpp.o
+
+
+CMakeFiles/Ranger.dir/Ranger.cpp.o: CMakeFiles/Ranger.dir/flags.make
+CMakeFiles/Ranger.dir/Ranger.cpp.o: ../Ranger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Ranger.dir/Ranger.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ranger.dir/Ranger.cpp.o -c /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.cpp
+
+CMakeFiles/Ranger.dir/Ranger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ranger.dir/Ranger.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.cpp > CMakeFiles/Ranger.dir/Ranger.cpp.i
+
+CMakeFiles/Ranger.dir/Ranger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ranger.dir/Ranger.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.cpp -o CMakeFiles/Ranger.dir/Ranger.cpp.s
+
+CMakeFiles/Ranger.dir/Ranger.cpp.o.requires:
+
+.PHONY : CMakeFiles/Ranger.dir/Ranger.cpp.o.requires
+
+CMakeFiles/Ranger.dir/Ranger.cpp.o.provides: CMakeFiles/Ranger.dir/Ranger.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Ranger.dir/build.make CMakeFiles/Ranger.dir/Ranger.cpp.o.provides.build
+.PHONY : CMakeFiles/Ranger.dir/Ranger.cpp.o.provides
+
+CMakeFiles/Ranger.dir/Ranger.cpp.o.provides.build: CMakeFiles/Ranger.dir/Ranger.cpp.o
+
+
+# Object files for target Ranger
+Ranger_OBJECTS = \
+"CMakeFiles/Ranger.dir/Laser.cpp.o" \
+"CMakeFiles/Ranger.dir/Radar1.cpp.o" \
+"CMakeFiles/Ranger.dir/Radar2.cpp.o" \
+"CMakeFiles/Ranger.dir/main.cpp.o" \
+"CMakeFiles/Ranger.dir/Ranger.cpp.o"
+
+# External object files for target Ranger
+Ranger_EXTERNAL_OBJECTS =
+
+Ranger: CMakeFiles/Ranger.dir/Laser.cpp.o
+Ranger: CMakeFiles/Ranger.dir/Radar1.cpp.o
+Ranger: CMakeFiles/Ranger.dir/Radar2.cpp.o
+Ranger: CMakeFiles/Ranger.dir/main.cpp.o
+Ranger: CMakeFiles/Ranger.dir/Ranger.cpp.o
+Ranger: CMakeFiles/Ranger.dir/build.make
+Ranger: CMakeFiles/Ranger.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Ranger"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Ranger.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/ranger.dir/build: ranger
+CMakeFiles/Ranger.dir/build: Ranger
 
-.PHONY : CMakeFiles/ranger.dir/build
+.PHONY : CMakeFiles/Ranger.dir/build
 
-CMakeFiles/ranger.dir/requires: CMakeFiles/ranger.dir/laser.cpp.o.requires
-CMakeFiles/ranger.dir/requires: CMakeFiles/ranger.dir/radar1.cpp.o.requires
-CMakeFiles/ranger.dir/requires: CMakeFiles/ranger.dir/radar2.cpp.o.requires
-CMakeFiles/ranger.dir/requires: CMakeFiles/ranger.dir/main.cpp.o.requires
-CMakeFiles/ranger.dir/requires: CMakeFiles/ranger.dir/ranger.cpp.o.requires
+CMakeFiles/Ranger.dir/requires: CMakeFiles/Ranger.dir/Laser.cpp.o.requires
+CMakeFiles/Ranger.dir/requires: CMakeFiles/Ranger.dir/Radar1.cpp.o.requires
+CMakeFiles/Ranger.dir/requires: CMakeFiles/Ranger.dir/Radar2.cpp.o.requires
+CMakeFiles/Ranger.dir/requires: CMakeFiles/Ranger.dir/main.cpp.o.requires
+CMakeFiles/Ranger.dir/requires: CMakeFiles/Ranger.dir/Ranger.cpp.o.requires
 
-.PHONY : CMakeFiles/ranger.dir/requires
+.PHONY : CMakeFiles/Ranger.dir/requires
 
-CMakeFiles/ranger.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/ranger.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/ranger.dir/clean
+CMakeFiles/Ranger.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/Ranger.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/Ranger.dir/clean
 
-CMakeFiles/ranger.dir/depend:
-	cd /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2 /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2 /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles/ranger.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/ranger.dir/depend
+CMakeFiles/Ranger.dir/depend:
+	cd /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2 /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2 /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build /home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/build/CMakeFiles/Ranger.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/Ranger.dir/depend
 

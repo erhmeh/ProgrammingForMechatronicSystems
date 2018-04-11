@@ -12,6 +12,21 @@
 class Ranger{
 public:
   Ranger();
+  bool setXOffset(double i);
+  bool setOOffset(double i);
+  bool setFov(double i);
+  bool setRes(double i);
+  bool setNumOfSamples(int i);
+  double getData();
+  bool setTtyUSB();
+private:
+  double xOffset;
+  double oOffset;
+  double fov;
+  double res;
+  int numOfSamples;
+  double data;
+  int ttyUSB;
 };
 
 #endif

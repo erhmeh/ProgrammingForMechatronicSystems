@@ -14,3 +14,13 @@
 using namespace std;
 
 Ranger::Ranger(){}
+
+Ranger::setXOffset(double i){
+    if (i <= 10 && i >= -10){
+      xOffset = i;
+      return true;
+    }
+    else {
+      return false;
+    }
+}
