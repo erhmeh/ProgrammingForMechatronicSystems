@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=c++11    CMakeFiles/shapes.dir/main.cpp.o CMakeFiles/shapes.dir/shape.cpp.o CMakeFiles/shapes.dir/rectangle.cpp.o  -o shapes -rdynamic 
