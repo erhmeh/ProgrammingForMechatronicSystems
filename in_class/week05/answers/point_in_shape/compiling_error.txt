@@ -1,0 +1,6 @@
+C:\Users\jamin\AppData\Local\Temp\ccb3rdid.o:main.cpp:(.text+0x48): undefined reference to `Rectangle::Rectangle(double, double, double, double)'
+C:\Users\jamin\AppData\Local\Temp\ccb3rdid.o:main.cpp:(.text+0x7f): undefined reference to `Rectangle::Rectangle(double, double, double, double)'
+C:\Users\jamin\AppData\Local\Temp\ccb3rdid.o:main.cpp:(.text+0xac): undefined reference to `Circle::Circle(double, double, double)'
+C:\Users\jamin\AppData\Local\Temp\ccb3rdid.o:main.cpp:(.text+0xd9): undefined reference to `Circle::Circle(double, double, double)'
+C:\Users\jamin\AppData\Local\Temp\ccb3rdid.o:main.cpp:(.text+0x1cf): undefined reference to `shape_functions::getShapesBoundingPoint(std::vector<Shape*, std::allocator<Shape*> >, double, double)'
+collect2.exe: error: ld returned 1 exit status
