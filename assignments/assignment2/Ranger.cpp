@@ -1,4 +1,4 @@
-/* ranger.h
+/* Ranger.cpp
  * Programming for Mechatronic systems
  * Assignment 2
  *
@@ -6,7 +6,11 @@
  * @date: Week 5-7 Autumn Semester 2018
  */
 
-class Ranger{
-public:
-  Ranger();
-};
+#include "Ranger.h"
+#include <iostream>
+#include <stdlib.h>
+#include <vector>
+
+using namespace std;
+
+Ranger::Ranger(){}

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.cpp
+laser.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.h
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.h
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
+iostream
+-
+vector
+-
+ranger.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.cpp
+radar1.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.h
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.h
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.cpp
+radar2.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.h
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.h
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.cpp
+ranger.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
+iostream
+-
+stdlib.h
+-
+vector
+-
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
+
