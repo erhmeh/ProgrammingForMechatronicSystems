@@ -2,7 +2,7 @@
 #define LASER_H
 
 
-class Laser
+class Laser : public Ranger
 {
 public:
     Laser();

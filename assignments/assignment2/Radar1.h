@@ -2,7 +2,7 @@
 #define RADAR1_H
 
 
-class Radar1
+class Radar1 : public Ranger
 {
 public:
     Radar1();

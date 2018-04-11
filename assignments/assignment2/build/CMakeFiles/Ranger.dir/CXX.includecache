@@ -6,27 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.cpp
-Laser.h
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.cpp
+laser.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.h
 
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/laser.h
 
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp
-Radar1.h
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
+iostream
+-
+vector
+-
+ranger.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
 
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.cpp
+radar1.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.h
 
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp
-Radar2.h
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar1.h
 
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.cpp
+radar2.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.h
 
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.cpp
-Ranger.h
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/radar2.h
+
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.cpp
+ranger.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
 iostream
 -
 stdlib.h
@@ -34,19 +42,5 @@ stdlib.h
 vector
 -
 
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
-
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
-iostream
--
-vector
--
-Ranger.h
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
-Radar1.h
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h
-Radar2.h
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h
-Laser.h
-/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.h
+/home/user/Desktop/PMS/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
 
