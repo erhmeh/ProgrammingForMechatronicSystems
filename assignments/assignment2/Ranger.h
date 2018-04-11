@@ -6,7 +6,12 @@
  * @date: Week 5-7 Autumn Semester 2018
  */
 
+#ifndef RANGER_H
+#define RANGER_H
+
 class Ranger{
 public:
   Ranger();
 };
+
+#endif

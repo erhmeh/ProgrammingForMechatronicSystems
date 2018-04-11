@@ -1,6 +1,7 @@
 #ifndef LASER_H
 #define LASER_H
 
+#include "Ranger.h"
 
 class Laser : public Ranger
 {

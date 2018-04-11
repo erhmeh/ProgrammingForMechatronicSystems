@@ -1,14 +1,14 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ranger.dir/laser.cpp.o"
-  "CMakeFiles/ranger.dir/radar1.cpp.o"
-  "CMakeFiles/ranger.dir/radar2.cpp.o"
-  "CMakeFiles/ranger.dir/main.cpp.o"
-  "CMakeFiles/ranger.dir/ranger.cpp.o"
-  "ranger.pdb"
-  "ranger"
+  "CMakeFiles/Ranger.dir/Laser.cpp.o"
+  "CMakeFiles/Ranger.dir/Radar1.cpp.o"
+  "CMakeFiles/Ranger.dir/Radar2.cpp.o"
+  "CMakeFiles/Ranger.dir/main.cpp.o"
+  "CMakeFiles/Ranger.dir/Ranger.cpp.o"
+  "Ranger.pdb"
+  "Ranger"
 )
 
 # Per-language clean rules from dependency scanning.
 foreach(lang CXX)
-  include(CMakeFiles/ranger.dir/cmake_clean_${lang}.cmake OPTIONAL)
+  include(CMakeFiles/Ranger.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()
