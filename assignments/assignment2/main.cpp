@@ -7,11 +7,14 @@
 
 using namespace std;
 
-#define LASER_BAUD 38400.0
-#define LASER_XOFFSET 0.0
+#define LASER_BAUD 38400
+#define LASER_XOFFSET 0
+#define LASER_OOFFSET 0
+#define LASER_TTY 2
 
-#define LASER_BAUD_DEFAULT 38400.0
-#define LASER_XOFFSET_DEFAULT 0.0
+#define LASER_BAUD_DEFAULT 38400
+#define LASER_XOFFSET_DEFAULT 0
+#define LASER_OOFFSET_DEFAULT 0
 
 Laser laser;
 Radar1 radar1;
@@ -23,22 +26,48 @@ void initRadar2();
 
 void initLaser(){
         if (laser.setBaudRate(LASER_BAUD)) {
-                cout << "Baud Rate set." << endl;
+                cout << "Baud Rate set: " << LASER_BAUD << endl;
         }
         else{
                 laser.setBaudRate(LASER_BAUD_DEFAULT);
-                cout << "Invalid baud rate. Default value used." << endl;
+                cout << "Invalid baud rate. Default value used: " << LASER_BAUD_DEFAULT << endl;
         }
         if (laser.setXOffset(LASER_XOFFSET)) {
-                cout << "X offset set." << endl;
+                cout << "X offset set: " << LASER_XOFFSET << endl;
         }
         else{
                 laser.setBaudRate(LASER_XOFFSET_DEFAULT);
-                cout << "Invalid offset. Default value used." << endl;
+                cout << "Invalid offset. Default value used: " << LASER_XOFFSET_DEFAULT << endl;
+        }
+        if (laser.setOOffset(LASER_OOFFSET)) {
+                cout << "Orientation offset set: " << LASER_OOFFSET << endl;
+        }
+        else{
+                laser.setOOffset(LASER_OOFFSET_DEFAULT);
+                cout << "Invalid orientation offset. Default value used: " << LASER_OOFFSET_DEFAULT << endl;
+        }
+        if (radar1.getTty() != LASER_TTY && radar2.getTty() != LASER_TTY && laser.setTtyACM(LASER_TTY)) {
+                cout << "Laser has been attached as ttyACM" << LASER_TTY << endl;
+        }
+        else{
+                if(radar1.getTty() == 0 || radar2.getTty() == 0) {
+                        if (radar1.getTty() == 1 || radar2.getTty() == 1) {
+                                laser.setTtyACM(2);
+                                cout << "Laser has been attached to ttyACM2" << endl;
+                        }
+                        else{
+                                laser.setTtyACM(1);
+                                cout << "Laser has been attached to ttyACM1" << endl;
+                        }
+                }
+                else{
+                        laser.setTtyACM(0);
+                        cout << "Laser has been attached to ttyACM0" << endl;
+                }
         }
 }
 
 int main(){
-
+        initLaser();
         return 0;
 }

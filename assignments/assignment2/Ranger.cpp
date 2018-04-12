@@ -16,7 +16,7 @@ using namespace std;
 Ranger::Ranger(){}
 
 bool Ranger::setXOffset(double i, int min, int max){
-    if (i <= max && i >= -min){
+    if (i <= max && i >= min){
       xOffset = i;
       return true;
     }
@@ -53,4 +53,8 @@ bool Ranger::setTtyACM(int i){
   else{
     return false;
   }
+}
+
+int Ranger::getTty(){
+  return ttyACM;
 }

@@ -16,6 +16,7 @@ public:
   bool setNumOfSamples(int i);
   bool setBaudRate(int i);
   bool setTtyACM(int i);
+  int getTty();
 protected:
   bool setXOffset(double i, int min, int max);
   double xOffset;
