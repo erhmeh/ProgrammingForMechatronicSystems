@@ -1,0 +1,8 @@
+C:\Users\jamin\AppData\Local\Temp\cc1wSseU.o:main.cpp:(.text+0x13): undefined reference to `Ranger::setBaudRate(int)'
+C:\Users\jamin\AppData\Local\Temp\cc1wSseU.o:main.cpp:(.text+0x52): undefined reference to `Ranger::setBaudRate(int)'
+C:\Users\jamin\AppData\Local\Temp\cc1wSseU.o:main.cpp:(.text+0x89): undefined reference to `Laser::setXOffset(double)'
+C:\Users\jamin\AppData\Local\Temp\cc1wSseU.o:main.cpp:(.text+0xc8): undefined reference to `Ranger::setBaudRate(int)'
+C:\Users\jamin\AppData\Local\Temp\cc1wSseU.o:main.cpp:(.text+0x14c): undefined reference to `Laser::Laser()'
+C:\Users\jamin\AppData\Local\Temp\cc1wSseU.o:main.cpp:(.text+0x156): undefined reference to `Radar1::Radar1()'
+C:\Users\jamin\AppData\Local\Temp\cc1wSseU.o:main.cpp:(.text+0x160): undefined reference to `Radar2::Radar2()'
+collect2.exe: error: ld returned 1 exit status

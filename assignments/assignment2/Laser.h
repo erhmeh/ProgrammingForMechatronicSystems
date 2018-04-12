@@ -7,6 +7,8 @@ class Laser : public Ranger
 {
 public:
     Laser();
+    bool setXOffset(double i);
+protected:
 };
 
 #endif // LASER_H
