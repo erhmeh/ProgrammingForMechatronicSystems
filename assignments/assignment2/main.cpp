@@ -12,10 +12,6 @@ using namespace std;
 #define LASER_OOFFSET 0
 #define LASER_TTY 2
 
-#define LASER_BAUD_DEFAULT 38400
-#define LASER_XOFFSET_DEFAULT 0
-#define LASER_OOFFSET_DEFAULT 0
-
 Laser laser;
 Radar1 radar1;
 Radar2 radar2;
@@ -26,25 +22,22 @@ void initRadar2();
 
 void initLaser(){
         if (laser.setBaudRate(LASER_BAUD)) {
-                cout << "Baud Rate set: " << LASER_BAUD << endl;
+                cout << "Baud Rate set: " << laser.getBaudRate() << endl;
         }
         else{
-                laser.setBaudRate(LASER_BAUD_DEFAULT);
-                cout << "Invalid baud rate. Default value used: " << LASER_BAUD_DEFAULT << endl;
+                cout << "Invalid baud rate. Default value used: " << laser.getBaudRate() << endl;
         }
         if (laser.setXOffset(LASER_XOFFSET)) {
-                cout << "X offset set: " << LASER_XOFFSET << endl;
+                cout << "X offset set: " << laser.getXOffset() << endl;
         }
         else{
-                laser.setBaudRate(LASER_XOFFSET_DEFAULT);
-                cout << "Invalid offset. Default value used: " << LASER_XOFFSET_DEFAULT << endl;
+                cout << "Invalid offset. Default value used: " << laser.getXOffset() << endl;
         }
         if (laser.setOOffset(LASER_OOFFSET)) {
-                cout << "Orientation offset set: " << LASER_OOFFSET << endl;
+                cout << "Orientation offset set: " << laser.getOOffset() << endl;
         }
         else{
-                laser.setOOffset(LASER_OOFFSET_DEFAULT);
-                cout << "Invalid orientation offset. Default value used: " << LASER_OOFFSET_DEFAULT << endl;
+                cout << "Invalid orientation offset. Default value used: " << laser.getOOffset() << endl;
         }
         if (radar1.getTty() != LASER_TTY && radar2.getTty() != LASER_TTY && laser.setTtyACM(LASER_TTY)) {
                 cout << "Laser has been attached as ttyACM" << LASER_TTY << endl;

@@ -17,7 +17,7 @@ Ranger::Ranger(){}
 
 bool Ranger::setXOffset(double i, int min, int max){
     if (i <= max && i >= min){
-      xOffset = i;
+      xOffset_ = i;
       return true;
     }
     else {
@@ -25,9 +25,13 @@ bool Ranger::setXOffset(double i, int min, int max){
     }
 }
 
+double Ranger::getXOffset(){
+  return xOffset_;
+}
+
 bool Ranger::setOOffset(double i){
   if (i >= -180 && i <= 180){
-    oOffset = i;
+    oOffset_ = i;
     return true;
   }
   else{
@@ -35,9 +39,13 @@ bool Ranger::setOOffset(double i){
   }
 }
 
+double Ranger::getOOffset(){
+  return oOffset_;
+}
+
 bool Ranger::setBaudRate(int i){
   if (i == 38400 || i == 115200){
-    baudRate = i;
+    baudRate_ = i;
     return true;
   }
   else {
@@ -45,9 +53,13 @@ bool Ranger::setBaudRate(int i){
   }
 }
 
+int Ranger::getBaudRate(){
+  return baudRate_;
+}
+
 bool Ranger::setTtyACM(int i){
   if (i == 0 || i == 1 || i == 2){
-    ttyACM = i;
+    ttyACM_ = i;
     return true;
   }
   else{
@@ -56,5 +68,5 @@ bool Ranger::setTtyACM(int i){
 }
 
 int Ranger::getTty(){
-  return ttyACM;
+  return ttyACM_;
 }
