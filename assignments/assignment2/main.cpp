@@ -26,6 +26,11 @@ using namespace std;
 #define RADAR1_OOFFSET 0
 #define RADAR1_TTY 1
 
+#define RADAR2_BAUD 115200
+#define RADAR2_XOFFSET 0
+#define RADAR2_OOFFSET 0
+#define RADAR2_TTY 0
+
 Laser laser;
 Radar1 radar1;
 Radar2 radar2;
@@ -106,7 +111,7 @@ void initRadar1(){
   else{
           cout << "Invalid offset. Default value used: " << radar1.getXOffset() << endl;
   }
-  if (radar1.setOOffset(LASER_OOFFSET)) {
+  if (radar1.setOOffset(RADAR1_OOFFSET)) {
           cout << "Orientation offset set: " << radar1.getOOffset() << endl;
   }
   else{
@@ -133,8 +138,56 @@ void initRadar1(){
   }
 }
 
+void initRadar2(){
+  cout << "Initialising Radar 2. Fixed Parameters are as follows." << endl << endl;
+  cout << "Model Number: RAD-001" << endl;
+  cout << "FOV: " << radar2.getFov() << endl;
+  cout << "Angular Resolution: " << radar2.getAngularRes() << endl;
+  cout << "Min distance: " << radar2.getMinDistance() << endl;
+  cout << "Max distance: " << radar2.getMaxDistance() << endl << endl;
+  cout << "Configuring user defined variables:" << endl;
+  if (radar2.setBaudRate(RADAR2_BAUD)) {
+          cout << "Baud Rate set: " << radar2.getBaudRate() << endl;
+  }
+  else{
+          cout << "Invalid baud rate. Default value used: " << radar2.getBaudRate() << endl;
+  }
+  if (radar2.setXOffset(RADAR2_XOFFSET)) {
+          cout << "X offset set: " << radar2.getXOffset() << endl;
+  }
+  else{
+          cout << "Invalid offset. Default value used: " << radar2.getXOffset() << endl;
+  }
+  if (radar2.setOOffset(RADAR2_OOFFSET)) {
+          cout << "Orientation offset set: " << radar2.getOOffset() << endl;
+  }
+  else{
+          cout << "Invalid orientation offset. Default value used: " << radar2.getOOffset() << endl;
+  }
+  if (laser.getTty() != RADAR2_TTY && radar1.getTty() != RADAR2_TTY && radar2.setTtyACM(RADAR1_TTY)) {
+          cout << "Radar 2 has been attached as ttyACM" << RADAR2_TTY << endl;
+  }
+  else{
+          if(laser.getTty() == 0 || radar1.getTty() == 0) {
+                  if (laser.getTty() == 1 || radar1.getTty() == 1) {
+                          radar1.setTtyACM(2);
+                          cout << "Radar 2 has been attached to ttyACM2" << endl;
+                  }
+                  else{
+                          radar2.setTtyACM(1);
+                          cout << "Radar 2 has been attached to ttyACM1" << endl;
+                  }
+          }
+          else{
+                  radar2.setTtyACM(0);
+                  cout << "Radar 2 has been attached to ttyACM0" << endl;
+          }
+  }
+}
+
 int main(){
         initLaser();
         initRadar1();
+        initRadar2();
         return 0;
 }
