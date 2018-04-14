@@ -16,11 +16,19 @@ Laser laser;
 Radar1 radar1;
 Radar2 radar2;
 
+void startSensors();
 void initLaser();
 void initRadar1();
 void initRadar2();
 
+void startSensors(){
+        initLaser();
+        initRadar1();
+        initRadar2();
+}
+
 void initLaser(){
+        Laser();
         if (laser.setBaudRate(LASER_BAUD)) {
                 cout << "Baud Rate set: " << laser.getBaudRate() << endl;
         }
@@ -61,6 +69,6 @@ void initLaser(){
 }
 
 int main(){
-        initLaser();
+        startSensors();
         return 0;
 }
