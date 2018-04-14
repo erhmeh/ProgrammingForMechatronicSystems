@@ -8,6 +8,8 @@ class Laser : public Ranger
 public:
     Laser();
     bool setXOffset(double i);
+    bool setOOffset(double i);
+    bool setAngularRes(double i);
 protected:
 };
 

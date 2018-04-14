@@ -11,6 +11,7 @@ using namespace std;
 #define LASER_XOFFSET 0
 #define LASER_OOFFSET 0
 #define LASER_TTY 2
+#define LASER_ANGULAR_RES 30
 
 Laser laser;
 Radar1 radar1;
@@ -21,6 +22,12 @@ void initRadar1();
 void initRadar2();
 
 void initLaser(){
+        cout << "Fixed Params:" << endl;
+        cout << "Model Number: UTM-XXL" << endl;
+        cout << "FOV: " << laser.getFov() << endl;
+        cout << "Min distance: " << laser.getMinDistance() << endl;
+        cout << "Max distance: " << laser.getMaxDistance() << endl;
+        cout << "Configuring user defined variables:" << endl;
         if (laser.setBaudRate(LASER_BAUD)) {
                 cout << "Baud Rate set: " << laser.getBaudRate() << endl;
         }
@@ -57,6 +64,12 @@ void initLaser(){
                         laser.setTtyACM(0);
                         cout << "Laser has been attached to ttyACM0" << endl;
                 }
+        }
+        if (laser.setAngularRes(LASER_ANGULAR_RES)) {
+                cout << "Angular Resolution set: " << laser.getAngularRes() << endl;
+        }
+        else{
+                cout << "Invalid Angular Resolution. Default value used: " << laser.getAngularRes() << endl;
         }
 }
 

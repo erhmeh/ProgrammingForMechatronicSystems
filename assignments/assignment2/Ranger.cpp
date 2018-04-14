@@ -70,3 +70,29 @@ bool Ranger::setTtyACM(int i){
 int Ranger::getTty(){
   return ttyACM_;
 }
+
+double Ranger::getFov(){
+  return fov_;
+}
+
+double Ranger::getMinDistance(){
+  return minDist_;
+}
+
+double Ranger::getMaxDistance(){
+  return maxDist_;
+}
+
+bool Ranger::setAngularRes(double i){
+  if (i != 0){
+    res_ = i;
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+double Ranger::getAngularRes(){
+  return res_;
+}

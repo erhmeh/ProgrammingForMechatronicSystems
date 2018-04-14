@@ -13,6 +13,7 @@ class Ranger{
 public:
   Ranger();
   double getXOffset();
+  bool setOOffset(double i);
   double getOOffset();
   bool setNumOfSamples(int i);
   int getNumOfSamples();
@@ -20,9 +21,13 @@ public:
   int getBaudRate();
   bool setTtyACM(int i);
   int getTty();
+  bool setAngularRes(double i);
+  double getAngularRes();
+  double getFov();
+  double getMinDistance();
+  double getMaxDistance();
 protected:
   bool setXOffset(double i, int min, int max);
-  bool setOOffset(double i);
   double xOffset_;
   double oOffset_;
   bool setFov(double i);
