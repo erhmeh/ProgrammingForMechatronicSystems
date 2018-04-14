@@ -1,3 +1,11 @@
+/* Laser.cpp
+ * Programming for Mechatronic systems
+ * Assignment 2
+ *
+ * @author: Jamin Early 99133391
+ * @date: Week 5-7 Autumn Semester 2018
+ */
+
 #include "Ranger.h"
 #include "Laser.h"
 
@@ -10,21 +18,13 @@
 #define LASER_MAX_DIST 8.0
 
 Laser::Laser(){
-  baudRate_ = LASER_BAUD_DEFAULT;
-  xOffset_ = LASER_XOFFSET_DEFAULT;
-  oOffset_ = LASER_OOFFSET_DEFAULT;
-  res_ = LASER_ANGULAR_RES_DEFAULT;
-  fov_ = LASER_FOV;
-  minDist_ = LASER_MIN_DIST;
-  maxDist_ = LASER_MAX_DIST;
-}
-
-bool Laser::setXOffset(double i){
-  return Ranger::setXOffset(i, -10.0, 10.0);
-}
-
-bool Laser::setOOffset(double i){
-    return Ranger::setOOffset(i);
+  setBaudRate(LASER_BAUD_DEFAULT);
+  setXOffset(LASER_XOFFSET_DEFAULT);
+  setOOffset(LASER_OOFFSET_DEFAULT);
+  setAngularRes(LASER_ANGULAR_RES_DEFAULT);
+  setFov(LASER_FOV);
+  setMaxDistance(LASER_MAX_DIST);
+  setMinDistance(LASER_MIN_DIST);
 }
 
 bool Laser::setAngularRes(double i){

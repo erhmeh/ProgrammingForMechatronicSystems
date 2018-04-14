@@ -12,6 +12,7 @@
 class Ranger{
 public:
   Ranger();
+  bool setXOffset(double i);
   double getXOffset();
   bool setOOffset(double i);
   double getOOffset();
@@ -27,7 +28,6 @@ public:
   double getMinDistance();
   double getMaxDistance();
 protected:
-  bool setXOffset(double i, int min, int max);
   double xOffset_;
   double oOffset_;
   bool setFov(double i);
@@ -35,7 +35,9 @@ protected:
   bool setRes(double i);
   double res_;
   int numOfSamples_;
+  bool setMinDistance(double i);
   double minDist_;
+  bool setMaxDistance(double i);
   double maxDist_;
   int baudRate_;
   int ttyACM_;

@@ -15,8 +15,8 @@ using namespace std;
 
 Ranger::Ranger(){}
 
-bool Ranger::setXOffset(double i, int min, int max){
-    if (i <= max && i >= min){
+bool Ranger::setXOffset(double i){
+    if (i <= 1000 && i >= -1000){
       xOffset_ = i;
       return true;
     }
@@ -71,12 +71,42 @@ int Ranger::getTty(){
   return ttyACM_;
 }
 
+bool Ranger::setFov(double i){
+  if (i >= 0){
+    fov_ = i;
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 double Ranger::getFov(){
   return fov_;
 }
 
+bool Ranger::setMinDistance(double i){
+  if (i >= 0){
+    minDist_ = i;
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
 double Ranger::getMinDistance(){
   return minDist_;
+}
+
+bool Ranger::setMaxDistance(double i){
+  if (i > 0){
+    maxDist_ = i;
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 double Ranger::getMaxDistance(){

@@ -1,3 +1,11 @@
+/* main.cpp
+ * Programming for Mechatronic systems
+ * Assignment 2
+ *
+ * @author: Jamin Early 99133391
+ * @date: Week 5-7 Autumn Semester 2018
+ */
+
 #include <iostream>
 #include <vector>
 #include "Ranger.h"
@@ -13,6 +21,11 @@ using namespace std;
 #define LASER_TTY 2
 #define LASER_ANGULAR_RES 30
 
+#define RADAR1_BAUD 38400
+#define RADAR1_XOFFSET 0
+#define RADAR1_OOFFSET 0
+#define RADAR1_TTY 1
+
 Laser laser;
 Radar1 radar1;
 Radar2 radar2;
@@ -22,11 +35,11 @@ void initRadar1();
 void initRadar2();
 
 void initLaser(){
-        cout << "Fixed Params:" << endl;
+        cout << "Initialising laser. Fixed Parameters are as follows." << endl << endl;
         cout << "Model Number: UTM-XXL" << endl;
         cout << "FOV: " << laser.getFov() << endl;
         cout << "Min distance: " << laser.getMinDistance() << endl;
-        cout << "Max distance: " << laser.getMaxDistance() << endl;
+        cout << "Max distance: " << laser.getMaxDistance() << endl << endl;
         cout << "Configuring user defined variables:" << endl;
         if (laser.setBaudRate(LASER_BAUD)) {
                 cout << "Baud Rate set: " << laser.getBaudRate() << endl;
@@ -73,7 +86,55 @@ void initLaser(){
         }
 }
 
+void initRadar1(){
+  cout << "Initialising Radar 1. Fixed Parameters are as follows." << endl << endl;
+  cout << "Model Number: RAD-001" << endl;
+  cout << "FOV: " << radar1.getFov() << endl;
+  cout << "Angular Resolution: " << radar1.getAngularRes() << endl;
+  cout << "Min distance: " << radar1.getMinDistance() << endl;
+  cout << "Max distance: " << radar1.getMaxDistance() << endl << endl;
+  cout << "Configuring user defined variables:" << endl;
+  if (radar1.setBaudRate(RADAR1_BAUD)) {
+          cout << "Baud Rate set: " << radar1.getBaudRate() << endl;
+  }
+  else{
+          cout << "Invalid baud rate. Default value used: " << radar1.getBaudRate() << endl;
+  }
+  if (radar1.setXOffset(RADAR1_XOFFSET)) {
+          cout << "X offset set: " << radar1.getXOffset() << endl;
+  }
+  else{
+          cout << "Invalid offset. Default value used: " << radar1.getXOffset() << endl;
+  }
+  if (radar1.setOOffset(LASER_OOFFSET)) {
+          cout << "Orientation offset set: " << radar1.getOOffset() << endl;
+  }
+  else{
+          cout << "Invalid orientation offset. Default value used: " << radar1.getOOffset() << endl;
+  }
+  if (laser.getTty() != RADAR1_TTY && radar2.getTty() != RADAR1_TTY && radar1.setTtyACM(RADAR1_TTY)) {
+          cout << "Radar 1 has been attached as ttyACM" << RADAR1_TTY << endl;
+  }
+  else{
+          if(laser.getTty() == 0 || radar2.getTty() == 0) {
+                  if (laser.getTty() == 1 || radar2.getTty() == 1) {
+                          radar1.setTtyACM(2);
+                          cout << "Radar 1 has been attached to ttyACM2" << endl;
+                  }
+                  else{
+                          radar1.setTtyACM(1);
+                          cout << "Radar 1 has been attached to ttyACM1" << endl;
+                  }
+          }
+          else{
+                  radar1.setTtyACM(0);
+                  cout << "Radar 1 has been attached to ttyACM0" << endl;
+          }
+  }
+}
+
 int main(){
         initLaser();
+        initRadar1();
         return 0;
 }
