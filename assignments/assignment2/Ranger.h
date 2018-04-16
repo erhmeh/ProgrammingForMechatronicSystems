@@ -6,8 +6,14 @@
  * @date: Week 5-7 Autumn Semester 2018
  */
 
+
+
 #ifndef RANGER_H
 #define RANGER_H
+
+#include <vector>
+
+using namespace std;
 
 class Ranger{
 public:
@@ -41,6 +47,7 @@ protected:
   double maxDist_;
   int baudRate_;
   int ttyACM_;
+  vector<double> scan;
 };
 
 #endif

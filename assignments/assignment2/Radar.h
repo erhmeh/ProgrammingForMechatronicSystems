@@ -15,6 +15,9 @@ class Radar : public Ranger
 {
 public:
     Radar();
+    double readingAtAngle(double angle);
+    void takeReading();
+
 };
 
 #endif // RADAR_H

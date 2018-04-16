@@ -188,5 +188,6 @@ int main(){
         initLaser();
         initRadar1();
         initRadar2();
+        radar1.takeReading();
         return 0;
 }

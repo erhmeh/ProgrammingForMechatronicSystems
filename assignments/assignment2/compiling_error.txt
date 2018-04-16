@@ -1,0 +1,24 @@
+In file included from C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/chrono:35:0,
+                 from C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:11:
+C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp: In member function 'void Radar::takeReading()':
+C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:37:19: error: 'chrono' has not been declared
+   unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+                   ^
+C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:38:3: error: 'default_random_engine' was not declared in this scope
+   default_random_engine generator(seed);
+   ^
+C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:39:3: error: 'normal_distribution' was not declared in this scope
+   normal_distribution<double> distribution(6.0,5.0);
+   ^
+C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:39:23: error: expected primary-expression before 'double'
+   normal_distribution<double> distribution(6.0,5.0);
+                       ^
+C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:41:28: error: 'generator' was not declared in this scope
+     scan[i] = distribution(generator);
+                            ^
+C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:41:37: error: 'distribution' was not declared in this scope
+     scan[i] = distribution(generator);
+                                     ^

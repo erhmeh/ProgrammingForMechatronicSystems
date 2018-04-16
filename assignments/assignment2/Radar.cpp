@@ -8,6 +8,10 @@
 
 #include "Ranger.h"
 #include "Radar.h"
+#include <chrono>
+#include <random>
+#include <iostream>
+
 
 #define RADAR_BAUD_DEFAULT 38400
 #define RADAR_XOFFSET_DEFAULT 0
@@ -26,4 +30,19 @@ Radar::Radar()
   setFov(RADAR_FOV);
   setMaxDistance(RADAR_MAX_DIST);
   setMinDistance(RADAR_MIN_DIST);
+}
+
+void Radar::takeReading(){
+  scan.clear();
+  unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+  default_random_engine generator(seed);
+  normal_distribution<double> distribution(6.0,5.0);
+  for (int i = 0; i <= (fov_/res_); i++){
+    scan[i] = distribution(generator);
+    cout << scan[i] << " ";
+  }
+}
+
+double Radar::readingAtAngle(double angle){
+
 }
