@@ -1,4 +1,4 @@
-/* Radar1.h
+/* Radar.h
  * Programming for Mechatronic systems
  * Assignment 2
  *
@@ -6,15 +6,15 @@
  * @date: Week 5-7 Autumn Semester 2018
  */
 
-#ifndef RADAR1_H
-#define RADAR1_H
+#ifndef RADAR_H
+#define RADAR_H
 
 #include "Ranger.h"
 
-class Radar1 : public Ranger
+class Radar : public Ranger
 {
 public:
-    Radar1();
+    Radar();
 };
 
-#endif // RADAR1_H
+#endif // RADAR_H

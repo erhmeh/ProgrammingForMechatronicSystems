@@ -9,8 +9,7 @@
 #include <iostream>
 #include <vector>
 #include "Ranger.h"
-#include "Radar1.h"
-#include "Radar2.h"
+#include "Radar.h"
 #include "Laser.h"
 
 using namespace std;
@@ -32,8 +31,8 @@ using namespace std;
 #define RADAR2_TTY 0
 
 Laser laser;
-Radar1 radar1;
-Radar2 radar2;
+Radar radar1;
+Radar radar2;
 
 void initLaser();
 void initRadar1();
