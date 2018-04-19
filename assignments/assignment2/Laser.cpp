@@ -27,6 +27,7 @@ Laser::Laser(){
   setMinDistance(LASER_MIN_DIST);
 }
 
+<<<<<<< HEAD
 bool Laser::setAngularRes(double i){
   if (i == 10 || i == 30){
     return Ranger::setAngularRes(i);
@@ -34,4 +35,12 @@ bool Laser::setAngularRes(double i){
   else {
     return false;
   }
+=======
+bool Laser::setXOffset(double i){
+  return Ranger::setXOffset(i, -10.0, 10.0);
+}
+
+bool Laser::setOOffset(double i){
+  return Ranger::setOOffset(i);
+>>>>>>> master
 }

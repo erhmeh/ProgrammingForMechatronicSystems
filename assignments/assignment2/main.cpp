@@ -34,17 +34,28 @@ Laser laser;
 Radar radar1;
 Radar radar2;
 
+void startSensors();
 void initLaser();
 void initRadar1();
 void initRadar2();
 
+void startSensors(){
+        initLaser();
+        initRadar1();
+        initRadar2();
+}
+
 void initLaser(){
+<<<<<<< HEAD
         cout << "Initialising laser. Fixed Parameters are as follows." << endl << endl;
         cout << "Model Number: UTM-XXL" << endl;
         cout << "FOV: " << laser.getFov() << endl;
         cout << "Min distance: " << laser.getMinDistance() << endl;
         cout << "Max distance: " << laser.getMaxDistance() << endl << endl;
         cout << "Configuring user defined variables:" << endl;
+=======
+        Laser();
+>>>>>>> master
         if (laser.setBaudRate(LASER_BAUD)) {
                 cout << "Baud Rate set: " << laser.getBaudRate() << endl;
         }
@@ -185,9 +196,13 @@ void initRadar2(){
 }
 
 int main(){
+<<<<<<< HEAD
         initLaser();
         initRadar1();
         initRadar2();
         radar1.takeReading();
+=======
+        startSensors();
+>>>>>>> master
         return 0;
 }

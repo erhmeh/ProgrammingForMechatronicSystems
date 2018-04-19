@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 In file included from C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/chrono:35:0,
                  from C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:11:
 C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
@@ -22,3 +23,28 @@ C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignm
 C:\Users\Solo\Documents\Git\ProgrammingForMechatronicSystems\assignments\assignment2\Radar.cpp:41:37: error: 'distribution' was not declared in this scope
      scan[i] = distribution(generator);
                                      ^
+=======
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x14): undefined reference to `Ranger::setBaudRate(int)'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x25): undefined reference to `Ranger::getBaudRate()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x65): undefined reference to `Ranger::getBaudRate()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0xa8): undefined reference to `Laser::setXOffset(double)'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0xb9): undefined reference to `Ranger::getXOffset()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0xfd): undefined reference to `Ranger::getXOffset()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x144): undefined reference to `Laser::setOOffset(double)'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x155): undefined reference to `Ranger::getOOffset()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x199): undefined reference to `Ranger::getOOffset()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x1db): undefined reference to `Ranger::getTty()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x1ea): undefined reference to `Ranger::getTty()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x200): undefined reference to `Ranger::setTtyACM(int)'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x25c): undefined reference to `Ranger::getTty()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x26a): undefined reference to `Ranger::getTty()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x28c): undefined reference to `Ranger::getTty()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x29b): undefined reference to `Ranger::getTty()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x2c1): undefined reference to `Ranger::setTtyACM(int)'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x2fc): undefined reference to `Ranger::setTtyACM(int)'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x337): undefined reference to `Ranger::setTtyACM(int)'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x3c3): undefined reference to `Laser::Laser()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x3cd): undefined reference to `Radar1::Radar1()'
+C:\Users\jamin\AppData\Local\Temp\cc98dg7A.o:main.cpp:(.text+0x3d7): undefined reference to `Radar2::Radar2()'
+collect2.exe: error: ld returned 1 exit status
+>>>>>>> master

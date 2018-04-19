@@ -15,7 +15,13 @@ class Laser : public Ranger
 {
 public:
     Laser();
+<<<<<<< HEAD
     bool setAngularRes(double i);
+=======
+    bool setXOffset(double i);
+    bool setOOffset(double i);
+protected:
+>>>>>>> master
 };
 
 #endif // LASER_H
