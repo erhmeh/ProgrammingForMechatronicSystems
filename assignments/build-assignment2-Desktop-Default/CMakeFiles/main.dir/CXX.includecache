@@ -16,23 +16,21 @@ Laser.h
 Ranger.h
 /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
 
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.cpp
 Ranger.h
 /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
-Radar1.h
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h
+Radar.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.h
+chrono
+-
+random
+-
+iostream
+-
+tgmath.h
+-
 
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h
-Ranger.h
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
-
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp
-Ranger.h
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
-Radar2.h
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h
-
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.h
 Ranger.h
 /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
 
@@ -47,6 +45,8 @@ vector
 -
 
 /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
+vector
+-
 
 /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
 iostream
@@ -55,10 +55,8 @@ vector
 -
 Ranger.h
 /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
-Radar1.h
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h
-Radar2.h
-/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h
+Radar.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.h
 Laser.h
 /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.h
 

@@ -46,7 +46,7 @@ void startSensors(){
 }
 
 void initLaser(){
-        cout << "Initialising laser. Fixed Parameters are as follows." << endl << endl;
+        cout << "Initialising laser. Fixed Parameters are as follows." << endl;
         cout << "Model Number: UTM-XXL" << endl;
         cout << "FOV: " << laser.getFov() << endl;
         cout << "Min distance: " << laser.getMinDistance() << endl;
@@ -91,10 +91,10 @@ void initLaser(){
                 }
         }
         if (laser.setAngularRes(LASER_ANGULAR_RES)) {
-                cout << "Angular Resolution set: " << laser.getAngularRes() << endl;
+                cout << "Angular Resolution set: " << laser.getAngularRes() << endl << endl;
         }
         else{
-                cout << "Invalid Angular Resolution. Default value used: " << laser.getAngularRes() << endl;
+                cout << "Invalid Angular Resolution. Default value used: " << laser.getAngularRes() << endl << endl;
         }
 }
 
@@ -193,10 +193,7 @@ void initRadar2(){
 }
 
 int main(){
-        initLaser();
-        initRadar1();
-        initRadar2();
-        radar1.takeReading();
         startSensors();
+        radar1.takeReading();
         return 0;
 }

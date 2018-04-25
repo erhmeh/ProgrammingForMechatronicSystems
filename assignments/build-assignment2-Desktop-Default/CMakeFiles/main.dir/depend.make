@@ -5,20 +5,15 @@ CMakeFiles/main.dir/Laser.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSy
 CMakeFiles/main.dir/Laser.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.h
 CMakeFiles/main.dir/Laser.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
 
-CMakeFiles/main.dir/Radar1.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp
-CMakeFiles/main.dir/Radar1.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h
-CMakeFiles/main.dir/Radar1.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
-
-CMakeFiles/main.dir/Radar2.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp
-CMakeFiles/main.dir/Radar2.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h
-CMakeFiles/main.dir/Radar2.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
+CMakeFiles/main.dir/Radar.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.cpp
+CMakeFiles/main.dir/Radar.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.h
+CMakeFiles/main.dir/Radar.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
 
 CMakeFiles/main.dir/Ranger.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.cpp
 CMakeFiles/main.dir/Ranger.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
 
 CMakeFiles/main.dir/main.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.h
-CMakeFiles/main.dir/main.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h
-CMakeFiles/main.dir/main.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h
+CMakeFiles/main.dir/main.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.h
 CMakeFiles/main.dir/main.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h
 CMakeFiles/main.dir/main.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
 

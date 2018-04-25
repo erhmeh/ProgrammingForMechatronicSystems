@@ -150,59 +150,32 @@ Laser.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Laser.cpp.s
 .PHONY : Laser.cpp.s
 
-Radar1.o: Radar1.cpp.o
+Radar.o: Radar.cpp.o
 
-.PHONY : Radar1.o
-
-# target to build an object file
-Radar1.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar1.cpp.o
-.PHONY : Radar1.cpp.o
-
-Radar1.i: Radar1.cpp.i
-
-.PHONY : Radar1.i
-
-# target to preprocess a source file
-Radar1.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar1.cpp.i
-.PHONY : Radar1.cpp.i
-
-Radar1.s: Radar1.cpp.s
-
-.PHONY : Radar1.s
-
-# target to generate assembly for a file
-Radar1.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar1.cpp.s
-.PHONY : Radar1.cpp.s
-
-Radar2.o: Radar2.cpp.o
-
-.PHONY : Radar2.o
+.PHONY : Radar.o
 
 # target to build an object file
-Radar2.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar2.cpp.o
-.PHONY : Radar2.cpp.o
+Radar.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar.cpp.o
+.PHONY : Radar.cpp.o
 
-Radar2.i: Radar2.cpp.i
+Radar.i: Radar.cpp.i
 
-.PHONY : Radar2.i
+.PHONY : Radar.i
 
 # target to preprocess a source file
-Radar2.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar2.cpp.i
-.PHONY : Radar2.cpp.i
+Radar.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar.cpp.i
+.PHONY : Radar.cpp.i
 
-Radar2.s: Radar2.cpp.s
+Radar.s: Radar.cpp.s
 
-.PHONY : Radar2.s
+.PHONY : Radar.s
 
 # target to generate assembly for a file
-Radar2.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar2.cpp.s
-.PHONY : Radar2.cpp.s
+Radar.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar.cpp.s
+.PHONY : Radar.cpp.s
 
 Ranger.o: Ranger.cpp.o
 
@@ -270,12 +243,9 @@ help:
 	@echo "... Laser.o"
 	@echo "... Laser.i"
 	@echo "... Laser.s"
-	@echo "... Radar1.o"
-	@echo "... Radar1.i"
-	@echo "... Radar1.s"
-	@echo "... Radar2.o"
-	@echo "... Radar2.i"
-	@echo "... Radar2.s"
+	@echo "... Radar.o"
+	@echo "... Radar.i"
+	@echo "... Radar.s"
 	@echo "... Ranger.o"
 	@echo "... Ranger.i"
 	@echo "... Ranger.s"

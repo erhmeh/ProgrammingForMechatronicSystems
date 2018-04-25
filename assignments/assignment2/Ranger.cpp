@@ -114,7 +114,7 @@ double Ranger::getMaxDistance(){
 }
 
 bool Ranger::setAngularRes(double i){
-  if (i != 0){
+  if (i > 0){
     res_ = i;
     return true;
   }

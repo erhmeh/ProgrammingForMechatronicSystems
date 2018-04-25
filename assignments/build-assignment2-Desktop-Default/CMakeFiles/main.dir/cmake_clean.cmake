@@ -1,8 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/Ranger.cpp.o"
   "CMakeFiles/main.dir/Laser.cpp.o"
-  "CMakeFiles/main.dir/Radar1.cpp.o"
-  "CMakeFiles/main.dir/Radar2.cpp.o"
+  "CMakeFiles/main.dir/Radar.cpp.o"
   "CMakeFiles/main.dir/main.cpp.o"
   "main.pdb"
   "main"

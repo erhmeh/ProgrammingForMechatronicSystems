@@ -90,16 +90,10 @@
 		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.h">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp">
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.cpp">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.h">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.h">
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.h">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.cpp">

@@ -105,57 +105,33 @@ CMakeFiles/main.dir/Laser.cpp.o.provides: CMakeFiles/main.dir/Laser.cpp.o.requir
 CMakeFiles/main.dir/Laser.cpp.o.provides.build: CMakeFiles/main.dir/Laser.cpp.o
 
 
-CMakeFiles/main.dir/Radar1.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/Radar1.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/build-assignment2-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Radar1.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Radar1.cpp.o -c /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp
+CMakeFiles/main.dir/Radar.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Radar.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/build-assignment2-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Radar.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Radar.cpp.o -c /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.cpp
 
-CMakeFiles/main.dir/Radar1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Radar1.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp > CMakeFiles/main.dir/Radar1.cpp.i
+CMakeFiles/main.dir/Radar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Radar.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.cpp > CMakeFiles/main.dir/Radar.cpp.i
 
-CMakeFiles/main.dir/Radar1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Radar1.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar1.cpp -o CMakeFiles/main.dir/Radar1.cpp.s
+CMakeFiles/main.dir/Radar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Radar.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.cpp -o CMakeFiles/main.dir/Radar.cpp.s
 
-CMakeFiles/main.dir/Radar1.cpp.o.requires:
+CMakeFiles/main.dir/Radar.cpp.o.requires:
 
-.PHONY : CMakeFiles/main.dir/Radar1.cpp.o.requires
+.PHONY : CMakeFiles/main.dir/Radar.cpp.o.requires
 
-CMakeFiles/main.dir/Radar1.cpp.o.provides: CMakeFiles/main.dir/Radar1.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar1.cpp.o.provides.build
-.PHONY : CMakeFiles/main.dir/Radar1.cpp.o.provides
+CMakeFiles/main.dir/Radar.cpp.o.provides: CMakeFiles/main.dir/Radar.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/Radar.cpp.o.provides
 
-CMakeFiles/main.dir/Radar1.cpp.o.provides.build: CMakeFiles/main.dir/Radar1.cpp.o
-
-
-CMakeFiles/main.dir/Radar2.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/Radar2.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/build-assignment2-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/Radar2.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Radar2.cpp.o -c /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp
-
-CMakeFiles/main.dir/Radar2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Radar2.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp > CMakeFiles/main.dir/Radar2.cpp.i
-
-CMakeFiles/main.dir/Radar2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Radar2.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar2.cpp -o CMakeFiles/main.dir/Radar2.cpp.s
-
-CMakeFiles/main.dir/Radar2.cpp.o.requires:
-
-.PHONY : CMakeFiles/main.dir/Radar2.cpp.o.requires
-
-CMakeFiles/main.dir/Radar2.cpp.o.provides: CMakeFiles/main.dir/Radar2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar2.cpp.o.provides.build
-.PHONY : CMakeFiles/main.dir/Radar2.cpp.o.provides
-
-CMakeFiles/main.dir/Radar2.cpp.o.provides.build: CMakeFiles/main.dir/Radar2.cpp.o
+CMakeFiles/main.dir/Radar.cpp.o.provides.build: CMakeFiles/main.dir/Radar.cpp.o
 
 
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/build-assignment2-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/build-assignment2-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
@@ -181,8 +157,7 @@ CMakeFiles/main.dir/main.cpp.o.provides.build: CMakeFiles/main.dir/main.cpp.o
 main_OBJECTS = \
 "CMakeFiles/main.dir/Ranger.cpp.o" \
 "CMakeFiles/main.dir/Laser.cpp.o" \
-"CMakeFiles/main.dir/Radar1.cpp.o" \
-"CMakeFiles/main.dir/Radar2.cpp.o" \
+"CMakeFiles/main.dir/Radar.cpp.o" \
 "CMakeFiles/main.dir/main.cpp.o"
 
 # External object files for target main
@@ -190,12 +165,11 @@ main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/Ranger.cpp.o
 main: CMakeFiles/main.dir/Laser.cpp.o
-main: CMakeFiles/main.dir/Radar1.cpp.o
-main: CMakeFiles/main.dir/Radar2.cpp.o
+main: CMakeFiles/main.dir/Radar.cpp.o
 main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/build-assignment2-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/build-assignment2-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -205,8 +179,7 @@ CMakeFiles/main.dir/build: main
 
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Ranger.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Laser.cpp.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Radar1.cpp.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Radar2.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Radar.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/main.cpp.o.requires
 
 .PHONY : CMakeFiles/main.dir/requires

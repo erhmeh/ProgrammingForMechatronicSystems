@@ -34,10 +34,4 @@ bool Laser::setAngularRes(double i){
   else {
     return false;
   }
-bool Laser::setXOffset(double i){
-  return Ranger::setXOffset(i, -10.0, 10.0);
-}
-
-bool Laser::setOOffset(double i){
-  return Ranger::setOOffset(i);
-}
+ }
