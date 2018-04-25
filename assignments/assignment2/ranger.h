@@ -1,4 +1,4 @@
-/* Ranger.h
+/* ranger.h
  * Programming for Mechatronic systems
  * Assignment 2
  *

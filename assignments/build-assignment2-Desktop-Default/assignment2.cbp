@@ -84,25 +84,37 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.cpp">
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/laser.cpp">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Laser.h">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.cpp">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Radar.h">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.cpp">
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/Ranger.h">
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/laser.h">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/radar.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/radar.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusion.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusion.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusioninterface.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusioninterface.h">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/CMakeLists.txt">

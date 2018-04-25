@@ -123,86 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-Laser.o: Laser.cpp.o
+laser.o: laser.cpp.o
 
-.PHONY : Laser.o
-
-# target to build an object file
-Laser.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Laser.cpp.o
-.PHONY : Laser.cpp.o
-
-Laser.i: Laser.cpp.i
-
-.PHONY : Laser.i
-
-# target to preprocess a source file
-Laser.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Laser.cpp.i
-.PHONY : Laser.cpp.i
-
-Laser.s: Laser.cpp.s
-
-.PHONY : Laser.s
-
-# target to generate assembly for a file
-Laser.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Laser.cpp.s
-.PHONY : Laser.cpp.s
-
-Radar.o: Radar.cpp.o
-
-.PHONY : Radar.o
+.PHONY : laser.o
 
 # target to build an object file
-Radar.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar.cpp.o
-.PHONY : Radar.cpp.o
+laser.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/laser.cpp.o
+.PHONY : laser.cpp.o
 
-Radar.i: Radar.cpp.i
+laser.i: laser.cpp.i
 
-.PHONY : Radar.i
-
-# target to preprocess a source file
-Radar.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar.cpp.i
-.PHONY : Radar.cpp.i
-
-Radar.s: Radar.cpp.s
-
-.PHONY : Radar.s
-
-# target to generate assembly for a file
-Radar.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Radar.cpp.s
-.PHONY : Radar.cpp.s
-
-Ranger.o: Ranger.cpp.o
-
-.PHONY : Ranger.o
-
-# target to build an object file
-Ranger.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Ranger.cpp.o
-.PHONY : Ranger.cpp.o
-
-Ranger.i: Ranger.cpp.i
-
-.PHONY : Ranger.i
+.PHONY : laser.i
 
 # target to preprocess a source file
-Ranger.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Ranger.cpp.i
-.PHONY : Ranger.cpp.i
+laser.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/laser.cpp.i
+.PHONY : laser.cpp.i
 
-Ranger.s: Ranger.cpp.s
+laser.s: laser.cpp.s
 
-.PHONY : Ranger.s
+.PHONY : laser.s
 
 # target to generate assembly for a file
-Ranger.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Ranger.cpp.s
-.PHONY : Ranger.cpp.s
+laser.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/laser.cpp.s
+.PHONY : laser.cpp.s
 
 main.o: main.cpp.o
 
@@ -231,6 +177,114 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+radar.o: radar.cpp.o
+
+.PHONY : radar.o
+
+# target to build an object file
+radar.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/radar.cpp.o
+.PHONY : radar.cpp.o
+
+radar.i: radar.cpp.i
+
+.PHONY : radar.i
+
+# target to preprocess a source file
+radar.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/radar.cpp.i
+.PHONY : radar.cpp.i
+
+radar.s: radar.cpp.s
+
+.PHONY : radar.s
+
+# target to generate assembly for a file
+radar.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/radar.cpp.s
+.PHONY : radar.cpp.s
+
+ranger.o: ranger.cpp.o
+
+.PHONY : ranger.o
+
+# target to build an object file
+ranger.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ranger.cpp.o
+.PHONY : ranger.cpp.o
+
+ranger.i: ranger.cpp.i
+
+.PHONY : ranger.i
+
+# target to preprocess a source file
+ranger.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ranger.cpp.i
+.PHONY : ranger.cpp.i
+
+ranger.s: ranger.cpp.s
+
+.PHONY : ranger.s
+
+# target to generate assembly for a file
+ranger.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ranger.cpp.s
+.PHONY : ranger.cpp.s
+
+rangerfusion.o: rangerfusion.cpp.o
+
+.PHONY : rangerfusion.o
+
+# target to build an object file
+rangerfusion.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rangerfusion.cpp.o
+.PHONY : rangerfusion.cpp.o
+
+rangerfusion.i: rangerfusion.cpp.i
+
+.PHONY : rangerfusion.i
+
+# target to preprocess a source file
+rangerfusion.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rangerfusion.cpp.i
+.PHONY : rangerfusion.cpp.i
+
+rangerfusion.s: rangerfusion.cpp.s
+
+.PHONY : rangerfusion.s
+
+# target to generate assembly for a file
+rangerfusion.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rangerfusion.cpp.s
+.PHONY : rangerfusion.cpp.s
+
+rangerfusioninterface.o: rangerfusioninterface.cpp.o
+
+.PHONY : rangerfusioninterface.o
+
+# target to build an object file
+rangerfusioninterface.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rangerfusioninterface.cpp.o
+.PHONY : rangerfusioninterface.cpp.o
+
+rangerfusioninterface.i: rangerfusioninterface.cpp.i
+
+.PHONY : rangerfusioninterface.i
+
+# target to preprocess a source file
+rangerfusioninterface.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rangerfusioninterface.cpp.i
+.PHONY : rangerfusioninterface.cpp.i
+
+rangerfusioninterface.s: rangerfusioninterface.cpp.s
+
+.PHONY : rangerfusioninterface.s
+
+# target to generate assembly for a file
+rangerfusioninterface.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rangerfusioninterface.cpp.s
+.PHONY : rangerfusioninterface.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,18 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... main"
 	@echo "... edit_cache"
-	@echo "... Laser.o"
-	@echo "... Laser.i"
-	@echo "... Laser.s"
-	@echo "... Radar.o"
-	@echo "... Radar.i"
-	@echo "... Radar.s"
-	@echo "... Ranger.o"
-	@echo "... Ranger.i"
-	@echo "... Ranger.s"
+	@echo "... laser.o"
+	@echo "... laser.i"
+	@echo "... laser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... radar.o"
+	@echo "... radar.i"
+	@echo "... radar.s"
+	@echo "... ranger.o"
+	@echo "... ranger.i"
+	@echo "... ranger.s"
+	@echo "... rangerfusion.o"
+	@echo "... rangerfusion.i"
+	@echo "... rangerfusion.s"
+	@echo "... rangerfusioninterface.o"
+	@echo "... rangerfusioninterface.i"
+	@echo "... rangerfusioninterface.s"
 .PHONY : help
 
 

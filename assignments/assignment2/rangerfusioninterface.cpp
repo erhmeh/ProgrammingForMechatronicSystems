@@ -1,4 +1,4 @@
-/* Radar.h
+/* rangerfusioninterface.cpp
  * Programming for Mechatronic systems
  * Assignment 2
  *
@@ -6,15 +6,9 @@
  * @date: Week 5-7 Autumn Semester 2018
  */
 
-#ifndef RADAR_H
-#define RADAR_H
+#include "rangerfusioninterface.h"
 
-#include "Ranger.h"
-
-class Radar : public Ranger
+RangerFusionInterface::RangerFusionInterface()
 {
-public:
-    Radar();
-};
 
-#endif // RADAR_H
+}

@@ -1,3 +1,11 @@
+/* rangerfusioninterface.h
+ * Programming for Mechatronic systems
+ * Assignment 2
+ *
+ * @author: Jamin Early 99133391
+ * @date: Week 5-7 Autumn Semester 2018
+ */
+
 #ifndef RANGERFUSIONINTERFACE_H
 #define RANGERFUSIONINTERFACE_H
 
@@ -26,7 +34,6 @@ public:
 
     // Returns a container of raw/unfused range readings as per C5 assignment 2
     virtual vector<vector<double> > getRawRangeData() = 0;
-
 };
 
 #endif // RANGERFUSIONINTERFACE_H

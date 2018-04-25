@@ -1,4 +1,4 @@
-/* RADAR.cpp
+/* radar.cpp
  * Programming for Mechatronic systems
  * Assignment 2
  *
@@ -6,14 +6,14 @@
  * @date: Week 5-7 Autumn Semester 2018
  */
 
-#include "Ranger.h"
-#include "Radar.h"
+#include "ranger.h"
+#include "radar.h"
 #include <chrono>
 #include <random>
 #include <iostream>
 #include <tgmath.h>
 
-
+// Default values for the radar
 #define RADAR_BAUD_DEFAULT 38400
 #define RADAR_XOFFSET_DEFAULT 0
 #define RADAR_OOFFSET_DEFAULT 0
@@ -22,6 +22,7 @@
 #define RADAR_MIN_DIST 0.2
 #define RADAR_MAX_DIST 16.0
 
+// When a radar object is initialised, it has all values set to default
 Radar::Radar()
 {
   setBaudRate(RADAR_BAUD_DEFAULT);

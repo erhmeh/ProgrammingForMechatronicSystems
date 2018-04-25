@@ -1,4 +1,4 @@
-/* Laser.h
+/* laser.h
  * Programming for Mechatronic systems
  * Assignment 2
  *
@@ -9,13 +9,13 @@
 #ifndef LASER_H
 #define LASER_H
 
-#include "Ranger.h"
+#include "ranger.h"
 
 class Laser : public Ranger
 {
 public:
-    Laser();
-    bool setAngularRes(double i);
+  Laser();
+  bool setAngularRes(double i);
 protected:
 };
 
