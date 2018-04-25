@@ -10,6 +10,10 @@
 #include <iostream>
 #include <stdlib.h>
 #include <vector>
+#include <chrono>
+#include <random>
+#include <iostream>
+#include <tgmath.h>
 
 using namespace std;
 
@@ -125,4 +129,25 @@ bool Ranger::setAngularRes(double i){
 
 double Ranger::getAngularRes(){
   return res_;
+}
+
+void Ranger::takeReading(){
+  scan.clear();
+  unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+  default_random_engine generator(seed);
+  normal_distribution<double> distribution(6.0,5.0);
+  for (int i = 1; i <= (fov_/res_); i++){
+      double reading = distribution(generator);
+      while(reading < getMinDistance() || reading > getMaxDistance()){
+          reading = distribution(generator);
+      }
+    scan.push_back(reading);
+  }
+}
+
+double Ranger::readingAtAngle(double angle){
+  if (angle > fov_ + oOffset_ || angle < oOffset_) return -1;
+  double relativeAngle = angle - oOffset_;
+  double sector = relativeAngle/res_;
+  return scan[floor(sector)];
 }

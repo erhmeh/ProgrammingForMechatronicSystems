@@ -33,6 +33,8 @@ public:
   double getFov();
   double getMinDistance();
   double getMaxDistance();
+  double readingAtAngle(double angle);
+  void takeReading();
 protected:
   double xOffset_;
   double oOffset_;
