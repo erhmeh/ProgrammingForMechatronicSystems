@@ -6,11 +6,16 @@
  * @date: Week 5-7 Autumn Semester 2018
  */
 
-
+#include <iostream>
+#include <vector>
 #include "rangerfusion.h"
 #include "rangerfusioninterface.h"
 
-RangerFusion::RangerFusion()
-{
+using namespace std;
 
-}
+RangerFusion::RangerFusion(){}
+void setRangers(vector<Ranger*> rangers){}
+
+vector<double> RangerFusion::getFusedRangeData(){}
+
+vector<vector<double> > RangerFusion::getRawRangeData(){}
