@@ -17,12 +17,13 @@
 class RangerFusion
 {
 protected:
-  vector<vector<double> *> sensor1_;
-  vector<vector<double> *> sensor2_;
-  vector<vector<double> *> sensor3_;
+  vector<vector<vector<double> >* > allScans_;
 public:
+    vector<double> *sensor1_;
+    vector<double> *sensor2_;
+    vector<double> *sensor3_;
     RangerFusion();
-    virtual void setRangers(vector<Ranger*> rangers) = 0;
+    virtual void setRangers(vector<vector<double> > *rangers) = 0;
     virtual vector<double> getFusedRangeData() = 0;
     virtual vector<vector<double> > getRawRangeData() = 0;
 };

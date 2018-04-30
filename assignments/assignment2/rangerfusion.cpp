@@ -8,14 +8,21 @@
 
 #include <iostream>
 #include <vector>
+#include "ranger.h"
 #include "rangerfusion.h"
 #include "rangerfusioninterface.h"
 
 using namespace std;
 
 RangerFusion::RangerFusion(){}
-void setRangers(vector<Ranger*> rangers){}
 
-vector<double> RangerFusion::getFusedRangeData(){}
+void RangerFusion::setRangers(vector<vector<double> > *rangers){
+  allScans_.insert(allScans_.end(), rangers);
+}
 
-vector<vector<double> > RangerFusion::getRawRangeData(){}
+vector<double> RangerFusion::getFusedRangeData(){
+}
+
+vector<vector<double> > RangerFusion::getRawRangeData(){
+
+}

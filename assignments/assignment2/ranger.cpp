@@ -180,3 +180,7 @@ double Ranger::readingAtAngle(double angle){
 	// Round the sector down to the closest integer and return the reading for that angle
 	return scan[floor(sector)];
 }
+
+vector<double> Ranger::getRawScan(){
+	return scan;
+}

@@ -35,6 +35,7 @@ public:
   double getMaxDistance();
   double readingAtAngle(double angle);
   void takeReading();
+  vector<double> getRawScan();
 protected:
   double xOffset_;
   double oOffset_;
