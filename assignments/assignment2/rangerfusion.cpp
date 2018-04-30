@@ -7,6 +7,10 @@
  */
 
 #include <iostream>
+#include <cstdio>
+#include <iostream>
+#include <stdlib.h>
+#include <string>
 #include <vector>
 #include "ranger.h"
 #include "rangerfusion.h"
@@ -14,9 +18,7 @@
 
 using namespace std;
 
-RangerFusion::RangerFusion(){}
-
-void RangerFusion::setRangers(vector<vector<double> > *rangers){
+void RangerFusion::setRangers(vector<double> *rangers){
   allScans_.insert(allScans_.end(), rangers);
 }
 

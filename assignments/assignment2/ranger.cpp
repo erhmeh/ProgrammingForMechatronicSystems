@@ -151,7 +151,7 @@ double Ranger::getAngularRes(){
 // Takes a reading and stores it in the scan vector.
 void Ranger::takeReading(){
 	// Ensure that the scan vector is clear
-	scan.clear();
+	scan_.clear();
 	// Generate a seed
 	unsigned seed = chrono::system_clock::now().time_since_epoch().count();
 	default_random_engine generator(seed);
@@ -165,7 +165,7 @@ void Ranger::takeReading(){
 			reading = distribution(generator);
 		}
 		// Add reading to scan vector
-		scan.push_back(reading);
+		scan_.push_back(reading);
 	}
 }
 
@@ -178,9 +178,10 @@ double Ranger::readingAtAngle(double angle){
 	// Choose 'sector' that the angle falls in
 	double sector = relativeAngle/res_;
 	// Round the sector down to the closest integer and return the reading for that angle
-	return scan[floor(sector)];
+	return scan_[floor(sector)];
 }
 
-vector<double> Ranger::getRawScan(){
-	return scan;
+vector<double>* Ranger::getRawScan(){
+	takeReading();
+	return &scan_;
 }

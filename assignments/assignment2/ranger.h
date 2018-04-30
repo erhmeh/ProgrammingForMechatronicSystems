@@ -35,9 +35,10 @@ public:
   double getMaxDistance();
   double readingAtAngle(double angle);
   void takeReading();
-  vector<double> getRawScan();
+  vector<double>* getRawScan();
 protected:
   double xOffset_;
+  vector<double> scan_;
   double oOffset_;
   bool setFov(double i);
   double fov_;
@@ -50,7 +51,6 @@ protected:
   double maxDist_;
   int baudRate_;
   int ttyACM_;
-  vector<double> scan;
 };
 
 #endif

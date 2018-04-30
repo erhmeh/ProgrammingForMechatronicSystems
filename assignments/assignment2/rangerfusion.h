@@ -10,22 +10,26 @@
 #ifndef RANGERFUSION_H
 #define RANGERFUSION_H
 
+#include <cstdio>
 #include <iostream>
+#include <stdlib.h>
+#include <iostream>
+#include <chrono>
 #include <vector>
+#include <string>
 #include "rangerfusioninterface.h"
 
 class RangerFusion
 {
 protected:
-  vector<vector<vector<double> >* > allScans_;
+  vector<vector<double> * > allScans_;
 public:
-    vector<double> *sensor1_;
+    char requestedFuseType_;
     vector<double> *sensor2_;
     vector<double> *sensor3_;
-    RangerFusion();
-    virtual void setRangers(vector<vector<double> > *rangers) = 0;
-    virtual vector<double> getFusedRangeData() = 0;
-    virtual vector<vector<double> > getRawRangeData() = 0;
+    virtual void setRangers(vector<double> *rangers);
+    virtual vector<double> getFusedRangeData();
+    virtual vector<vector<double> > getRawRangeData();
 };
 
 #endif // RANGERFUSION_H
