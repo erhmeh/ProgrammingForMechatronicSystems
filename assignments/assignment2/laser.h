@@ -16,6 +16,7 @@ class Laser : public Ranger
 public:
   Laser();
   bool setAngularRes(double i);
+  int sensorType_ = 1;
 protected:
 };
 

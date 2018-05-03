@@ -10,6 +10,8 @@ CMakeFiles/main.dir/main.cpp.o
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/main.cpp
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/radar.h
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
+ /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusion.h
+ /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusioninterface.h
 CMakeFiles/main.dir/radar.cpp.o
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/radar.cpp
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/radar.h
@@ -18,6 +20,7 @@ CMakeFiles/main.dir/ranger.cpp.o
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.cpp
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
 CMakeFiles/main.dir/rangerfusion.cpp.o
+ /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/ranger.h
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusion.cpp
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusion.h
  /home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/rangerfusioninterface.h

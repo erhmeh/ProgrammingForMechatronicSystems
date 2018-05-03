@@ -18,18 +18,20 @@
 #include <vector>
 #include <string>
 #include "rangerfusioninterface.h"
+#include "ranger.h"
 
 class RangerFusion
 {
 protected:
-  vector<vector<double> * > allScans_;
+  vector<Ranger *> rangers_;
 public:
-    char requestedFuseType_;
-    vector<double> *sensor2_;
-    vector<double> *sensor3_;
-    virtual void setRangers(vector<double> *rangers);
-    virtual vector<double> getFusedRangeData();
-    virtual vector<vector<double> > getRawRangeData();
+void takeReadings();
+vector<vector<double> > rawData_;
+vector<double> fusedData_;
+char requestedFuseType_;
+virtual void setRangers(vector<Ranger *> sensor);
+virtual vector<double> getFusedRangeData();
+virtual vector<vector<double> > getRawRangeData();
 };
 
 #endif // RANGERFUSION_H

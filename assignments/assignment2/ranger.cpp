@@ -172,7 +172,7 @@ void Ranger::takeReading(){
 // Returns the reading at a specific angle
 double Ranger::readingAtAngle(double angle){
 	// Checks if the angle is within range. Returns -1 if it is not (-1 was chosen as in this situation distance is an absolute value)
-	if (angle > fov_ + oOffset_ || angle < oOffset_) return -1;
+	if (angle >= fov_ + oOffset_ || angle < oOffset_) return -1;
 	// Generate angle relative to the sensor
 	double relativeAngle = angle - oOffset_;
 	// Choose 'sector' that the angle falls in
@@ -181,7 +181,8 @@ double Ranger::readingAtAngle(double angle){
 	return scan_[floor(sector)];
 }
 
-vector<double>* Ranger::getRawScan(){
+// Takes a reading then returns it
+vector<double> Ranger::getRawScan(){
 	takeReading();
-	return &scan_;
+	return scan_;
 }
