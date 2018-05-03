@@ -1,1 +1,0 @@
-/usr/bin/g++   -std=c++11  -rdynamic CMakeFiles/main.dir/ranger.cpp.o CMakeFiles/main.dir/laser.cpp.o CMakeFiles/main.dir/radar.cpp.o CMakeFiles/main.dir/rangerfusion.cpp.o CMakeFiles/main.dir/rangerfusioninterface.cpp.o CMakeFiles/main.dir/main.cpp.o  -o main 

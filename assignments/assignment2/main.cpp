@@ -253,7 +253,8 @@ void initRadar2()
 }
 
 // Prints out the fused data in a readable manner
-void printFusedData(){
+void printFusedData()
+{
 	cout << "Displaying fused data: " << endl;
 	// Generate a vector of fused data
 	vector<double> fusedData = fuser.getFusedRangeData();
@@ -261,11 +262,12 @@ void printFusedData(){
 	for (int i = 0; i != fusedData.size(); i++) {
 		cout << i*10 << "° - "<< (int) ((i*10) + 10) << "°: " << fusedData.at(i) << endl;
 	}
-    cout << endl;
+	cout << endl;
 }
 
 // Prints the raw sensor data to the console in a readable manner.
-void printRawData(){
+void printRawData()
+{
 	cout << "Displaying raw data: " << endl;
 	// Obtain a vector of a vector holding the raw readings of each sensor
 	vector<vector <double> > rawData = fuser.getRawRangeData();
@@ -275,7 +277,7 @@ void printRawData(){
 		for (int i = 0; i < 18; i++) {
 			cout << i*10 << "° - "<< (int) ((i*10) + 10) << "°: " << rawData.at(j).at(i) << endl;
 		}
-        cout << endl;
+		cout << endl;
 	}
 }
 

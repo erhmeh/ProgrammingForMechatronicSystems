@@ -25,11 +25,11 @@
 // When a radar object is initialised, it has all values set to default
 Radar::Radar()
 {
-  setBaudRate(RADAR_BAUD_DEFAULT);
-  setXOffset(RADAR_XOFFSET_DEFAULT);
-  setOOffset(RADAR_OOFFSET_DEFAULT);
-  setAngularRes(RADAR_ANGULAR_RES_DEFAULT);
-  setFov(RADAR_FOV);
-  setMaxDistance(RADAR_MAX_DIST);
-  setMinDistance(RADAR_MIN_DIST);
+	setBaudRate(RADAR_BAUD_DEFAULT);
+	setXOffset(RADAR_XOFFSET_DEFAULT);
+	setOOffset(RADAR_OOFFSET_DEFAULT);
+	setAngularRes(RADAR_ANGULAR_RES_DEFAULT);
+	setFov(RADAR_FOV);
+	setMaxDistance(RADAR_MAX_DIST);
+	setMinDistance(RADAR_MIN_DIST);
 }
