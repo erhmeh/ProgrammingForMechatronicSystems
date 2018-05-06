@@ -1,0 +1,3 @@
+/home/veers/Desktop/ProgrammingForMechatronicSystems/in_class/week08/prework/build-convar_starter-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/veers/Desktop/ProgrammingForMechatronicSystems/in_class/week08/prework/build-convar_starter-Desktop-Default/CMakeFiles/main.dir
+/home/veers/Desktop/ProgrammingForMechatronicSystems/in_class/week08/prework/build-convar_starter-Desktop-Default/CMakeFiles/edit_cache.dir

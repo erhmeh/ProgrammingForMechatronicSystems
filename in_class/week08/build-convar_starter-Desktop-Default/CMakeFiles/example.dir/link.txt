@@ -1,1 +1,0 @@
-/usr/bin/g++  -std=c++11 -pthread  -rdynamic CMakeFiles/example.dir/main.cpp.o  -o example 
