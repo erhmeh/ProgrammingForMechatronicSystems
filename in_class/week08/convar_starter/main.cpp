@@ -26,7 +26,7 @@ void generateSamples(vector<double> &data, mutex &numMutex) {
 
         // We can only obtain a lock in this thread if the mutex
         // is not locked anywhere else
-        numMutex.lock();
+        unique_lock<mutex> locker(numMutex);
 
         cout << "sample gen" << endl;
         // We only access num while the mutex is locked
@@ -43,7 +43,8 @@ void processSamples(vector<double> &data, mutex &numMutex) {
     while (true) {
         // We can only obtain a lock in this thread if the mutex
         // is not locked anywhere else
-        numMutex.lock();
+        // numMutex.lock();
+        unique_lock<mutex> locker(numMutex);
 
         if (!data.empty()){
             double sample = data.back();
@@ -56,7 +57,8 @@ void processSamples(vector<double> &data, mutex &numMutex) {
             numMutex.unlock();
             // This delay is to avoid hard-looping and consuming too much cpu
             // What is a better solution
-            std::this_thread::sleep_for (std::chrono::milliseconds(20));
+            //std::this_thread::sleep_for (std::chrono::milliseconds(20));
+
           }
     }
 }
@@ -77,6 +79,3 @@ int main ()
 
     return 0;
 }
-
-
-

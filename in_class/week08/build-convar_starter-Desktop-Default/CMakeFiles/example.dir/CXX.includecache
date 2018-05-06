@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/in_class/week08/convar_starter/main.cpp
+iostream
+-
+thread
+-
+mutex
+-
+vector
+-
+chrono
+-
+random
+-
+algorithm
+-
+
