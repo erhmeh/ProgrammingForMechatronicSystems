@@ -1,0 +1,74 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Laser.cpp
+Laser.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Laser.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Laser.h
+Ranger.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Ranger.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Radar.cpp
+Radar.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Radar.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Radar.h
+Ranger.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Ranger.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Ranger.cpp
+chrono
+-
+random
+-
+Ranger.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Ranger.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Ranger.h
+string
+-
+vector
+-
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/RangerFusion.cpp
+RangerFusion.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/RangerFusion.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/RangerFusion.h
+RangerFusionInterface.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/RangerFusionInterface.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/RangerFusionInterface.cpp
+RangerFusionInterface.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/RangerFusionInterface.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/RangerFusionInterface.h
+vector
+-
+Ranger.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Ranger.h
+
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/main.cpp
+iostream
+-
+vector
+-
+chrono
+-
+thread
+-
+math.h
+-
+Laser.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Laser.h
+Radar.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/Radar.h
+RangerFusion.h
+/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/C9FB633EAA7C9673735C92B5791850EACE7FCE39/Assignment 2/RangerFusion.h
+

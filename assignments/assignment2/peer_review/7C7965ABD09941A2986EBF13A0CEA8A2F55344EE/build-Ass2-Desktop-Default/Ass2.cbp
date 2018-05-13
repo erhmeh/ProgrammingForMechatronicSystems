@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Ass2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main">
+				<Option output="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/build-Ass2-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/laser.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/laser.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/main.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/radar.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/radar.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/ranger.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/ranger.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/rangerfusioninterface.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/rangerfusioninterface.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/veers/Desktop/ProgrammingForMechatronicSystems/assignments/assignment2/peer_review/7C7965ABD09941A2986EBF13A0CEA8A2F55344EE/Ass2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
