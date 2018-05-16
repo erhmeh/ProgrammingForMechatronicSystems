@@ -11,7 +11,8 @@
 #ifndef RANGER_H
 #define RANGER_H
 
-#include <vector>
+#include <queue>
+#include <chrono>
 
 using namespace std;
 
@@ -26,8 +27,16 @@ double getFov();
 int getDataRate();
 double getMinDistance();
 double getMaxDistance();
+void takeReading(mutex &numMutex);
 protected:
-bool ssetMaxDistance(double i);
+struct reading
+{
+    double data_;
+    long long int eventTime_;
+};
+queue<reading> dataStream_;
+std::chrono::duration<double> lastReading;
+bool setMaxDistance(double i);
 bool setMinDistance(double i);
 int baudRate_;
 int ttyACM_;

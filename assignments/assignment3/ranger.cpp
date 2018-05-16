@@ -8,12 +8,10 @@
 
 #include "ranger.h"
 #include <iostream>
-#include <stdlib.h>
-#include <vector>
+#include <queue>
 #include <chrono>
+#include <math.h>
 #include <random>
-#include <iostream>
-#include <tgmath.h>
 
 Ranger::Ranger()
 {
@@ -108,4 +106,27 @@ bool Ranger::setMaxDistance(double i)
 double Ranger::getMaxDistance()
 {
     return maxDist_;
+}
+
+void Ranger::takeReading(mutex &numMutex)
+{
+    while (true)
+    {
+        double updateRate = 1.0 / dataRate_;
+        auto now = chrono::system_clock::now().time_since_epoch();
+
+        std::chrono::duration<double> elapsed_seconds = now - lastReading;
+        if (elapsed_seconds.count() > updateRate)
+        {
+            reading event;
+            event.eventTime_ = chrono::system_clock::now().time_since_epoch().count();
+            double w = 0.31459;
+            default_random_engine generator(now.count());
+            normal_distribution<double> distribution(0, 0.1);
+            double i = distribution(generator);
+            event.data_ = 6.0 + (4 * sin(w * now.count())) + i;
+            dataStream_.push(event);
+            lastReading = now;
+        }
+    }
 }

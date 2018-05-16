@@ -13,11 +13,13 @@
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/main.cpp
 iostream
 -
-vector
--
 thread
 -
 chrono
+-
+mutex
+-
+condition_variable
 -
 radar.h
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/radar.h
@@ -49,21 +51,19 @@ ranger.h
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/ranger.h
 iostream
 -
-stdlib.h
--
-vector
+deque
 -
 chrono
 -
+math.h
+-
 random
--
-iostream
--
-tgmath.h
 -
 
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/ranger.h
-vector
+deque
+-
+chrono
 -
 
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/sonar.cpp

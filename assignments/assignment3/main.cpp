@@ -7,9 +7,10 @@
  */
 
 #include <iostream>
-#include <vector>
 #include <thread>
 #include <chrono>
+#include <mutex>
+#include <condition_variable>
 #include "radar.h"
 #include "sonar.h"
 #include "data_fusion.h"
@@ -24,6 +25,8 @@ using namespace std;
 // Declare radar and sonar objects
 Radar radar;
 Sonar sonar;
+condition_variable cond;
+mutex mu;
 
 // Prototype Functons
 void initRadar();
@@ -99,5 +102,6 @@ int main()
 {
     initRadar();
     initSonar();
+    thread radarProcess(radar.takeReading(), ref(mu));
     return 0;
 }

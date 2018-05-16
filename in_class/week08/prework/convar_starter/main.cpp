@@ -6,25 +6,28 @@
 #include <random>    // random number generation
 #include <algorithm> // algorithms for sorting
 #include <condition_variable>
+#include <windows.h>
 
 using namespace std;
 
 condition_variable cond;
 
 // The function generates samples
-void generateSamples(vector<double> &data, mutex &numMutex) {
+void generateSamples(vector<double> &data, mutex &numMutex)
+{
 
-  //Setup and seed our random normal distribution generator
-  std::default_random_engine generator(std::chrono::duration_cast
-                                       <std::chrono::nanoseconds>
-                                       (std::chrono::system_clock::now().time_since_epoch()).count());
-  std::normal_distribution<double> distribution(6.0, 5.0); //mean of 6m and a stdev of 5m
+    // Setup and seed our random normal distribution generator
+    std::default_random_engine generator(std::chrono::duration_cast
+                                         <std::chrono::nanoseconds>
+                                             (std::chrono::system_clock::now().time_since_epoch()).count());
+    std::normal_distribution<double> distribution(6.0, 5.0); // mean of 6m and a stdev of 5m
 
-  while (true) {
+    while (true)
+    {
 
         // This delay is included to improve the emulate some other process of generating the data
         // by the sensor which could be at a specific rate
-       std::this_thread::sleep_for (std::chrono::milliseconds(1000));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
 
         // We can only obtain a lock in this thread if the mutex
@@ -43,32 +46,35 @@ void generateSamples(vector<double> &data, mutex &numMutex) {
 }
 
 // This function consumes the samples
-void processSamples(vector<double> &data, mutex &numMutex) {
-    while (true) {
+void processSamples(vector<double> &data, mutex &numMutex)
+{
+    while (true)
+    {
         // We can only obtain a lock in this thread if the mutex
         // is not locked anywhere else
         // numMutex.lock();
         unique_lock<mutex> locker(numMutex);
         cond.wait(locker);
-        if (!data.empty()){
+        if (!data.empty())
+        {
             double sample = data.back();
             data.pop_back();
             numMutex.unlock();
             // We now have a sample
             cout <<  "sample is:" << sample << endl;
-          }
+        }
     }
 }
 
-int main ()
+int main()
 {
     vector<double> data;
     // We will use this mutex to synchonise access to num
     mutex numMutex;
 
     // Create the threads
-    thread inc_thread(generateSamples,ref(data),ref(numMutex));
-    thread print_thread(processSamples,ref(data),ref(numMutex));
+    thread inc_thread(generateSamples, ref(data), ref(numMutex));
+    thread print_thread(processSamples, ref(data), ref(numMutex));
 
     // Wait for the threads to finish (they wont)
     inc_thread.join();
