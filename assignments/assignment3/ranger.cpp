@@ -18,6 +18,7 @@
 
 Ranger::Ranger()
 {
+    lastReading = chrono::system_clock::now().time_since_epoch();
 }
 
 // Sets baud rate. Returns if sane
@@ -116,8 +117,9 @@ void Ranger::takeReading(mutex &mu, condition_variable &cond)
     while (true)
     {
         double updateRate = 1.0 / dataRate_;
-        unique_lock<mutex> locker(mu);
-        cond.wait(locker);
+        // unique_lock<mutex> locker(mu);
+        // cond.wait(locker);
+        mu.lock();
         auto now = chrono::system_clock::now().time_since_epoch();
         std::chrono::duration<double> elapsed_seconds = now - lastReading;
         if (elapsed_seconds.count() > updateRate)
@@ -129,9 +131,11 @@ void Ranger::takeReading(mutex &mu, condition_variable &cond)
             normal_distribution<double> distribution(0, 0.1);
             double i = distribution(generator);
             event.data_ = 6.0 + (4 * sin(w * now.count())) + i;
+            cout << getTty() << ": " << event.data_ << endl;
             dataStream_.push(event);
             lastReading = now;
         }
         mu.unlock();
+        cond.notify_one();
     }
 }

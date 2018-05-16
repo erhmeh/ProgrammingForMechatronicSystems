@@ -25,7 +25,6 @@ using namespace std;
 // Declare radar and sonar objects
 Radar radar;
 Sonar sonar;
-condition_variable cond;
 
 
 // Prototype Functons
@@ -103,6 +102,7 @@ int main()
     initRadar();
     initSonar();
 
+    condition_variable cond;
     mutex mu;
 
     thread radarThread(&Ranger::takeReading, &radar, ref(mu), ref(cond));
