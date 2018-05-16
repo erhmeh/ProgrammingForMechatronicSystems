@@ -24,16 +24,16 @@ class Ranger;
 class RangerFusionInterface
 {
 public:
-    RangerFusionInterface();
+RangerFusionInterface();
 
-    // Accepts container of rangers as per requirement C2 of assignment 2
-    virtual void setRangers(vector<Ranger*> rangers) = 0;
+// Accepts container of rangers as per requirement C2 of assignment 2
+virtual void setRangers(vector<Ranger *> rangers) = 0;
 
-    // Returns a container of fused range readings as per C4 assignment 2
-    virtual vector<double> getFusedRangeData() = 0;
+// Returns a container of fused range readings as per C4 assignment 2
+virtual vector<double> getFusedRangeData() = 0;
 
-    // Returns a container of raw/unfused range readings as per C5 assignment 2
-    virtual vector<vector<double> > getRawRangeData() = 0;
+// Returns a container of raw/unfused range readings as per C5 assignment 2
+virtual vector<vector<double> > getRawRangeData() = 0;
 };
 
 #endif // RANGERFUSIONINTERFACE_H

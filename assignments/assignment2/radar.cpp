@@ -14,22 +14,22 @@
 #include <tgmath.h>
 
 // Default values for the radar
-#define RADAR_BAUD_DEFAULT 38400
-#define RADAR_XOFFSET_DEFAULT 0
-#define RADAR_OOFFSET_DEFAULT 0
+#define RADAR_BAUD_DEFAULT        38400
+#define RADAR_XOFFSET_DEFAULT     0
+#define RADAR_OOFFSET_DEFAULT     0
 #define RADAR_ANGULAR_RES_DEFAULT 20.0
-#define RADAR_FOV 60.0
-#define RADAR_MIN_DIST 0.2
-#define RADAR_MAX_DIST 16.0
+#define RADAR_FOV                 60.0
+#define RADAR_MIN_DIST            0.2
+#define RADAR_MAX_DIST            16.0
 
 // When a radar object is initialised, it has all values set to default
 Radar::Radar()
 {
-	setBaudRate(RADAR_BAUD_DEFAULT);
-	setXOffset(RADAR_XOFFSET_DEFAULT);
-	setOOffset(RADAR_OOFFSET_DEFAULT);
-	setAngularRes(RADAR_ANGULAR_RES_DEFAULT);
-	setFov(RADAR_FOV);
-	setMaxDistance(RADAR_MAX_DIST);
-	setMinDistance(RADAR_MIN_DIST);
+    setBaudRate(RADAR_BAUD_DEFAULT);
+    setXOffset(RADAR_XOFFSET_DEFAULT);
+    setOOffset(RADAR_OOFFSET_DEFAULT);
+    setAngularRes(RADAR_ANGULAR_RES_DEFAULT);
+    setFov(RADAR_FOV);
+    setMaxDistance(RADAR_MAX_DIST);
+    setMinDistance(RADAR_MIN_DIST);
 }

@@ -23,7 +23,7 @@
 class RangerFusion
 {
 protected:
-  vector<Ranger *> rangers_;
+vector<Ranger *> rangers_;
 public:
 void takeReadings();
 vector<vector<double> > rawData_;

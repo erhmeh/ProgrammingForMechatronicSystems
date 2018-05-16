@@ -14,8 +14,8 @@
 class Radar : public Ranger
 {
 public:
-    Radar();
-    int sensorType_ = 2;
+Radar();
+int sensorType_ = 2;
 };
 
 #endif // RADAR_H

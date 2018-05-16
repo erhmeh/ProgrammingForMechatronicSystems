@@ -3,7 +3,7 @@
  * Assignment 3
  *
  * @author: Jamin Early 99133391
- * @date: Week 5-7 Autumn Semester 2018
+ * @date: Week 8 Autumn Semester 2018
  */
 
 
@@ -15,25 +15,26 @@
 
 using namespace std;
 
-class Ranger{
+class Ranger {
 public:
-  Ranger();
-  bool setBaudRate(int i);
-  int getBaudRate();
-  bool setTtyACM(int i);
-  int getTty();
-  double getFov();
-  double getMinDistance();
-  double getMaxDistance();
+Ranger();
+bool setBaudRate(int i);
+int getBaudRate();
+bool setTtyACM(int i);
+int getTty();
+double getFov();
+int getDataRate();
+double getMinDistance();
+double getMaxDistance();
 protected:
-  bool setFov(double i);
-  bool setMaxDistance(double i);
-  bool setMinDistance(double i);
-  int baudRate_;
-  int ttyACM_;
-  double fov_;
-  double minDist_;
-  double maxDist_;
+bool ssetMaxDistance(double i);
+bool setMinDistance(double i);
+int baudRate_;
+int ttyACM_;
+double fov_;
+double minDist_;
+double maxDist_;
+int dataRate_;
 };
 
-#endif
+#endif // ifndef RANGER_H
