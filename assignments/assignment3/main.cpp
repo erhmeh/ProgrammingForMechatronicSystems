@@ -105,7 +105,9 @@ int main()
 
     mutex mu;
 
-    thread radarThread(radar.takeReading, ref(mu), ref(cond));
+    thread radarThread(&Ranger::takeReading, &radar, ref(mu), ref(cond));
+    thread sonarThread(&Ranger::takeReading, &sonar, ref(mu), ref(cond));
     radarThread.join();
+    sonarThread.join();
     return 0;
 }
