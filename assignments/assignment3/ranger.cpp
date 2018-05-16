@@ -12,6 +12,9 @@
 #include <chrono>
 #include <math.h>
 #include <random>
+#include <mutex>
+#include <condition_variable>
+#include <thread>
 
 Ranger::Ranger()
 {
@@ -108,13 +111,14 @@ double Ranger::getMaxDistance()
     return maxDist_;
 }
 
-void Ranger::takeReading(mutex &numMutex)
+void Ranger::takeReading(mutex &mu, condition_variable &cond)
 {
     while (true)
     {
         double updateRate = 1.0 / dataRate_;
+        unique_lock<mutex> locker(mu);
+        cond.wait(locker);
         auto now = chrono::system_clock::now().time_since_epoch();
-
         std::chrono::duration<double> elapsed_seconds = now - lastReading;
         if (elapsed_seconds.count() > updateRate)
         {
@@ -128,5 +132,6 @@ void Ranger::takeReading(mutex &numMutex)
             dataStream_.push(event);
             lastReading = now;
         }
+        mu.unlock();
     }
 }

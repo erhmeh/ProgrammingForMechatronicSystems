@@ -26,7 +26,7 @@ using namespace std;
 Radar radar;
 Sonar sonar;
 condition_variable cond;
-mutex mu;
+
 
 // Prototype Functons
 void initRadar();
@@ -102,6 +102,10 @@ int main()
 {
     initRadar();
     initSonar();
-    thread radarProcess(radar.takeReading(), ref(mu));
+
+    mutex mu;
+
+    thread radarThread(radar.takeReading, ref(mu), ref(cond));
+    radarThread.join();
     return 0;
 }

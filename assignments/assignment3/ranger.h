@@ -13,6 +13,9 @@
 
 #include <queue>
 #include <chrono>
+#include <mutex>
+#include <condition_variable>
+#include <thread>
 
 using namespace std;
 
@@ -27,7 +30,7 @@ double getFov();
 int getDataRate();
 double getMinDistance();
 double getMaxDistance();
-void takeReading(mutex &numMutex);
+void takeReading(mutex &mu, condition_variable &cond);
 protected:
 struct reading
 {

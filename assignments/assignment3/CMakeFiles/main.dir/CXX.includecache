@@ -51,7 +51,7 @@ ranger.h
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/ranger.h
 iostream
 -
-deque
+queue
 -
 chrono
 -
@@ -59,11 +59,23 @@ math.h
 -
 random
 -
+mutex
+-
+condition_variable
+-
+thread
+-
 
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/ranger.h
-deque
+queue
 -
 chrono
+-
+mutex
+-
+condition_variable
+-
+thread
 -
 
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/sonar.cpp
