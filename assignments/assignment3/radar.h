@@ -15,8 +15,8 @@
 class Radar : public Ranger
 {
 public:
-Radar();
-bool setFov(double i);
+	Radar();
+	bool setFov(double i);
 };
 
 #endif /** RADAR_H */

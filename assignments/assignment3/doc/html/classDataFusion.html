@@ -93,8 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa4afcc1feff6fdf9688d95ad640154cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4afcc1feff6fdf9688d95ad640154cd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>startFusion</b> (queue&lt; double &gt; &amp;stream1, queue&lt; double &gt; &amp;stream2, mutex &amp;mu, condition_variable &amp;cond, int fuseMethod)</td></tr>
+<tr class="memitem:aa4afcc1feff6fdf9688d95ad640154cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataFusion.html#aa4afcc1feff6fdf9688d95ad640154cd">startFusion</a> (queue&lt; double &gt; &amp;stream1, queue&lt; double &gt; &amp;stream2, mutex &amp;mu, condition_variable &amp;cond, int fuseMethod)</td></tr>
 <tr class="separator:aa4afcc1feff6fdf9688d95ad640154cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -115,6 +114,74 @@ std::chrono::duration&lt; double &gt;&#160;</td><td class="memItemRight" valign=
 int&#160;</td><td class="memItemRight" valign="bottom"><b>fuseRate_</b></td></tr>
 <tr class="separator:a4c036eccb8ed9b1a86ede0682e543704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa4afcc1feff6fdf9688d95ad640154cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataFusion::startFusion </td>
+          <td>(</td>
+          <td class="paramtype">queue&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stream1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">queue&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stream2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mutex &amp;&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">condition_variable &amp;&#160;</td>
+          <td class="paramname"><em>cond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fuseMethod</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Start fusion member function. This accepts two references to queues (one for each sensor), mustex and condition variable and the selected fuse method </p>
+<p>Turn freqency (Hz) into a period</p>
+<p>Lock mutex</p>
+<p>When a new reading is entered into stream1, update the local variable</p>
+<p>Copy variable</p>
+<p>Pop from front of queue</p>
+<p>Change varaible to notify that a new variable has been entered (3.c.ii produce a fused result on each new piece of sensor data)</p>
+<p>When a new reading is entered into stream2, update the local variable</p>
+<p>Copy variable</p>
+<p>Pop from front of queue</p>
+<p>Change varaible to notify that a new variable has been entered (3.c.ii produce a fused result on each new piece of sensor data)</p>
+<p>Set current time to now</p>
+<p>Calculate the duration since the last reading</p>
+<p>True if enough time has passed or a new reading has been taken</p>
+<p>Print out the reason why the event occured and reach sensor's reading</p>
+<p>If the selected fusion method is minimum, compare the two readings and assign the smallest to the fusedData_ variable</p>
+<p>Print the minimum to the console</p>
+<p>If the selected fusion method is maximum, compare the two readings and assign the largest to the fusedData_ variable</p>
+<p>Print the maximum to the console</p>
+<p>If the selected fusion method is average, add the two values and divide by two. Assign to fusedData_ variable</p>
+<p>Print the average to the console</p>
+<p>Reset timer</p>
+<p>Unlock Mutex. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="data__fusion_8h_source.html">data_fusion.h</a></li>
 <li>data_fusion.cpp</li>
@@ -122,7 +189,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>fuseRate_</b></td></tr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 19 2018 15:26:16 for 41012 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 19 2018 15:51:00 for 41012 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

@@ -21,14 +21,14 @@ using namespace std;
 
 class DataFusion {
 public:
-DataFusion();
-void startFusion(queue<double> &stream1, queue<double> &stream2, mutex &mu, condition_variable &cond, int fuseMethod);
+	DataFusion();
+	void startFusion(queue<double> &stream1, queue<double> &stream2, mutex &mu, condition_variable &cond, int fuseMethod);
 protected:
-double lastReading1_;
-double lastReading2_;
-double fusedData_;
-std::chrono::duration<double> lastFuseTime_;
-int fuseRate_;
+	double lastReading1_;
+	double lastReading2_;
+	double fusedData_;
+	std::chrono::duration<double> lastFuseTime_;
+	int fuseRate_;
 };
 
 #endif /** ifndef DATA_FUSION_H */

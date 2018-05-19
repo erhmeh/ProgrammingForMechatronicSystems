@@ -124,8 +124,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getDataRate</b> ()</td
 <tr class="separator:ab08a6310dee156f89fdd28256b1055e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e5aaf0373980c5196b171fe3371190c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRanger.html#a8e5aaf0373980c5196b171fe3371190c">getMaxDistance</a> ()</td></tr>
 <tr class="separator:a8e5aaf0373980c5196b171fe3371190c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3c38e14a1cec55729563b5feebf1e6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3c38e14a1cec55729563b5feebf1e6f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>takeReading</b> (mutex &amp;mu, condition_variable &amp;cond)</td></tr>
+<tr class="memitem:af3c38e14a1cec55729563b5feebf1e6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRanger.html#af3c38e14a1cec55729563b5feebf1e6f">takeReading</a> (mutex &amp;mu, condition_variable &amp;cond)</td></tr>
 <tr class="separator:af3c38e14a1cec55729563b5feebf1e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -181,6 +180,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>dataRate_</b></td></tr
 <p>ranger.cpp Programming for Mechatronic systems Assignment 3</p>
 <dl class="section author"><dt>Author</dt><dd>: Jamin Early 99133391 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>: Week 8 Autumn Semester 2018 </dd></dl>
+<p>On initialisation, last reading is set to the current time to avoid it being undefined. </p>
 
 </div>
 </div>
@@ -349,6 +349,44 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>dataRate_</b></td></tr
 
 </div>
 </div>
+<a class="anchor" id="af3c38e14a1cec55729563b5feebf1e6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ranger::takeReading </td>
+          <td>(</td>
+          <td class="paramtype">mutex &amp;&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">condition_variable &amp;&#160;</td>
+          <td class="paramname"><em>cond</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Generates readings constantly. Accepts a mutex and condition variable. </p>
+<p>Turn freqency (Hz) into a period</p>
+<p>Lock mutex</p>
+<p>Set current time to now</p>
+<p>Calculate the duration since the last reading</p>
+<p>True if enough time has passed</p>
+<p>Start random number generator</p>
+<p>Apply constrainst to generator</p>
+<p>Generate random value</p>
+<p>Push reading as defined by the formula in the assignment document</p>
+<p>Reset timer</p>
+<p>Lock mutex </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="ranger_8h_source.html">ranger.h</a></li>
 <li>ranger.cpp</li>
@@ -356,7 +394,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>dataRate_</b></td></tr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 19 2018 15:26:16 for 41012 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 19 2018 15:51:00 for 41012 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

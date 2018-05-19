@@ -15,7 +15,7 @@
 class Sonar : public Ranger
 {
 public:
-Sonar();
+	Sonar();
 };
 
 #endif /** RADAR_H */

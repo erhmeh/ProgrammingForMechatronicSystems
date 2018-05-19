@@ -20,27 +20,27 @@ using namespace std;
 
 class Ranger {
 public:
-Ranger();
-bool setBaudRate(int i);
-int getBaudRate();
-bool setTtyACM(int i);
-int getTty();
-double getFov();
-int getDataRate();
-double getMinDistance();
-double getMaxDistance();
-void takeReading(mutex &mu, condition_variable &cond);
-queue<double> dataStream_;
+	Ranger();
+	bool setBaudRate(int i);
+	int getBaudRate();
+	bool setTtyACM(int i);
+	int getTty();
+	double getFov();
+	int getDataRate();
+	double getMinDistance();
+	double getMaxDistance();
+	void takeReading(mutex &mu, condition_variable &cond);
+	queue<double> dataStream_;
 protected:
-std::chrono::duration<double> lastReading;
-bool setMaxDistance(double i);
-bool setMinDistance(double i);
-int baudRate_;
-int ttyACM_;
-double fov_;
-double minDist_;
-double maxDist_;
-int dataRate_;
+	std::chrono::duration<double> lastReading;
+	bool setMaxDistance(double i);
+	bool setMinDistance(double i);
+	int baudRate_;
+	int ttyACM_;
+	double fov_;
+	double minDist_;
+	double maxDist_;
+	int dataRate_;
 };
 
 #endif /** ifndef RANGER_H */

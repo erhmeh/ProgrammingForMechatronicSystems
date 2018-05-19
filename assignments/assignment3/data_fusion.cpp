@@ -70,7 +70,7 @@ void DataFusion::startFusion(queue<double> &stream1, queue<double> &stream2, mut
                 }
                 cout << "Min: " << fusedData_ << endl; /** Print the minimum to the console */
             }
-            if (fuseMethod == 2)
+            if (fuseMethod == 2) /** If the selected fusion method is maximum, compare the two readings and assign the largest to the fusedData_ variable */
             {
                 if (lastReading1_ >= lastReading2_)
                 {
@@ -80,18 +80,18 @@ void DataFusion::startFusion(queue<double> &stream1, queue<double> &stream2, mut
                 {
                     fusedData_ = lastReading2_;
                 }
-                cout << "Max: " << fusedData_ << endl;
+                cout << "Max: " << fusedData_ << endl; /** Print the maximum to the console */
             }
-            if (fuseMethod == 3)
+            if (fuseMethod == 3) /** If the selected fusion method is average, add the two values and divide by two. Assign to fusedData_ variable */
             {
                 fusedData_ = (lastReading1_ + lastReading2_) / 2;
-                cout << "Avg: " << fusedData_ << endl;
+                cout << "Avg: " << fusedData_ << endl; /** Print the average to the console */
             }
             if (!newReading)
             {
-                lastFuseTime_ = now;
+                lastFuseTime_ = now; /** Reset timer */
             }
         }
-        mu.unlock();
+        mu.unlock(); /** Unlock Mutex. */
     }
 }

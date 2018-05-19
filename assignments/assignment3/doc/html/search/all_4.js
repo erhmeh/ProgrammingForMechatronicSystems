@@ -4,5 +4,6 @@ var searchData=
   ['setmaxdistance',['setMaxDistance',['../classRanger.html#ac191d948d1a1451927f0a856f131fed0',1,'Ranger']]],
   ['setmindistance',['setMinDistance',['../classRanger.html#ac3c89ae3ce2b6529f385ac356ca899f6',1,'Ranger']]],
   ['setttyacm',['setTtyACM',['../classRanger.html#af9e1edce24012a056905fe4e41eca784',1,'Ranger']]],
-  ['sonar',['Sonar',['../classSonar.html',1,'']]]
+  ['sonar',['Sonar',['../classSonar.html',1,'']]],
+  ['startfusion',['startFusion',['../classDataFusion.html#aa4afcc1feff6fdf9688d95ad640154cd',1,'DataFusion']]]
 ];

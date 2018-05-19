@@ -19,7 +19,7 @@
 
 Ranger::Ranger()
 {
-    lastReading = chrono::system_clock::now().time_since_epoch();
+    lastReading = chrono::system_clock::now().time_since_epoch(); /** On initialisation, last reading is set to the current time to avoid it being undefined. */
 }
 
 /** Sets baud rate. Returns if sane */
@@ -113,25 +113,26 @@ double Ranger::getMaxDistance()
     return maxDist_;
 }
 
+/** Generates readings constantly. Accepts a mutex and condition variable. */
 void Ranger::takeReading(mutex &mu, condition_variable &cond)
 {
-    double updateRate = 1.0 / dataRate_;
+    double updateRate = 1.0 / dataRate_; /** Turn freqency (Hz) into a period */
 
     while (true)
     {
-        mu.lock();
-        auto now = chrono::system_clock::now().time_since_epoch();
-        std::chrono::duration<double> elapsed_seconds = now - lastReading;
-        if (elapsed_seconds.count() > updateRate)
+        mu.lock(); /** Lock mutex */
+        auto now = chrono::system_clock::now().time_since_epoch(); /** Set current time to now */
+        std::chrono::duration<double> elapsed_seconds = now - lastReading; /** Calculate the duration since the last reading */
+        if (elapsed_seconds.count() > updateRate) /** True if enough time has passed */
         {
             double w = 0.31459;
-            default_random_engine generator(now.count());
-            normal_distribution<double> distribution(0, 0.1);
-            double i = distribution(generator);
-            dataStream_.push(6.0 + (4 * sin(w * now.count())) + i);
-            lastReading = now;
+            default_random_engine generator(now.count()); /** Start random number generator */
+            normal_distribution<double> distribution(0, 0.1); /** Apply constrainst to generator */
+            double i = distribution(generator); /** Generate random value */
+            dataStream_.push(6.0 + (4 * sin(w * now.count())) + i); /** Push reading as defined by the formula in the assignment document */
+            lastReading = now; /** Reset timer */
         }
-        mu.unlock();
+        mu.unlock(); /** Lock mutex */
         cond.notify_one();
     }
 }

@@ -72,6 +72,7 @@ void initRadar()
     }
 }
 
+/** Initialises Sonar with user defined variables and prints out the device specific configuration */
 void initSonar()
 {
     cout << "Initialising Sonar. Fixed Parameters are as follows." << endl;
@@ -103,15 +104,19 @@ void initSonar()
 
 int main()
 {
+    /** Call the initialisation function for the two variables. */
     initRadar();
     initSonar();
 
+    /** Initialise the condition variable and mutex */
     condition_variable cond;
     mutex mu;
 
+    /** Initialise threads for radar, sonar and fusion. */
     thread radarThread(&Ranger::takeReading, &radar, ref(mu), ref(cond));
     thread sonarThread(&Ranger::takeReading, &sonar, ref(mu), ref(cond));
     thread fuseThread(&DataFusion::startFusion, &fuse, ref(radar.dataStream_), ref(sonar.dataStream_), ref(mu), ref(cond), FUSION_METHOD);
+    /** Call join() method on each thread */
     radarThread.join();
     sonarThread.join();
     fuseThread.join();

@@ -28,8 +28,7 @@ double \hyperlink{classRanger_ab08a6310dee156f89fdd28256b1055e5}{get\+Min\+Dista
 \item 
 double \hyperlink{classRanger_a8e5aaf0373980c5196b171fe3371190c}{get\+Max\+Distance} ()
 \item 
-void {\bfseries take\+Reading} (mutex \&mu, condition\+\_\+variable \&cond)\hypertarget{classRanger_af3c38e14a1cec55729563b5feebf1e6f}{}\label{classRanger_af3c38e14a1cec55729563b5feebf1e6f}
-
+void \hyperlink{classRanger_af3c38e14a1cec55729563b5feebf1e6f}{take\+Reading} (mutex \&mu, condition\+\_\+variable \&cond)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -86,7 +85,7 @@ ranger.\+cpp Programming for Mechatronic systems Assignment 3
 \begin{DoxyDate}{Date}
 \+: Week 8 Autumn Semester 2018 
 \end{DoxyDate}
-
+On initialisation, last reading is set to the current time to avoid it being undefined. 
 
 \subsection{Member Function Documentation}
 \index{Ranger@{Ranger}!get\+Baud\+Rate@{get\+Baud\+Rate}}
@@ -152,7 +151,35 @@ Sets minimum distance. Returns if sane \index{Ranger@{Ranger}!set\+Tty\+A\+CM@{s
 \item[{int}]{i}
 \end{DoxyParamCaption}
 )}\hypertarget{classRanger_af9e1edce24012a056905fe4e41eca784}{}\label{classRanger_af9e1edce24012a056905fe4e41eca784}
-Sets port. Returns if sane 
+Sets port. Returns if sane \index{Ranger@{Ranger}!take\+Reading@{take\+Reading}}
+\index{take\+Reading@{take\+Reading}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{take\+Reading(mutex \&mu, condition\+\_\+variable \&cond)}{takeReading(mutex &mu, condition_variable &cond)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ranger\+::take\+Reading (
+\begin{DoxyParamCaption}
+\item[{mutex \&}]{mu, }
+\item[{condition\+\_\+variable \&}]{cond}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_af3c38e14a1cec55729563b5feebf1e6f}{}\label{classRanger_af3c38e14a1cec55729563b5feebf1e6f}
+Generates readings constantly. Accepts a mutex and condition variable. Turn freqency (Hz) into a period
+
+Lock mutex
+
+Set current time to now
+
+Calculate the duration since the last reading
+
+True if enough time has passed
+
+Start random number generator
+
+Apply constrainst to generator
+
+Generate random value
+
+Push reading as defined by the formula in the assignment document
+
+Reset timer
+
+Lock mutex 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

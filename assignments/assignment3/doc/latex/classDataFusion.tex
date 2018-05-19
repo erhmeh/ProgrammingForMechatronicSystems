@@ -3,8 +3,7 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries start\+Fusion} (queue$<$ double $>$ \&stream1, queue$<$ double $>$ \&stream2, mutex \&mu, condition\+\_\+variable \&cond, int fuse\+Method)\hypertarget{classDataFusion_aa4afcc1feff6fdf9688d95ad640154cd}{}\label{classDataFusion_aa4afcc1feff6fdf9688d95ad640154cd}
-
+void \hyperlink{classDataFusion_aa4afcc1feff6fdf9688d95ad640154cd}{start\+Fusion} (queue$<$ double $>$ \&stream1, queue$<$ double $>$ \&stream2, mutex \&mu, condition\+\_\+variable \&cond, int fuse\+Method)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -25,6 +24,62 @@ int {\bfseries fuse\+Rate\+\_\+}\hypertarget{classDataFusion_a4c036eccb8ed9b1a86
 
 \end{DoxyCompactItemize}
 
+
+\subsection{Member Function Documentation}
+\index{Data\+Fusion@{Data\+Fusion}!start\+Fusion@{start\+Fusion}}
+\index{start\+Fusion@{start\+Fusion}!Data\+Fusion@{Data\+Fusion}}
+\subsubsection[{\texorpdfstring{start\+Fusion(queue$<$ double $>$ \&stream1, queue$<$ double $>$ \&stream2, mutex \&mu, condition\+\_\+variable \&cond, int fuse\+Method)}{startFusion(queue< double > &stream1, queue< double > &stream2, mutex &mu, condition_variable &cond, int fuseMethod)}}]{\setlength{\rightskip}{0pt plus 5cm}void Data\+Fusion\+::start\+Fusion (
+\begin{DoxyParamCaption}
+\item[{queue$<$ double $>$ \&}]{stream1, }
+\item[{queue$<$ double $>$ \&}]{stream2, }
+\item[{mutex \&}]{mu, }
+\item[{condition\+\_\+variable \&}]{cond, }
+\item[{int}]{fuse\+Method}
+\end{DoxyParamCaption}
+)}\hypertarget{classDataFusion_aa4afcc1feff6fdf9688d95ad640154cd}{}\label{classDataFusion_aa4afcc1feff6fdf9688d95ad640154cd}
+Start fusion member function. This accepts two references to queues (one for each sensor), mustex and condition variable and the selected fuse method Turn freqency (Hz) into a period
+
+Lock mutex
+
+When a new reading is entered into stream1, update the local variable
+
+Copy variable
+
+Pop from front of queue
+
+Change varaible to notify that a new variable has been entered (3.\+c.\+ii produce a fused result on each new piece of sensor data)
+
+When a new reading is entered into stream2, update the local variable
+
+Copy variable
+
+Pop from front of queue
+
+Change varaible to notify that a new variable has been entered (3.\+c.\+ii produce a fused result on each new piece of sensor data)
+
+Set current time to now
+
+Calculate the duration since the last reading
+
+True if enough time has passed or a new reading has been taken
+
+Print out the reason why the event occured and reach sensor\textquotesingle{}s reading
+
+If the selected fusion method is minimum, compare the two readings and assign the smallest to the fused\+Data\+\_\+ variable
+
+Print the minimum to the console
+
+If the selected fusion method is maximum, compare the two readings and assign the largest to the fused\+Data\+\_\+ variable
+
+Print the maximum to the console
+
+If the selected fusion method is average, add the two values and divide by two. Assign to fused\+Data\+\_\+ variable
+
+Print the average to the console
+
+Reset timer
+
+Unlock Mutex. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
