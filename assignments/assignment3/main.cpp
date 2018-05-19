@@ -1,4 +1,5 @@
-/* main.cpp
+/**
+ * main.cpp
  * Programming for Mechatronic systems
  * Assignment 3
  *
@@ -17,21 +18,24 @@
 
 using namespace std;
 
-// User configurable variables
-#define SONAR_BAUD 38400
-#define RADAR_BAUD 38400
-#define RADAR_FOV  40.0
+/** User configurable variables */
+#define SONAR_BAUD    38400
+#define RADAR_BAUD    38400
+#define RADAR_FOV     40.0
 
-// Declare radar and sonar objects
+/** 1 for min, 2 for max, 3 for average */
+#define FUSION_METHOD 3
+
+/** Declare radar and sonar objects */
 Radar radar;
 Sonar sonar;
+DataFusion fuse;
 
-
-// Prototype Functons
+/** Prototype Functons */
 void initRadar();
 void initSonar();
 
-// Initialises Radar with user defined variables and prints out the device specific configuration
+/** Initialises Radar with user defined variables and prints out the device specific configuration */
 void initRadar()
 {
     cout << "Initialising Radar. Fixed Parameters are as follows." << endl;
@@ -107,7 +111,9 @@ int main()
 
     thread radarThread(&Ranger::takeReading, &radar, ref(mu), ref(cond));
     thread sonarThread(&Ranger::takeReading, &sonar, ref(mu), ref(cond));
+    thread fuseThread(&DataFusion::startFusion, &fuse, ref(radar.dataStream_), ref(sonar.dataStream_), ref(mu), ref(cond), FUSION_METHOD);
     radarThread.join();
     sonarThread.join();
+    fuseThread.join();
     return 0;
 }

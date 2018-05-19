@@ -1,4 +1,5 @@
-/* sonar.cpp
+/**
+ * sonar.cpp
  * Programming for Mechatronic systems
  * Assignment 3
  *

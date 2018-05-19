@@ -1,4 +1,5 @@
-/* radar.h
+/**
+ * radar.h
  * Programming for Mechatronic systems
  * Assignment 3
  *
@@ -18,4 +19,4 @@ Radar();
 bool setFov(double i);
 };
 
-#endif // RADAR_H
+#endif /** RADAR_H */

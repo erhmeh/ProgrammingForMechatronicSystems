@@ -7,8 +7,40 @@
 #IncludeRegexTransform: 
 
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/data_fusion.cpp
+ranger.h
+/mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/ranger.h
+iostream
+-
+queue
+-
+chrono
+-
+math.h
+-
+random
+-
+mutex
+-
+condition_variable
+-
+thread
+-
+data_fusion.h
+/mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/data_fusion.h
 
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/data_fusion.h
+queue
+-
+chrono
+-
+mutex
+-
+condition_variable
+-
+thread
+-
+ranger.h
+/mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/ranger.h
 
 /mnt/c/Users/jamin/Documents/GitHub/ProgrammingForMechatronicSystems/assignments/assignment3/main.cpp
 iostream

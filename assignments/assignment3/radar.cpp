@@ -1,4 +1,5 @@
-/* radar.cpp
+/**
+ * radar.cpp
  * Programming for Mechatronic systems
  * Assignment 3
  *
@@ -13,14 +14,14 @@
 #include <iostream>
 #include <tgmath.h>
 
-// Default values for the radar
+/** Default values for the radar */
 #define RADAR_BAUD_DEFAULT 38400
 #define RADAR_FOV_DEFAULT  20.0
 #define RADAR_MIN_DIST     0.2
 #define RADAR_MAX_DIST     10.0
 #define RADAR_DATA_RATE    10
 
-// When a radar object is initialised, it has all values set to default
+/** When a radar object is initialised, it has all values set to default */
 Radar::Radar()
 {
     setBaudRate(RADAR_BAUD_DEFAULT);

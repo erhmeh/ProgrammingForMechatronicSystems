@@ -1,12 +1,11 @@
-/* ranger.h
+/**
+ * ranger.h
  * Programming for Mechatronic systems
  * Assignment 3
  *
  * @author: Jamin Early 99133391
  * @date: Week 8 Autumn Semester 2018
  */
-
-
 
 #ifndef RANGER_H
 #define RANGER_H
@@ -31,13 +30,8 @@ int getDataRate();
 double getMinDistance();
 double getMaxDistance();
 void takeReading(mutex &mu, condition_variable &cond);
+queue<double> dataStream_;
 protected:
-struct reading
-{
-    double data_;
-    long long int eventTime_;
-};
-queue<reading> dataStream_;
 std::chrono::duration<double> lastReading;
 bool setMaxDistance(double i);
 bool setMinDistance(double i);
@@ -49,4 +43,4 @@ double maxDist_;
 int dataRate_;
 };
 
-#endif // ifndef RANGER_H
+#endif /** ifndef RANGER_H */

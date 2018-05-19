@@ -1,4 +1,5 @@
-/* sonar.h
+/**
+ * sonar.h
  * Programming for Mechatronic systems
  * Assignment 3
  *
@@ -17,4 +18,4 @@ public:
 Sonar();
 };
 
-#endif // RADAR_H
+#endif /** RADAR_H */

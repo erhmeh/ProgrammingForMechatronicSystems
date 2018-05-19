@@ -1,0 +1,160 @@
+\hypertarget{classRanger}{}\section{Ranger Class Reference}
+\label{classRanger}\index{Ranger@{Ranger}}
+Inheritance diagram for Ranger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRanger}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRanger_a65e1b9530f370b95cd673690c5bf02b5}{Ranger} ()
+\item 
+bool \hyperlink{classRanger_a5cb6fe854af1751438b1a836c6703f3f}{set\+Baud\+Rate} (int i)
+\item 
+int \hyperlink{classRanger_abd9461cf6b81f879986e6ef79a1a7269}{get\+Baud\+Rate} ()
+\item 
+bool \hyperlink{classRanger_af9e1edce24012a056905fe4e41eca784}{set\+Tty\+A\+CM} (int i)
+\item 
+int \hyperlink{classRanger_a10d0c5f291b2cd850e6d82717d1e179d}{get\+Tty} ()
+\item 
+double \hyperlink{classRanger_a92538e7e7c3b5346501ed4116b6a96bb}{get\+Fov} ()
+\item 
+int {\bfseries get\+Data\+Rate} ()\hypertarget{classRanger_a76768ed2f954887a5d4aa48271fdee3d}{}\label{classRanger_a76768ed2f954887a5d4aa48271fdee3d}
+
+\item 
+double \hyperlink{classRanger_ab08a6310dee156f89fdd28256b1055e5}{get\+Min\+Distance} ()
+\item 
+double \hyperlink{classRanger_a8e5aaf0373980c5196b171fe3371190c}{get\+Max\+Distance} ()
+\item 
+void {\bfseries take\+Reading} (mutex \&mu, condition\+\_\+variable \&cond)\hypertarget{classRanger_af3c38e14a1cec55729563b5feebf1e6f}{}\label{classRanger_af3c38e14a1cec55729563b5feebf1e6f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+queue$<$ double $>$ {\bfseries data\+Stream\+\_\+}\hypertarget{classRanger_a82f7e4ae6cd80d31baf5118a3df877ab}{}\label{classRanger_a82f7e4ae6cd80d31baf5118a3df877ab}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classRanger_ac191d948d1a1451927f0a856f131fed0}{set\+Max\+Distance} (double i)
+\item 
+bool \hyperlink{classRanger_ac3c89ae3ce2b6529f385ac356ca899f6}{set\+Min\+Distance} (double i)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::chrono\+::duration$<$ double $>$ {\bfseries last\+Reading}\hypertarget{classRanger_a1bdab7210a1469ffff99eedd28f8b7e6}{}\label{classRanger_a1bdab7210a1469ffff99eedd28f8b7e6}
+
+\item 
+int {\bfseries baud\+Rate\+\_\+}\hypertarget{classRanger_aced6f17f9f3e14fb3a74d041d239d021}{}\label{classRanger_aced6f17f9f3e14fb3a74d041d239d021}
+
+\item 
+int {\bfseries tty\+A\+C\+M\+\_\+}\hypertarget{classRanger_affe5d5e2bcd736aa64fe36e8c305ebb6}{}\label{classRanger_affe5d5e2bcd736aa64fe36e8c305ebb6}
+
+\item 
+double {\bfseries fov\+\_\+}\hypertarget{classRanger_a43cc24e0ee22c92224eb6279f5da18d1}{}\label{classRanger_a43cc24e0ee22c92224eb6279f5da18d1}
+
+\item 
+double {\bfseries min\+Dist\+\_\+}\hypertarget{classRanger_a162f6de8033276f58138b46d39b78361}{}\label{classRanger_a162f6de8033276f58138b46d39b78361}
+
+\item 
+double {\bfseries max\+Dist\+\_\+}\hypertarget{classRanger_a46504fe73b39234252b9f93d9a6423a7}{}\label{classRanger_a46504fe73b39234252b9f93d9a6423a7}
+
+\item 
+int {\bfseries data\+Rate\+\_\+}\hypertarget{classRanger_a0e489954008a72da7eb57884b6ba5a73}{}\label{classRanger_a0e489954008a72da7eb57884b6ba5a73}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ranger@{Ranger}!Ranger@{Ranger}}
+\index{Ranger@{Ranger}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{Ranger()}{Ranger()}}]{\setlength{\rightskip}{0pt plus 5cm}Ranger\+::\+Ranger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_a65e1b9530f370b95cd673690c5bf02b5}{}\label{classRanger_a65e1b9530f370b95cd673690c5bf02b5}
+ranger.\+cpp Programming for Mechatronic systems Assignment 3
+
+\begin{DoxyAuthor}{Author}
+\+: Jamin Early 99133391 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: Week 8 Autumn Semester 2018 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\index{Ranger@{Ranger}!get\+Baud\+Rate@{get\+Baud\+Rate}}
+\index{get\+Baud\+Rate@{get\+Baud\+Rate}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{get\+Baud\+Rate()}{getBaudRate()}}]{\setlength{\rightskip}{0pt plus 5cm}int Ranger\+::get\+Baud\+Rate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_abd9461cf6b81f879986e6ef79a1a7269}{}\label{classRanger_abd9461cf6b81f879986e6ef79a1a7269}
+Returns baud rate \index{Ranger@{Ranger}!get\+Fov@{get\+Fov}}
+\index{get\+Fov@{get\+Fov}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{get\+Fov()}{getFov()}}]{\setlength{\rightskip}{0pt plus 5cm}double Ranger\+::get\+Fov (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_a92538e7e7c3b5346501ed4116b6a96bb}{}\label{classRanger_a92538e7e7c3b5346501ed4116b6a96bb}
+Returns field of view \index{Ranger@{Ranger}!get\+Max\+Distance@{get\+Max\+Distance}}
+\index{get\+Max\+Distance@{get\+Max\+Distance}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{get\+Max\+Distance()}{getMaxDistance()}}]{\setlength{\rightskip}{0pt plus 5cm}double Ranger\+::get\+Max\+Distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_a8e5aaf0373980c5196b171fe3371190c}{}\label{classRanger_a8e5aaf0373980c5196b171fe3371190c}
+Returns maximum distance \index{Ranger@{Ranger}!get\+Min\+Distance@{get\+Min\+Distance}}
+\index{get\+Min\+Distance@{get\+Min\+Distance}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{get\+Min\+Distance()}{getMinDistance()}}]{\setlength{\rightskip}{0pt plus 5cm}double Ranger\+::get\+Min\+Distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_ab08a6310dee156f89fdd28256b1055e5}{}\label{classRanger_ab08a6310dee156f89fdd28256b1055e5}
+Returns minimum distance \index{Ranger@{Ranger}!get\+Tty@{get\+Tty}}
+\index{get\+Tty@{get\+Tty}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{get\+Tty()}{getTty()}}]{\setlength{\rightskip}{0pt plus 5cm}int Ranger\+::get\+Tty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_a10d0c5f291b2cd850e6d82717d1e179d}{}\label{classRanger_a10d0c5f291b2cd850e6d82717d1e179d}
+Returns port \index{Ranger@{Ranger}!set\+Baud\+Rate@{set\+Baud\+Rate}}
+\index{set\+Baud\+Rate@{set\+Baud\+Rate}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{set\+Baud\+Rate(int i)}{setBaudRate(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ranger\+::set\+Baud\+Rate (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_a5cb6fe854af1751438b1a836c6703f3f}{}\label{classRanger_a5cb6fe854af1751438b1a836c6703f3f}
+Sets baud rate. Returns if sane \index{Ranger@{Ranger}!set\+Max\+Distance@{set\+Max\+Distance}}
+\index{set\+Max\+Distance@{set\+Max\+Distance}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{set\+Max\+Distance(double i)}{setMaxDistance(double i)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ranger\+::set\+Max\+Distance (
+\begin{DoxyParamCaption}
+\item[{double}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classRanger_ac191d948d1a1451927f0a856f131fed0}{}\label{classRanger_ac191d948d1a1451927f0a856f131fed0}
+Sets maximum distance. Returns if sane \index{Ranger@{Ranger}!set\+Min\+Distance@{set\+Min\+Distance}}
+\index{set\+Min\+Distance@{set\+Min\+Distance}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{set\+Min\+Distance(double i)}{setMinDistance(double i)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ranger\+::set\+Min\+Distance (
+\begin{DoxyParamCaption}
+\item[{double}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classRanger_ac3c89ae3ce2b6529f385ac356ca899f6}{}\label{classRanger_ac3c89ae3ce2b6529f385ac356ca899f6}
+Sets minimum distance. Returns if sane \index{Ranger@{Ranger}!set\+Tty\+A\+CM@{set\+Tty\+A\+CM}}
+\index{set\+Tty\+A\+CM@{set\+Tty\+A\+CM}!Ranger@{Ranger}}
+\subsubsection[{\texorpdfstring{set\+Tty\+A\+C\+M(int i)}{setTtyACM(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ranger\+::set\+Tty\+A\+CM (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanger_af9e1edce24012a056905fe4e41eca784}{}\label{classRanger_af9e1edce24012a056905fe4e41eca784}
+Sets port. Returns if sane 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ranger.\+h\item 
+ranger.\+cpp\end{DoxyCompactItemize}
