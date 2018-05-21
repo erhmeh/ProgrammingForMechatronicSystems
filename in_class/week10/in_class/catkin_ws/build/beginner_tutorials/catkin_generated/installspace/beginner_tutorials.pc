@@ -1,0 +1,8 @@
+prefix=/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/in_class/week10/in_class/catkin_ws/install
+
+Name: beginner_tutorials
+Description: Description of beginner_tutorials
+Version: 0.0.0
+Cflags: 
+Libs: -L/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/in_class/week10/in_class/catkin_ws/install/lib 
+Requires: 

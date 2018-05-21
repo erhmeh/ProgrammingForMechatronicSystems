@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -shared -Wl,-soname,libgtest.so -o libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/in_class/week10/in_class/catkin_ws/build/gtest/gtest/src -lpthread -Wl,-rpath,/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/in_class/week10/in_class/catkin_ws/build/gtest/gtest/src 
