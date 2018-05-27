@@ -1,0 +1,8 @@
+prefix=/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel
+
+Name: map_ray_caster
+Description: Description of map_ray_caster
+Version: 0.1.8
+Cflags: -I/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src/a5_support/map_ray_caster/include
+Libs: -L/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel/lib -lmap_ray_caster
+Requires: lama_msgs nav_msgs roscpp
