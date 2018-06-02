@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build
+CMAKE_BINARY_DIR = /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src /mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src /mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build /mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build /mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

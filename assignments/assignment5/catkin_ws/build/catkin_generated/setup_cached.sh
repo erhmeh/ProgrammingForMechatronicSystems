@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build"
+export CMAKE_PREFIX_PATH="/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel:$CMAKE_PREFIX_PATH"
+export PWD="/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src:$ROS_PACKAGE_PATH"

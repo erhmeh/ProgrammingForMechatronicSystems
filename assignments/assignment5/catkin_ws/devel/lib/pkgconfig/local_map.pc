@@ -1,8 +1,0 @@
-prefix=/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel
-
-Name: local_map
-Description: Description of local_map
-Version: 0.1.8
-Cflags: -I/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel/include -I/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src/a5_support/local_map/include
-Libs: -L/mnt/c/Users/Solo/Documents/Git/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel/lib 
-Requires: angles geometry_msgs lama_msgs map_ray_caster message_runtime nav_msgs roscpp sensor_msgs tf
