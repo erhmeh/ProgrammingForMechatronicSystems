@@ -1,2 +1,2 @@
-
+a5_help:a5_support/lama_msgs:a5_support/local_map:a5_support/map_ray_caster:beginner_tutorials:opencv_example
 -DCATKIN_DEVEL_PREFIX=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install -G Unix Makefiles

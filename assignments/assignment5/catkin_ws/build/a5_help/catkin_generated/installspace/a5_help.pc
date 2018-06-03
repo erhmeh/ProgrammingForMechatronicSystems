@@ -1,0 +1,8 @@
+prefix=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install
+
+Name: a5_help
+Description: Description of a5_help
+Version: 0.0.0
+Cflags: -I/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install/include
+Libs: -L/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install/lib -ldrawing_tools
+Requires: 
