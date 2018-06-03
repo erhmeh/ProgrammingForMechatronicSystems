@@ -1,0 +1,8 @@
+prefix=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install
+
+Name: lama_msgs
+Description: Description of lama_msgs
+Version: 0.1.3
+Cflags: -I/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install/include
+Libs: -L/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install/lib 
+Requires: geometry_msgs message_runtime

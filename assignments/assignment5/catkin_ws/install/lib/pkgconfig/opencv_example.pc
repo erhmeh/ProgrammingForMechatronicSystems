@@ -1,0 +1,8 @@
+prefix=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install
+
+Name: opencv_example
+Description: Description of opencv_example
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install/lib 
+Requires: 
