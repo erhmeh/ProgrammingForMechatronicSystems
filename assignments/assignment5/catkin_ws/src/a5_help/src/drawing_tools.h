@@ -5,7 +5,7 @@
 
 namespace drawing_tools {
 
-void drawRedDot(cv::Mat &image);
+    void drawRedDot(cv::Mat &image);
 }
 
 #endif // DRAWING_TOOLS_H

@@ -2,10 +2,10 @@
  * teleop_base_keyboard_pioneer. (modified by Laura GalÃ­ndez, july 2010)
  * Copyright (c) 2008, Willow Garage, Inc.
  * All rights reserved.
- *
+ * 
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *
+ * 
  *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
@@ -14,7 +14,7 @@
  *     * Neither the name of the <ORGANIZATION> nor the names of its
  *       contributors may be used to endorse or promote products derived from
  *       this software without specific prior written permission.
- *
+ * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -71,24 +71,23 @@ bool always_command = false;
 
 class TBK_Node
 {
-private:
-geometry_msgs::Twist cmdvel;
-ros::NodeHandle n_;
-ros::Publisher pub_;
+  private:
+    geometry_msgs::Twist cmdvel;
+    ros::NodeHandle n_;
+    ros::Publisher pub_;
 
-public:
-TBK_Node()
-{
-        pub_ = n_.advertise<geometry_msgs::Twist>("/cmd_vel",1); //TBK_Node publishes RosAria/cmd_vel topic and RosAria node subscribes to it
-}
-~TBK_Node() {
-}
-void keyboardLoop();
-void stopRobot()
-{
-        cmdvel.linear.x = cmdvel.angular.z = 0.0;
-        pub_.publish(cmdvel);
-}
+  public:
+    TBK_Node()
+    {
+      pub_ = n_.advertise<geometry_msgs::Twist>("/cmd_vel",1); //TBK_Node publishes RosAria/cmd_vel topic and RosAria node subscribes to it
+    }
+    ~TBK_Node() { }
+    void keyboardLoop();
+    void stopRobot()
+    {
+      cmdvel.linear.x = cmdvel.angular.z = 0.0;
+      pub_.publish(cmdvel);
+    }
 };
 
 TBK_Node* tbk;
@@ -99,169 +98,171 @@ bool done;
 int
 main(int argc, char** argv)
 {
-        ros::init(argc,argv,"tbk", ros::init_options::AnonymousName | ros::init_options::NoSigintHandler);
-        TBK_Node tbk;
+  ros::init(argc,argv,"tbk", ros::init_options::AnonymousName | ros::init_options::NoSigintHandler);
+  TBK_Node tbk;
 
-        boost::thread t = boost::thread(boost::bind(&TBK_Node::keyboardLoop, &tbk));
+  boost::thread t = boost::thread(boost::bind(&TBK_Node::keyboardLoop, &tbk));
+  
+  ros::spin();
 
-        ros::spin();
+  t.interrupt();
+  t.join();
+  tbk.stopRobot();
+  tcsetattr(kfd, TCSANOW, &cooked);
 
-        t.interrupt();
-        t.join();
-        tbk.stopRobot();
-        tcsetattr(kfd, TCSANOW, &cooked);
-
-        return(0);
+  return(0);
 }
 
 void
 TBK_Node::keyboardLoop()
 {
-        char c;
-        double max_tv = max_speed;
-        double max_rv = max_turn;
-        bool dirty=false;
+  char c;
+  double max_tv = max_speed;
+  double max_rv = max_turn;
+  bool dirty=false;
 
-        int speed=0;
-        int turn=0;
+  int speed=0;
+  int turn=0;
 
-        // get the console in raw mode
-        tcgetattr(kfd, &cooked);
-        memcpy(&raw, &cooked, sizeof(struct termios));
-        raw.c_lflag &=~(ICANON | ECHO);
-        raw.c_cc[VEOL] = 1;
-        raw.c_cc[VEOF] = 2;
-        tcsetattr(kfd, TCSANOW, &raw);
+  // get the console in raw mode
+  tcgetattr(kfd, &cooked);
+  memcpy(&raw, &cooked, sizeof(struct termios));
+  raw.c_lflag &=~ (ICANON | ECHO);
+  raw.c_cc[VEOL] = 1;
+  raw.c_cc[VEOF] = 2;
+  tcsetattr(kfd, TCSANOW, &raw);
 
-        puts("Reading from keyboard");
-        puts("-------------------------------------------------------------------------------");
-        puts("q/z : increase/decrease max angular and linear speeds by 10%");
-        puts("w/x : increase/decrease max linear speed by 10%");
-        puts("e/c : increase/decrease max angular speed by 10%");
-        puts("--------------------------------------------------------------------------------");
-        puts("Moving around:");
-        puts("   u=turn left and go forward    i=go forward    o=turn right and go forward");
-        puts("   j=turn left                   k=stop          l=turn right");
-        puts("   m=turn left and go backwards  ,=go backwards  .=turn right and go backwards");
-        puts("                             anything else : stop");
-        puts("--------------------------------------------------------------------------------");
+  puts("Reading from keyboard");
+  puts("-------------------------------------------------------------------------------");
+  puts("q/z : increase/decrease max angular and linear speeds by 10%");
+  puts("w/x : increase/decrease max linear speed by 10%");
+  puts("e/c : increase/decrease max angular speed by 10%");
+  puts("--------------------------------------------------------------------------------");
+  puts("Moving around:");
+  puts("   u=turn left and go forward    i=go forward    o=turn right and go forward");
+  puts("   j=turn left                   k=stop          l=turn right");
+  puts("   m=turn left and go backwards  ,=go backwards  .=turn right and go backwards");
+  puts("                             anything else : stop");
+  puts("--------------------------------------------------------------------------------");
 
-        struct pollfd ufd;
-        ufd.fd = kfd;
-        ufd.events = POLLIN;
-        for(;; )
-        {
-                boost::this_thread::interruption_point();
+  struct pollfd ufd;
+  ufd.fd = kfd;
+  ufd.events = POLLIN;
+  for(;;)
+  {
+    boost::this_thread::interruption_point();
+    
+    // get the next event from the keyboard
+    int num;
+    if((num = poll(&ufd, 1, 250)) < 0)
+    {
+      perror("poll():");
+      return;
+    }
+    else if(num > 0)
+    {
+      if(read(kfd, &c, 1) < 0)
+      {
+        perror("read():");
+        return;
+      }
+    }
+    else
+      continue;
 
-                // get the next event from the keyboard
-                int num;
-                if((num = poll(&ufd, 1, 250)) < 0)
-                {
-                        perror("poll():");
-                        return;
-                }
-                else if(num > 0)
-                {
-                        if(read(kfd, &c, 1) < 0)
-                        {
-                                perror("read():");
-                                return;
-                        }
-                }
-                else
-                        continue;
-
-                switch(c)
-                {
-                case KEYCODE_I:
-                        speed = 1;
-                        turn = 0;
-                        dirty = true;
-                        break;
-                case KEYCODE_K:
-                        speed = 0;
-                        turn = 0;
-                        dirty = true;
-                        break;
-                case KEYCODE_O:
-                        speed = 1;
-                        turn = -1;
-                        dirty = true;
-                        break;
-                case KEYCODE_J:
-                        speed = 0;
-                        turn = 1;
-                        dirty = true;
-//  printf("Pressed J!\n");
-                        break;
-                case KEYCODE_L:
-                        speed = 0;
-                        turn = -1;
-                        dirty = true;
-                        break;
-                case KEYCODE_U:
-                        turn = 1;
-                        speed = 1;
-                        dirty = true;
-                        break;
-                case KEYCODE_COMMA:
-                        turn = 0;
-                        speed = -1;
-                        dirty = true;
-                        break;
-                case KEYCODE_PERIOD:
-                        turn = 1;
-                        speed = -1;
-                        dirty = true;
-                        break;
-                case KEYCODE_M:
-                        turn = -1;
-                        speed = -1;
-                        dirty = true;
-                        break;
-                case KEYCODE_Q:
-                        max_tv += max_tv / 10.0;
-                        max_rv += max_rv / 10.0;
-                        if(always_command)
-                                dirty = true;
-                        break;
-                case KEYCODE_Z:
-                        max_tv -= max_tv / 10.0;
-                        max_rv -= max_rv / 10.0;
-                        if(always_command)
-                                dirty = true;
-                        break;
-                case KEYCODE_W:
-                        max_tv += max_tv / 10.0;
-                        if(always_command)
-                                dirty = true;
-                        break;
-                case KEYCODE_X:
-                        max_tv -= max_tv / 10.0;
-                        if(always_command)
-                                dirty = true;
-                        break;
-                case KEYCODE_E:
-                        max_rv += max_rv / 10.0;
-                        if(always_command)
-                                dirty = true;
-                        break;
-                case KEYCODE_C:
-                        max_rv -= max_rv / 10.0;
-                        if(always_command)
-                                dirty = true;
-                        break;
-                default:
-                        speed = 0;
-                        turn = 0;
-                        dirty = true;
-                }
-                if (dirty == true)
-                {
-                        cmdvel.linear.x = speed * max_tv;
-                        cmdvel.angular.z = turn * max_rv;
+    switch(c)
+    {
+      case KEYCODE_I:
+        speed = 1;
+        turn = 0;
+        dirty = true;
+        break;
+      case KEYCODE_K:
+        speed = 0;
+        turn = 0;
+        dirty = true;
+        break;
+      case KEYCODE_O:
+        speed = 1;
+        turn = -1;
+        dirty = true;
+        break;
+      case KEYCODE_J:
+        speed = 0;
+        turn = 1;
+        dirty = true;
+// 	printf("Pressed J!\n");
+        break;
+      case KEYCODE_L:
+        speed = 0;
+        turn = -1;
+        dirty = true;
+        break;
+      case KEYCODE_U:
+        turn = 1;
+        speed = 1;
+        dirty = true;
+        break;
+      case KEYCODE_COMMA: 
+        turn = 0;
+        speed = -1;
+        dirty = true;
+        break;
+      case KEYCODE_PERIOD:
+        turn = 1;
+        speed = -1;
+        dirty = true;
+        break;
+      case KEYCODE_M:
+        turn = -1;
+        speed = -1;
+        dirty = true;
+        break;
+      case KEYCODE_Q:
+        max_tv += max_tv / 10.0;
+        max_rv += max_rv / 10.0;
+        if(always_command)
+          dirty = true;
+        break;
+      case KEYCODE_Z:
+        max_tv -= max_tv / 10.0;
+        max_rv -= max_rv / 10.0;
+        if(always_command)
+          dirty = true;
+        break;
+      case KEYCODE_W:
+        max_tv += max_tv / 10.0;
+        if(always_command)
+          dirty = true;
+        break;
+      case KEYCODE_X:
+        max_tv -= max_tv / 10.0;
+        if(always_command)
+          dirty = true;
+        break;
+      case KEYCODE_E:
+        max_rv += max_rv / 10.0;
+        if(always_command)
+          dirty = true;
+        break;
+    case KEYCODE_C:
+        max_rv -= max_rv / 10.0;
+        if(always_command)
+          dirty = true;
+        break;
+    default:
+      speed = 0;
+      turn = 0;
+      dirty = true;
+    }
+    if (dirty == true)
+    {
+      cmdvel.linear.x = speed * max_tv;
+      cmdvel.angular.z = turn * max_rv;
 // printf("sending...[%f, %f]\n", cmdvel.linear.x, cmdvel.angular.z);
-                        pub_.publish(cmdvel);
-                }
-        }
+      pub_.publish(cmdvel);
+    }
+  }
 }
+
+

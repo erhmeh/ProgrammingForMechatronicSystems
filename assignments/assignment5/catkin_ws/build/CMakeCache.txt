@@ -289,6 +289,12 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //Value Computed by CMake
+a3_ros_BINARY_DIR:STATIC=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/a3_ros
+
+//Value Computed by CMake
+a3_ros_SOURCE_DIR:STATIC=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src/a3_ros
+
+//Value Computed by CMake
 a5_help_BINARY_DIR:STATIC=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/a5_help
 
 //Value Computed by CMake

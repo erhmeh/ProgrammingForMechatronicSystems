@@ -1,0 +1,8 @@
+prefix=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel
+
+Name: a3_ros
+Description: Description of a3_ros
+Version: 1.2.4
+Cflags: 
+Libs: -L/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/devel/lib 
+Requires: 
