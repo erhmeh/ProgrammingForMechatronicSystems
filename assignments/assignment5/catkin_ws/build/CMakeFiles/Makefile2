@@ -1467,6 +1467,24 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory controller
+
+# Convenience name for "all" pass in the directory.
+controller/all:
+
+.PHONY : controller/all
+
+# Convenience name for "clean" pass in the directory.
+controller/clean:
+
+.PHONY : controller/clean
+
+# Convenience name for "preinstall" pass in the directory.
+controller/preinstall:
+
+.PHONY : controller/preinstall
+
+#=============================================================================
 # Directory level rules for directory a5_help
 
 # Convenience name for "all" pass in the directory.

@@ -66,6 +66,13 @@
 /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir
 /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/beginner_tutorials/CMakeFiles/test.dir
 /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/beginner_tutorials/CMakeFiles/beginner_tutorials_geneus.dir
+/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/controller/CMakeFiles/list_install_components.dir
+/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/controller/CMakeFiles/install.dir
+/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/controller/CMakeFiles/rebuild_cache.dir
+/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/controller/CMakeFiles/install/strip.dir
+/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/controller/CMakeFiles/install/local.dir
+/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/controller/CMakeFiles/test.dir
+/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/controller/CMakeFiles/edit_cache.dir
 /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/a5_help/CMakeFiles/rebuild_cache.dir
 /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/a5_help/CMakeFiles/test.dir
 /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/a5_help/CMakeFiles/run_tests_a5_help_gtest_a5_help-test.dir

@@ -1,0 +1,8 @@
+prefix=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install
+
+Name: controller
+Description: Description of controller
+Version: 1.2.4
+Cflags: 
+Libs: -L/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install/lib 
+Requires: 
