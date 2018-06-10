@@ -87,6 +87,7 @@ controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o
  /opt/ros/kinetic/include/sensor_msgs/LaserScan.h
  /opt/ros/kinetic/include/sensor_msgs/RegionOfInterest.h
  /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
+ /opt/ros/kinetic/include/std_msgs/Float64.h
  /opt/ros/kinetic/include/std_msgs/Header.h
  /opt/ros/kinetic/include/std_msgs/String.h
  /opt/ros/kinetic/include/tf/LinearMath/Matrix3x3.h
