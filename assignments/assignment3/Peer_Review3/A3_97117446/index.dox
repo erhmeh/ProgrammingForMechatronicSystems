@@ -1,0 +1,53 @@
+/*!
+
+*/
+
+// without this gap between two doxygen definition, the last group does not get
+// populated properly for some reason.
+
+/*!
+@mainpage Assignment 3: Threading, Synchronisation and Data Integrity
+
+41012 - Programming for Mechatronic Systems
+
+@section ac_doc_Intent Intent:
+
+Skills in utilising:
+- classes
+- abstraction
+- data structures
+- threading
+- data synchronisation
+- documentation
+will be assessed.
+
+@section ac_doc_Task Task:
+
+- Write a program in C++ using object oriented paradigms that shares data originating from a range of Mechatronics sensors between a number of threads.
+- Ensure data integrity between threads and enable relating data between them via suitable data structure that enables time synchronisation and subsequently interpolation of data for task at hand. Supply appropriate auto-generated documentation utilising inline source mark-up.
+
+@section ac_doc_Rationale Rationale:
+
+- In a Mechatronics System, sensors produce data at varying rates.
+- Decisions need to be made based on correctly associated data in near real-time.
+- Threading and synchronisation are ways to ensure the system performs as intended, with guarantees on the responsiveness of the system to incoming data changes, processing constraints and system behaviour.
+
+@section ac_doc_Assignment_Task Assignment Task:
+
+@subsection ac_doc_task1 Task 1: Creating Threads
+
+Create a number of threads that can handle buffering incoming data in an agnostic manner.
+
+@subsection ac_doc_task2 Task 2: Running applications
+    
+create a separate thread to process the data from the sensors that ensures synchronisation of the data between producers / consumers and produces an output by extrapolation of data.
+
+(extrapolation is the process of estimating, beyond the original observation).
+
+  \verbatim
+Xy = (X1 + ((ty - t1)/(t1 - t0))*(X1 - X0));
+  \endverbatim
+
+*/
+
+Your task is to (a)  (b) 
