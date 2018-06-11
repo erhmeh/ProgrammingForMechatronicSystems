@@ -26,19 +26,17 @@
 class instant {
 public:
 
-  // instant();
   void convPose(nav_msgs::OdometryConstPtr i);
-  void storeCVImg(const sensor_msgs::ImageConstPtr source,
-                  const std::string                encoding);
+  void storeCVImg();
   cv::Mat img_;
   double  angle_;
   float   x_;
   float   y_;
+  cv_bridge::CvImagePtr currentImgPtr_;
 
 private:
 
-  geometry_msgs::Pose   pose_;
-  cv_bridge::CvImagePtr currentImgPtr_;
+  geometry_msgs::Pose pose_;
 };
 
 #endif // ifndef INSTANT_H

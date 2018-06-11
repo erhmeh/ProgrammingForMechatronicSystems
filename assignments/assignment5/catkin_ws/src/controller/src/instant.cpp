@@ -30,9 +30,6 @@ void instant::convPose(nav_msgs::OdometryConstPtr i) {
   y_ = pose_.position.y;
 }
 
-void instant::storeCVImg(const sensor_msgs::ImageConstPtr source,
-                         const std::string                encoding) {
-  currentImgPtr_ = cv_bridge::toCvCopy(source,
-                                       "MONO8");
+void instant::storeCVImg() {
   img_ = currentImgPtr_->image;
 }
