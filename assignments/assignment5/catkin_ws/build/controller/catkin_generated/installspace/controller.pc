@@ -2,7 +2,7 @@ prefix=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignmen
 
 Name: controller
 Description: Description of controller
-Version: 1.2.4
+Version: 0.0.0
 Cflags: 
-Libs: -L/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install/lib 
+Libs: -L/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/install/lib -linstant
 Requires: 

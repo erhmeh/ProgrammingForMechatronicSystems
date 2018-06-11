@@ -400,6 +400,9 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 
+//Dependencies for target
+instant_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 lama_msgs_BINARY_DIR:STATIC=/home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build/a5_support/lama_msgs
 

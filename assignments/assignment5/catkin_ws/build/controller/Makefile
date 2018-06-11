@@ -90,6 +90,17 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -110,17 +121,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -181,154 +181,184 @@ a5_main/fast:
 .PHONY : a5_main/fast
 
 # Convenience name for target.
-controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+controller/CMakeFiles/instant.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/instant.dir/rule
+.PHONY : controller/CMakeFiles/instant.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_nodejs: controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+instant: controller/CMakeFiles/instant.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_nodejs
+.PHONY : instant
 
 # fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
+instant/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/build
+.PHONY : instant/fast
 
 # Convenience name for target.
-controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+controller/CMakeFiles/controller_genpy.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_genpy.dir/rule
+.PHONY : controller/CMakeFiles/controller_genpy.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_eus: controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+controller_genpy: controller/CMakeFiles/controller_genpy.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_eus
+.PHONY : controller_genpy
 
 # fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+controller_genpy/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_genpy.dir/build.make controller/CMakeFiles/controller_genpy.dir/build
+.PHONY : controller_genpy/fast
 
 # Convenience name for target.
-controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+controller/CMakeFiles/controller_generate_messages_eus.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_eus.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_py: controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+controller_generate_messages_eus: controller/CMakeFiles/controller_generate_messages_eus.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_py
+.PHONY : controller_generate_messages_eus
 
 # fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+controller_generate_messages_eus/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
+.PHONY : controller_generate_messages_eus/fast
 
 # Convenience name for target.
-controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+controller/CMakeFiles/controller_gencpp.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_gencpp.dir/rule
+.PHONY : controller/CMakeFiles/controller_gencpp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_lisp: controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+controller_gencpp: controller/CMakeFiles/controller_gencpp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_lisp
+.PHONY : controller_gencpp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
+controller_gencpp/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_gencpp.dir/build.make controller/CMakeFiles/controller_gencpp.dir/build
+.PHONY : controller_gencpp/fast
 
 # Convenience name for target.
-controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+controller/CMakeFiles/controller_geneus.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_geneus.dir/rule
+.PHONY : controller/CMakeFiles/controller_geneus.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_cpp: controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+controller_geneus: controller/CMakeFiles/controller_geneus.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_cpp
+.PHONY : controller_geneus
 
 # fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
+controller_geneus/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_geneus.dir/build.make controller/CMakeFiles/controller_geneus.dir/build
+.PHONY : controller_geneus/fast
 
 # Convenience name for target.
-controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+controller/CMakeFiles/controller_generate_messages_cpp.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_py: controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+controller_generate_messages_cpp: controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_py
+.PHONY : controller_generate_messages_cpp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+controller_generate_messages_cpp/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_cpp.dir/build.make controller/CMakeFiles/controller_generate_messages_cpp.dir/build
+.PHONY : controller_generate_messages_cpp/fast
 
 # Convenience name for target.
-controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+controller/CMakeFiles/controller_generate_messages.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_cpp: controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+controller_generate_messages: controller/CMakeFiles/controller_generate_messages.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_cpp
+.PHONY : controller_generate_messages
 
 # fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
+controller_generate_messages/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages.dir/build.make controller/CMakeFiles/controller_generate_messages.dir/build
+.PHONY : controller_generate_messages/fast
 
 # Convenience name for target.
-controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+controller/CMakeFiles/controller_generate_messages_py.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_py.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_py.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_eus: controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+controller_generate_messages_py: controller/CMakeFiles/controller_generate_messages_py.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_eus
+.PHONY : controller_generate_messages_py
 
 # fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
+controller_generate_messages_py/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_py.dir/build.make controller/CMakeFiles/controller_generate_messages_py.dir/build
+.PHONY : controller_generate_messages_py/fast
 
 # Convenience name for target.
-controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+controller/CMakeFiles/controller_genlisp.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_genlisp.dir/rule
+.PHONY : controller/CMakeFiles/controller_genlisp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_lisp: controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+controller_genlisp: controller/CMakeFiles/controller_genlisp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_lisp
+.PHONY : controller_genlisp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
+controller_genlisp/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_genlisp.dir/build.make controller/CMakeFiles/controller_genlisp.dir/build
+.PHONY : controller_genlisp/fast
 
 # Convenience name for target.
-controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+controller/CMakeFiles/controller_generate_messages_lisp.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_nodejs: controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+controller_generate_messages_lisp: controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_nodejs
+.PHONY : controller_generate_messages_lisp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
+controller_generate_messages_lisp/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_lisp.dir/build.make controller/CMakeFiles/controller_generate_messages_lisp.dir/build
+.PHONY : controller_generate_messages_lisp/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_generate_messages_nodejs.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_nodejs.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+controller_generate_messages_nodejs: controller/CMakeFiles/controller_generate_messages_nodejs.dir/rule
+
+.PHONY : controller_generate_messages_nodejs
+
+# fast build rule for target.
+controller_generate_messages_nodejs/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_nodejs.dir/build.make controller/CMakeFiles/controller_generate_messages_nodejs.dir/build
+.PHONY : controller_generate_messages_nodejs/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_gennodejs.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_gennodejs.dir/rule
+.PHONY : controller/CMakeFiles/controller_gennodejs.dir/rule
+
+# Convenience name for target.
+controller_gennodejs: controller/CMakeFiles/controller_gennodejs.dir/rule
+
+.PHONY : controller_gennodejs
+
+# fast build rule for target.
+controller_gennodejs/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_gennodejs.dir/build.make controller/CMakeFiles/controller_gennodejs.dir/build
+.PHONY : controller_gennodejs/fast
 
 src/a5_main.o: src/a5_main.cpp.o
 
@@ -357,6 +387,33 @@ src/a5_main.cpp.s:
 	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/a5_main.dir/build.make controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.s
 .PHONY : src/a5_main.cpp.s
 
+src/instant.o: src/instant.cpp.o
+
+.PHONY : src/instant.o
+
+# target to build an object file
+src/instant.cpp.o:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/src/instant.cpp.o
+.PHONY : src/instant.cpp.o
+
+src/instant.i: src/instant.cpp.i
+
+.PHONY : src/instant.i
+
+# target to preprocess a source file
+src/instant.cpp.i:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/src/instant.cpp.i
+.PHONY : src/instant.cpp.i
+
+src/instant.s: src/instant.cpp.s
+
+.PHONY : src/instant.s
+
+# target to generate assembly for a file
+src/instant.cpp.s:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/src/instant.cpp.s
+.PHONY : src/instant.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -366,24 +423,29 @@ help:
 	@echo "... install"
 	@echo "... test"
 	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... a5_main"
 	@echo "... edit_cache"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... instant"
+	@echo "... controller_genpy"
+	@echo "... controller_generate_messages_eus"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... controller_gencpp"
+	@echo "... controller_geneus"
+	@echo "... controller_generate_messages_cpp"
 	@echo "... rebuild_cache"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... controller_generate_messages"
+	@echo "... controller_generate_messages_py"
+	@echo "... controller_genlisp"
+	@echo "... controller_generate_messages_lisp"
+	@echo "... controller_generate_messages_nodejs"
+	@echo "... controller_gennodejs"
 	@echo "... src/a5_main.o"
 	@echo "... src/a5_main.i"
 	@echo "... src/a5_main.s"
+	@echo "... src/instant.o"
+	@echo "... src/instant.i"
+	@echo "... src/instant.s"
 .PHONY : help
 
 

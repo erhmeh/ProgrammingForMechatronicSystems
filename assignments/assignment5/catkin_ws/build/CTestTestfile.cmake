@@ -6,8 +6,8 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(beginner_tutorials)
-subdirs(controller)
 subdirs(a5_help)
+subdirs(controller)
 subdirs(opencv_example)
 subdirs(a5_support/lama_msgs)
 subdirs(a5_support/map_ray_caster)

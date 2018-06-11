@@ -85,7 +85,8 @@ public:
     // need to be _param:=value
     ros::NodeHandle pn("~");
     double mapSize;
-    double resolution;
+
+    // double resolution;
     pn.param<double>("map_size", mapSize, 20.0);
     pn.param<double>("resolution", resolution_, 0.1);
 
@@ -173,7 +174,7 @@ public:
   void seperateThread() {
     /**
      * The below loop runs until ros is shutdown, to ensure this thread does not
-     *remain
+     ***remain
      * a zombie thread
      *
      * The loop locks the buffer, checks the size
@@ -225,9 +226,9 @@ public:
       (x / resolution_) << ","  << (y / resolution_) << "] " <<
       " pos [x,y]=[" <<
       (x /
-      resolution_) +
+       resolution_) +
       (image.rows /
-      2) << "," << (y / resolution_) + (image.cols / 2) << "]" << std::endl;
+       2) << "," << (y / resolution_) + (image.cols / 2) << "]" << std::endl;
 
       if (!image.empty()) {
         cv_bridge::CvImage cv_image;
@@ -251,10 +252,10 @@ int main(int argc, char **argv)
   /**
    * The ros::init() function needs to see argc and argv so that it can perform
    * any ROS arguments and name remapping that were provided at the command
-   *line. For programmatic
+   ***line. For programmatic
    * remappings you can use a different version of init() which takes remappings
    * directly, but for most command-line programs, passing argc and argv is the
-   *easiest
+   ***easiest
    * way to do it.  The third argument to init() is the name of the node.
    *
    * You must call one of the versions of ros::init() before using any other
@@ -265,7 +266,7 @@ int main(int argc, char **argv)
   /**
    * NodeHandle is the main access point to communications with the ROS system.
    * The first NodeHandle constructed will fully initialize this node, and the
-   *last
+   ***last
    * NodeHandle destructed will close down the node.
    */
   ros::NodeHandle nh;
