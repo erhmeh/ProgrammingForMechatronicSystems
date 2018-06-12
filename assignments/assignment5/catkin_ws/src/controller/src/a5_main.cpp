@@ -32,8 +32,9 @@ instant i;
 
 struct cell { int x; int y; bool isFrontier = 0; bool isFree = 0; bool isWall =
                 0;
-              bool isUnknown = 0; };
+              bool isUnknown = 0; double distance = -1; };
 std::vector<cell> frontiers;
+cell latestFrontier;
 
 void callbackOdom(const nav_msgs::OdometryConstPtr& msg)
 {
@@ -57,7 +58,7 @@ void callbackImg(const sensor_msgs::ImageConstPtr& msg)
 }
 
 void bufTh() {
-  ros::Rate rate_limiter(10.0);
+  ros::Rate rate_limiter(1.0);
 
   while (ros::ok()) {
     inst_mutex_.lock();
@@ -71,8 +72,8 @@ void bufTh() {
   }
 }
 
-void frontierFindTh() {
-  ros::Rate rate_limiter(100.0);
+void frontierTh() {
+  ros::Rate rate_limiter(1);
 
   while (ros::ok()) {
     buf_mutex_.lock();
@@ -81,7 +82,8 @@ void frontierFindTh() {
     buf_mutex_.unlock();
 
     if (data.img_.rows == 200) {
-      frontiers.erase(frontiers.begin(), frontiers.end());
+      frontiers.clear();
+
       for (int x = 1; x < 200; x++) {
         for (int y = 1; y < 200; y++) {
           cv::Point2f pt(x, y);
@@ -96,6 +98,7 @@ void frontierFindTh() {
             cv::Point2f neighbour6(x - 1, y - 1);
             cv::Point2f neighbour7(x, y + 1);
             cv::Point2f neighbour8(x, y - 1);
+
             if ((data.img_.at<uchar>(neighbour1.y,
                                      neighbour1.x) == 127) ||
                 (data.img_.at<uchar>(neighbour2.y,
@@ -111,18 +114,43 @@ void frontierFindTh() {
                 (data.img_.at<uchar>(neighbour7.y,
                                      neighbour7.x) == 127) ||
                 (data.img_.at<uchar>(neighbour8.y, neighbour8.x) == 127)) {
-                  cell frontier;
-                  frontier.x = x;
-                  frontier.y = y;
-                  frontier.isFrontier = 1;
-                  frontier.isFree = 1;
-                  frontiers.push_back(frontier);
-                }
+              cell frontier;
+              frontier.x          = x;
+              frontier.y          = y;
+              frontier.isFrontier = 1;
+              frontier.isFree     = 1;
+              frontiers.push_back(frontier);
+            }
           }
         }
       }
+      std::cout << "Number of frontier cells " << frontiers.size() << std::endl;
+
+      for (unsigned int i = 0; i < frontiers.size(); i++) {
+        cell   q         = frontiers[i];
+        double distancex = pow(q.x - 100.0, 2);
+        double distancey = pow(q.y - 100.0, 2);
+        double distance  = sqrt(distancex + distancey);
+        q.distance   = distance;
+        frontiers[i] = q;
+      }
+
+      while (frontiers.size() != 1) {
+        cell a = frontiers[0];
+        cell b = frontiers[1];
+
+        if (a.distance <= b.distance) {
+          frontiers.erase(frontiers.begin() + 1);
+        }
+        else {
+          frontiers.erase(frontiers.begin());
+        }
+      }
+      cell latestFrontier = frontiers[0];
+      std::cout << "Closest frontier cell is located at " << latestFrontier.x <<
+      ", " << latestFrontier.y << " at a distance of " <<
+      latestFrontier.distance << std::endl;
     }
-    std::cout << "Number of frontier cells " << frontiers.size() << std::endl;
     buf.empty();
     rate_limiter.sleep();
   }
@@ -138,7 +166,7 @@ int main(int argc, char **argv)
   ros::Subscriber sub1 = n.subscribe("odom", 1000, callbackOdom);
   ros::Subscriber sub2 = n.subscribe("map_image/full", 1000, callbackImg);
   std::thread     t1(bufTh);
-  std::thread     t2(frontierFindTh);
+  std::thread     t2(frontierTh);
 
   ros::spin();
   t1.join();
