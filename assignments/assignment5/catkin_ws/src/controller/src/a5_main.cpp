@@ -73,28 +73,73 @@ void addPossiblePose(int x, int y, cv::Point2f pt)
 {
   if (oldImg.at<uchar>(pt.y, pt.x) == 255) {
     goalPose pose;
+    // pose.pixel.x = 
     std::queue<cv::Point2f> viewablePixels;
 
     if (x > pt.x) {
       if (y > pt.y) {
         pose.bearing = -45.0;
+        viewablePixels.push(cv::Point2f(x, y));
+        viewablePixels.push(cv::Point2f(x, y - 1));
+        viewablePixels.push(cv::Point2f(x - 1, y));
       }
 
-      if (y < pt.y) pose.bearing = 45.0;
-      else pose.bearing = 0.0;
+      if (y < pt.y) {
+        pose.bearing = 45.0;
+        viewablePixels.push(cv::Point2f(x, y));
+        viewablePixels.push(cv::Point2f(x, y + 1));
+        viewablePixels.push(cv::Point2f(x - 1, y));
+      }
+      else {
+        pose.bearing = 0.0;
+        viewablePixels.push(cv::Point2f(x, y));
+        viewablePixels.push(cv::Point2f(x, y + 1));
+        viewablePixels.push(cv::Point2f(x, y - 1));
+      }
     }
 
     if (x == pt.x) {
-      if (y > pt.y) pose.bearing = -90.0;
+      if (y > pt.y) {
+        pose.bearing = -90.0;
+        viewablePixels.push(cv::Point2f(x, y));
+        viewablePixels.push(cv::Point2f(x + 1, y));
+        viewablePixels.push(cv::Point2f(x - 1, y));
+      }
 
-      if (y < pt.y) pose.bearing = 90.0;
+      if (y < pt.y) {
+        pose.bearing = 90.0;
+        viewablePixels.push(cv::Point2f(x, y));
+        viewablePixels.push(cv::Point2f(x + 1, y));
+        viewablePixels.push(cv::Point2f(x - 1, y));
+      }
     }
 
     if (x < pt.x) {
-      if (y > pt.y) pose.bearing = -135.0;
+      if (y > pt.y) {
+        pose.bearing = -135.0;
+        viewablePixels.push(cv::Point2f(x, y));
+        viewablePixels.push(cv::Point2f(x + 1, y));
+        viewablePixels.push(cv::Point2f(x, y - 1));
+      }
 
-      if (y < pt.y) pose.bearing = 135.0;
-      else pose.bearing = 180.0;
+      if (y < pt.y) {
+        pose.bearing = 135.0;
+        viewablePixels.push(cv::Point2f(x, y));
+        viewablePixels.push(cv::Point2f(x + 1, y));
+        viewablePixels.push(cv::Point2f(x, y + 1));
+      }
+      else {
+        pose.bearing = 180.0;
+        viewablePixels.push(cv::Point2f(x, y));
+        viewablePixels.push(cv::Point2f(x, y + 1));
+        viewablePixels.push(cv::Point2f(x, y - 1));
+      }
+    }
+
+    while (!viewablePixels.empty()) {
+      cv::Point2f t = viewablePixels.front();
+      if (oldImg.at<uchar>(t.y, t.x) == 127) { pose.visibleFrontiers++; }
+      viewablePixels.pop();
     }
   }
 }
