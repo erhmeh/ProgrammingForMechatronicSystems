@@ -30,11 +30,11 @@ std::mutex          inst_mutex_;
 
 instant i;
 
-struct cell { int x; int y; bool isFrontier = 0; bool isFree = 0; bool isWall =
-                0;
-              bool isUnknown = 0; double distance = -1; };
-std::vector<cell> frontiers;
-cell latestFrontier;
+struct pixel { int x; int y; bool isFrontier = 0; bool isFree = 0; bool isWall =
+                 0;
+               bool isUnknown = 0; double distance = -1; };
+std::vector<pixel> frontiers;
+pixel latestFrontier;
 
 void callbackOdom(const nav_msgs::OdometryConstPtr& msg)
 {
@@ -114,7 +114,7 @@ void frontierTh() {
                 (data.img_.at<uchar>(neighbour7.y,
                                      neighbour7.x) == 127) ||
                 (data.img_.at<uchar>(neighbour8.y, neighbour8.x) == 127)) {
-              cell frontier;
+              pixel frontier;
               frontier.x          = x;
               frontier.y          = y;
               frontier.isFrontier = 1;
@@ -124,10 +124,10 @@ void frontierTh() {
           }
         }
       }
-      std::cout << "Number of frontier cells " << frontiers.size() << std::endl;
+      std::cout << "Number of frontier pixels " << frontiers.size() << std::endl;
 
       for (unsigned int i = 0; i < frontiers.size(); i++) {
-        cell   q         = frontiers[i];
+        pixel  q         = frontiers[i];
         double distancex = pow(q.x - 100.0, 2);
         double distancey = pow(q.y - 100.0, 2);
         double distance  = sqrt(distancex + distancey);
@@ -136,8 +136,8 @@ void frontierTh() {
       }
 
       while (frontiers.size() != 1) {
-        cell a = frontiers[0];
-        cell b = frontiers[1];
+        pixel a = frontiers[0];
+        pixel b = frontiers[1];
 
         if (a.distance <= b.distance) {
           frontiers.erase(frontiers.begin() + 1);
@@ -146,8 +146,8 @@ void frontierTh() {
           frontiers.erase(frontiers.begin());
         }
       }
-      cell latestFrontier = frontiers[0];
-      std::cout << "Closest frontier cell is located at " << latestFrontier.x <<
+      pixel latestFrontier = frontiers[0];
+      std::cout << "Closest frontier pixel is located at " << latestFrontier.x <<
       ", " << latestFrontier.y << " at a distance of " <<
       latestFrontier.distance << std::endl;
     }
