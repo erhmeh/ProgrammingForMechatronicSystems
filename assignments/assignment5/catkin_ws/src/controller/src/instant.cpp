@@ -24,7 +24,6 @@
 void instant::convPose(nav_msgs::OdometryConstPtr i) {
   pose_  = i->pose.pose;
   angle_ = tf::getYaw(pose_.orientation) * 180.0 / M_PI;
-  std::cout << "Angle: " << angle_ << std::endl;
 
   if (angle_ < 0) angle_ += 360.0;
   x_ = pose_.position.x;

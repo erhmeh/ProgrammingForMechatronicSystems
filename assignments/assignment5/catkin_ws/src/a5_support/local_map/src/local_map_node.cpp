@@ -44,7 +44,7 @@ int main(int argc, char **argv)
   double map_resolution;
   nh.param<double>("map_width", map_width, 200);
   nh.param<double>("map_height", map_height, 200);
-  nh.param<double>("map_resolution", map_resolution, 0.020);
+  nh.param<double>("map_resolution", map_resolution, 0.10);
   local_map::MapBuilder map_builder(map_width, map_height, map_resolution);
   map_builder_ptr = &map_builder;
 
@@ -54,4 +54,3 @@ int main(int argc, char **argv)
 
   ros::spin();
 }
-
