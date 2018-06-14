@@ -21,7 +21,7 @@
 #include <random>
 #include "instant.h"
 
-void instant::convPose(nav_msgs::OdometryConstPtr i) {
+void instant::convPosePx(nav_msgs::OdometryConstPtr i) {
   pose_  = i->pose.pose;
   angle_ = tf::getYaw(pose_.orientation) * 180.0 / M_PI;
 

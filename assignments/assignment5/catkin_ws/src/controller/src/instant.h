@@ -26,7 +26,7 @@
 class instant {
 public:
 
-  void convPose(nav_msgs::OdometryConstPtr i);
+  void convPosePx(nav_msgs::OdometryConstPtr i);
   void storeCVImg();
   cv::Mat img_;
   double  angle_;

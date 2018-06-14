@@ -29,22 +29,22 @@ namespace enc = sensor_msgs::image_encodings;
 
 struct pixel { int x; int y; double distance = -1; };
 
-struct goalPose { pixel                  p;
-                  std::queue<cv::Point2f>visibleFrontiers;
-                  double                 bearing;
-                  std::queue<cv::Point2f>viewablePixels; };
+struct goalPx { pixel                  p;
+                std::queue<cv::Point2f>visibleFrontiers;
+                double                 bearing;
+                std::queue<cv::Point2f>viewablePixels; };
 
 void               callbackOdom(const nav_msgs::OdometryConstPtr& msg);
 bool               sortByDist(const pixel& lhs,
                               const pixel& rhs);
 void               sortFrontierPixels();
-void               computeGoalPose();
-bool               sortByViewableFrontiers(const goalPose& lhs,
-                                           const goalPose& rhs);
+void               computegoalPx();
+bool               sortByViewableFrontiers(const goalPx& lhs,
+                                           const goalPx& rhs);
 void               sortGoalCandidates();
-void               addPossiblePose(int         x,
-                                   int         y,
-                                   cv::Point2f pt);
+void               addPossiblepxPose(int         x,
+                                     int         y,
+                                     cv::Point2f pt);
 void               callbackImg(const sensor_msgs::ImageConstPtr& msg);
 void               bufTh();
 void               goalTh();
@@ -58,13 +58,13 @@ image_transport::Publisher image_pub_;
 instant i;
 cv::Mat oldImg;
 cv::Mat newImg;
-std::vector<pixel>    frontiers;
-std::vector<goalPose> possibleGoalPose;
+std::vector<pixel>  frontiers;
+std::vector<goalPx> possiblegoalPx;
 instant latest;
 
 void callbackOdom(const nav_msgs::OdometryConstPtr& msg)
 {
-  i.convPose(msg);
+  i.convPosePx(msg);
 }
 
 bool isFrontier(cv::Point2f pt) {
@@ -111,94 +111,94 @@ void sortFrontierPixels()
   sort(frontiers.begin(), frontiers.end(), sortByDist);
 }
 
-bool sortByViewableFrontiers(const goalPose& lhs, const goalPose& rhs)
+bool sortByViewableFrontiers(const goalPx& lhs, const goalPx& rhs)
 {
   return lhs.visibleFrontiers.size() > rhs.visibleFrontiers.size();
 }
 
 void sortGoalCandidates()
 {
-  sort(possibleGoalPose.begin(), possibleGoalPose.end(), sortByViewableFrontiers);
+  sort(possiblegoalPx.begin(), possiblegoalPx.end(), sortByViewableFrontiers);
 }
 
-void addPossiblePose(int x, int y, cv::Point2f pt)
+void addPossiblepxPose(int x, int y, cv::Point2f pt)
 {
   if (oldImg.at<uchar>(pt.y, pt.x) == 255) {
-    goalPose pose;
-    pose.p.x = pt.x;
-    pose.p.y = pt.y;
+    goalPx pxPose;
+    pxPose.p.x = pt.x;
+    pxPose.p.y = pt.y;
 
     if (x > pt.x) {
       if (y > pt.y) {
-        pose.bearing = -45.0;
-        pose.viewablePixels.push(cv::Point2f(x, y));
-        pose.viewablePixels.push(cv::Point2f(x, y - 1));
-        pose.viewablePixels.push(cv::Point2f(x - 1, y));
+        pxPose.bearing = -45.0;
+        pxPose.viewablePixels.push(cv::Point2f(x, y));
+        pxPose.viewablePixels.push(cv::Point2f(x, y - 1));
+        pxPose.viewablePixels.push(cv::Point2f(x - 1, y));
       }
 
       else if (y < pt.y) {
-        pose.bearing = 45.0;
-        pose.viewablePixels.push(cv::Point2f(x, y));
-        pose.viewablePixels.push(cv::Point2f(x, y + 1));
-        pose.viewablePixels.push(cv::Point2f(x - 1, y));
+        pxPose.bearing = 45.0;
+        pxPose.viewablePixels.push(cv::Point2f(x, y));
+        pxPose.viewablePixels.push(cv::Point2f(x, y + 1));
+        pxPose.viewablePixels.push(cv::Point2f(x - 1, y));
       }
       else {
-        pose.bearing = 0.0;
-        pose.viewablePixels.push(cv::Point2f(x, y));
-        pose.viewablePixels.push(cv::Point2f(x, y + 1));
-        pose.viewablePixels.push(cv::Point2f(x, y - 1));
+        pxPose.bearing = 0.0;
+        pxPose.viewablePixels.push(cv::Point2f(x, y));
+        pxPose.viewablePixels.push(cv::Point2f(x, y + 1));
+        pxPose.viewablePixels.push(cv::Point2f(x, y - 1));
       }
     }
 
     else if (x == pt.x) {
       if (y > pt.y) {
-        pose.bearing = -90.0;
-        pose.viewablePixels.push(cv::Point2f(x, y));
-        pose.viewablePixels.push(cv::Point2f(x + 1, y));
-        pose.viewablePixels.push(cv::Point2f(x - 1, y));
+        pxPose.bearing = -90.0;
+        pxPose.viewablePixels.push(cv::Point2f(x, y));
+        pxPose.viewablePixels.push(cv::Point2f(x + 1, y));
+        pxPose.viewablePixels.push(cv::Point2f(x - 1, y));
       }
 
       else if (y < pt.y) {
-        pose.bearing = 90.0;
-        pose.viewablePixels.push(cv::Point2f(x, y));
-        pose.viewablePixels.push(cv::Point2f(x + 1, y));
-        pose.viewablePixels.push(cv::Point2f(x - 1, y));
+        pxPose.bearing = 90.0;
+        pxPose.viewablePixels.push(cv::Point2f(x, y));
+        pxPose.viewablePixels.push(cv::Point2f(x + 1, y));
+        pxPose.viewablePixels.push(cv::Point2f(x - 1, y));
       }
     }
 
     else if (x < pt.x) {
       if (y > pt.y) {
-        pose.bearing = -135.0;
-        pose.viewablePixels.push(cv::Point2f(x, y));
-        pose.viewablePixels.push(cv::Point2f(x + 1, y));
-        pose.viewablePixels.push(cv::Point2f(x, y - 1));
+        pxPose.bearing = -135.0;
+        pxPose.viewablePixels.push(cv::Point2f(x, y));
+        pxPose.viewablePixels.push(cv::Point2f(x + 1, y));
+        pxPose.viewablePixels.push(cv::Point2f(x, y - 1));
       }
 
       else if (y < pt.y) {
-        pose.bearing = 135.0;
-        pose.viewablePixels.push(cv::Point2f(x, y));
-        pose.viewablePixels.push(cv::Point2f(x + 1, y));
-        pose.viewablePixels.push(cv::Point2f(x, y + 1));
+        pxPose.bearing = 135.0;
+        pxPose.viewablePixels.push(cv::Point2f(x, y));
+        pxPose.viewablePixels.push(cv::Point2f(x + 1, y));
+        pxPose.viewablePixels.push(cv::Point2f(x, y + 1));
       }
       else {
-        pose.bearing = 180.0;
-        pose.viewablePixels.push(cv::Point2f(x, y));
-        pose.viewablePixels.push(cv::Point2f(x, y + 1));
-        pose.viewablePixels.push(cv::Point2f(x, y - 1));
+        pxPose.bearing = 180.0;
+        pxPose.viewablePixels.push(cv::Point2f(x, y));
+        pxPose.viewablePixels.push(cv::Point2f(x, y + 1));
+        pxPose.viewablePixels.push(cv::Point2f(x, y - 1));
       }
     }
 
-    while (!pose.viewablePixels.empty()) {
-      cv::Point2f t = pose.viewablePixels.front();
+    while (!pxPose.viewablePixels.empty()) {
+      cv::Point2f t = pxPose.viewablePixels.front();
 
-      if (isFrontier(t)) pose.visibleFrontiers.push(t);
-      pose.viewablePixels.pop();
+      if (isFrontier(t)) pxPose.visibleFrontiers.push(t);
+      pxPose.viewablePixels.pop();
     }
-    possibleGoalPose.push_back(pose);
+    possiblegoalPx.push_back(pxPose);
   }
 }
 
-void computeGoalPose()
+void computegoalPx()
 {
   pixel p = frontiers[0];
   int   x = p.x;
@@ -214,15 +214,15 @@ void computeGoalPose()
   neighbours.push(cv::Point2f(x, y + 1));
   neighbours.push(cv::Point2f(x, y - 1));
 
-  possibleGoalPose.clear();
+  possiblegoalPx.clear();
 
   while (!neighbours.empty())
   {
-    addPossiblePose(x, y, neighbours.front());
+    addPossiblepxPose(x, y, neighbours.front());
     neighbours.pop();
   }
   sortGoalCandidates();
-  goalPose goal = possibleGoalPose.front();
+  goalPx goal = possiblegoalPx.front();
   std::cout << "Goal Pixel- x: " << goal.p.x << " y: " << goal.p.y <<
   " Visible frontiers: " << goal.visibleFrontiers.size() << std::endl;
 }
@@ -259,7 +259,7 @@ void bufTh()
 
 void goalTh()
 {
-  ros::Rate rate_limiter(1);
+  ros::Rate rate_limiter(1. / 10.);
 
   while (ros::ok()) {
     buf_mutex_.lock();
@@ -303,7 +303,7 @@ void goalTh()
       // closestFrontier.x <<
       // ", " << closestFrontier.y << " at a distance of " <<
       // closestFrontier.distance << std::endl;
-      computeGoalPose();
+      computegoalPx();
 
       generateNewImg(oldImg);
     }
@@ -324,7 +324,7 @@ cv_bridge::CvImage generateNewImg(cv::Mat oldImg)
     pixel f = frontiers[i];
     cv_image.image.at<cv::Vec3b>(f.y, f.x) = { 0, 255, 255 };
   }
-  goalPose g = possibleGoalPose.front();
+  goalPx g = possiblegoalPx.front();
   cv_image.image.at<cv::Vec3b>(g.p.y, g.p.x) = { 0, 0, 255 };
 
   while (!g.visibleFrontiers.empty()) {
