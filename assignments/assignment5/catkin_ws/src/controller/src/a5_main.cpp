@@ -7,20 +7,34 @@
  * @date: Due 17th June 2018
  */
 
-#include "ros/ros.h"
-#include <iostream>
-#include <cmath>
-#include <math.h>
-#include <thread>
-#include <chrono>
-#include <deque>
-#include <string>
-#include <mutex>
-#include <random>
-#include <stack>
-#include <queue>
-#include <algorithm>
-#include "instant.h"
+ #include "ros/ros.h"
+ #include "std_msgs/String.h"
+ #include <std_msgs/Float64.h>
+ #include "tf/transform_datatypes.h"
+ #include "sensor_msgs/LaserScan.h"
+ #include "sensor_msgs/image_encodings.h"
+ #include "nav_msgs/Odometry.h"
+ #include <opencv2/imgproc/imgproc.hpp>
+ #include <image_transport/image_transport.h>
+ #include <opencv2/highgui/highgui.hpp>
+ #include <cv_bridge/cv_bridge.h>
+ #include <sstream>
+ #include <iostream>
+ #include <string>
+ #include <cmath>
+ #include <math.h>
+ #include <thread>
+ #include <chrono>
+ #include <deque>
+ #include <string>
+ #include <mutex>
+ #include <random>
+ #include <stack>
+ #include <queue>
+ #include <unistd.h>
+ #include <algorithm>
+
+ #include "instant.h"
 
 namespace enc = sensor_msgs::image_encodings;
 
@@ -311,50 +325,47 @@ void goalTh()
   }
 }
 
+// Generates new image and publishes to topic
 cv_bridge::CvImage generateNewImg(cv::Mat oldImg)
 {
-  cv_bridge::CvImage cv_image;
+  cv_bridge::CvImage cv_image;                            // Create new image object
 
-  cv::cvtColor(oldImg, cv_image.image, 8);
+  cv::cvtColor(oldImg, cv_image.image, 8);                // The original image is usually in greyscale so we need to convert it to colour
+  cv_image.image.at<cv::Vec3b>(100, 100) = { 0, 255, 0 }; // The robot is always in the middle of the image so let's make that pixel green for easy reference
 
-  cv_image.image.at<cv::Vec3b>(100, 100) = { 0, 255, 0 };
-
-  for (unsigned int i = 0; i < frontiers.size(); i++) {
+  for (unsigned int i = 0; i < frontiers.size(); i++) {   // All of the possible frontiers are to be shown in yellow
     pixel f = frontiers[i];
     cv_image.image.at<cv::Vec3b>(f.y, f.x) = { 0, 255, 255 };
   }
   goalPx g = possiblegoalPx.front();
-  cv_image.image.at<cv::Vec3b>(g.p.y, g.p.x) = { 0, 0, 255 };
+  cv_image.image.at<cv::Vec3b>(g.p.y, g.p.x) = { 0, 0, 255 }; // Our goal pose is to be shown in red
 
-  while (!g.visibleFrontiers.empty()) {
+  while (!g.visibleFrontiers.empty()) {                       // All of the visible frontier cells from our goal pose are to be shown in blue
     cv::Point2f f = g.visibleFrontiers.front();
     cv_image.image.at<cv::Vec3b>(f) = { 255, 0, 0 };
     g.visibleFrontiers.pop();
   }
-
-  cv_image.encoding = "bgr8";
-  cv_image.header   = std_msgs::Header();
-  image_pub_.publish(cv_image.toImageMsg());
-  return cv_image;
+  cv_image.encoding = "bgr8";                // Encode the image in bgr8
+  cv_image.header   = std_msgs::Header();    // Append the message header
+  image_pub_.publish(cv_image.toImageMsg()); // Publish the image
+  return cv_image;                           // Return the image
 }
 
+// Project main
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "a5_main");
+  ros::init(argc, argv, "a5_main");                                        // Initialise the node
+  ros::NodeHandle n;                                                       // Init NodeHandle object
+  image_transport::ImageTransport it(n);                                   // Declare the ImageTransport object for image publishing
+  ros::Subscriber sub1 = n.subscribe("odom", 1000, callbackOdom);          // Odom subscriber
+  ros::Subscriber sub2 = n.subscribe("map_image/full", 1000, callbackImg); // Image subscriber
+  image_pub_ = it.advertise("map_image/fbe", 1);                           // Image publisher
+  std::thread t1(bufTh);                                                   // Initialise the first thread
+  std::thread t2(goalTh);                                                  // Initialise the second thread
 
-  ros::NodeHandle n;
-  image_transport::ImageTransport it(n);
-  ros::Subscriber sub1 = n.subscribe("odom", 1000, callbackOdom);
-  ros::Subscriber sub2 = n.subscribe("map_image/full",
-                                     1000,
-                                     callbackImg);
-  image_pub_ = it.advertise("map_image/fbe", 1);
-  std::thread t1(bufTh);
-  std::thread t2(goalTh);
-
-  ros::spin();
-  t1.join();
-  t2.join();
+  ros::spin();                                                             // Call ros::spin() to start callbacks
+  t1.join();                                                               // Join thread 1
+  t2.join();                                                               // Join thread 2
 
   return 0;
 }

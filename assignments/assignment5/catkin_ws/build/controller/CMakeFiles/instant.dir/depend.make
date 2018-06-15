@@ -222,6 +222,7 @@ controller/CMakeFiles/instant.dir/src/instant.cpp.o: /opt/ros/kinetic/include/se
 controller/CMakeFiles/instant.dir/src/instant.cpp.o: /opt/ros/kinetic/include/sensor_msgs/LaserScan.h
 controller/CMakeFiles/instant.dir/src/instant.cpp.o: /opt/ros/kinetic/include/sensor_msgs/RegionOfInterest.h
 controller/CMakeFiles/instant.dir/src/instant.cpp.o: /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
+controller/CMakeFiles/instant.dir/src/instant.cpp.o: /opt/ros/kinetic/include/std_msgs/Float64.h
 controller/CMakeFiles/instant.dir/src/instant.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 controller/CMakeFiles/instant.dir/src/instant.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
 controller/CMakeFiles/instant.dir/src/instant.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Matrix3x3.h
