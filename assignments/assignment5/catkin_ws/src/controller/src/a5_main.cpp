@@ -14,7 +14,10 @@
  #include "sensor_msgs/LaserScan.h"
  #include "sensor_msgs/image_encodings.h"
  #include "nav_msgs/Odometry.h"
- #include "a5_help/RequestGoal.h"
+ #include <geometry_msgs/PoseArray.h>
+ #include <geometry_msgs/Pose.h>
+
+// #include "a5_help/RequestGoal.h"
  #include <opencv2/imgproc/imgproc.hpp>
  #include <image_transport/image_transport.h>
  #include <opencv2/highgui/highgui.hpp>
@@ -69,12 +72,15 @@ std::stack<instant> buf;               // Buffer for several 'instants' stored a
 std::mutex          buf_mutex_;        // Mutex for buffer access
 std::mutex          inst_mutex_;       // Mutex for instant access
 image_transport::Publisher image_pub_; // Manages the image topic that is being published to
+ros::Publisher pathPosePub;            // Manages publishing to the path topic
 instant i;                             // Local instant for multi node access
 cv::Mat oldImg;                        // Holds the last image recieved from the Og Map topic
 cv::Mat newImg;                        // Manipulated version of the oldImg with changes made to show required information
 std::vector<pixel>  frontiers;         // A vector of frontiers. It is stored as a vector as random access is required for searching and sorting
 std::vector<goalPx> possiblegoalPx;    // A vector of possible goal cells adjacent to the closest frontier
 instant latest;                        // The latest instant being processed. A copy is stored so that the buffer can be written to while processing is taking place
+goalPx  goal;                          // Holds the latest calculated global variable
+geometry_msgs::PoseArray goalPoses;    // Array of all goal poses
 
 // Callback for the odom subscriber
 void callbackOdom(const nav_msgs::OdometryConstPtr& msg)
@@ -250,7 +256,7 @@ void computegoalPx()
     neighbours.pop();
   }
   sortGoalCandidates();                                                // Sort the candidate cells by number of viewable frontier cells
-  goalPx goal = possiblegoalPx.front();                                // The goal pose pixel will be the front
+  goal = possiblegoalPx.front();                                       // The goal pose pixel will be the front
   std::cout << "Goal Pixel- x: " << goal.p.x << " y: " << goal.p.y <<
   " Visible frontiers: " << goal.visibleFrontiers.size() << std::endl; // print out info about the next goal pose pixel
 }
@@ -320,6 +326,11 @@ void goalTh()
       pixel closestFrontier = frontiers[0];                             // The closest frontier will be the first one in the data structure
       computegoalPx();                                                  // Calculate the goal posed based of the closest frontier cell
       generateNewImg(oldImg);                                           // Generate a new image taking into account the new calculated information
+      geometry_msgs::Pose latestPose = pixelToPose(goal);               // Calculate the goal pose in global coordiance
+      goalPoses.header.stamp    = ros::Time::now();                     // append timestamp
+      goalPoses.header.frame_id = "/path";                              // as /path to the header for
+      goalPoses.poses.push_back(latestPose);                            // pushback the latest pose
+      pathPosePub.publish(goalPoses);                                   // publish to topic
     }
     buf.empty();                                                        // Empty the buffer since we are done with these readings
     rate_limiter.sleep();                                               // Sleep for the remaining cycle
@@ -372,7 +383,8 @@ int main(int argc, char **argv)
   image_transport::ImageTransport it(n);                                   // Declare the ImageTransport object for image publishing
   ros::Subscriber sub1 = n.subscribe("odom", 1000, callbackOdom);          // Odom subscriber
   ros::Subscriber sub2 = n.subscribe("map_image/full", 1000, callbackImg); // Image subscriber
-  image_pub_ = it.advertise("map_image/fbe", 1);                           // Image publisher
+  image_pub_  = it.advertise("map_image/fbe", 1);                          // Image publisher
+  pathPosePub = n.advertise<geometry_msgs::PoseArray>("path", 1);          // Goal pose Publisher
   std::thread t1(bufTh);                                                   // Initialise the first thread
   std::thread t2(goalTh);                                                  // Initialise the second thread
 

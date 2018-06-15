@@ -7,6 +7,7 @@ controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o: /opt/ros/kinetic/include/cv
 controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
 controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PointStamped.h
 controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseArray.h
 controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
 controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovariance.h
 controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
