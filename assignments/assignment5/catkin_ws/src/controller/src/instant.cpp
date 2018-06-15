@@ -39,10 +39,8 @@
 void instant::convPosePx(nav_msgs::OdometryConstPtr i) {
   pose_  = i->pose.pose;                                 // extracts pose
   angle_ = tf::getYaw(pose_.orientation) * 180.0 / M_PI; // Converts the quaternion yaw to a simple angle in degrees
-
-  if (angle_ < 0) angle_ += 360.0;                       // Adjusts the angle be above 0
-  x_ = pose_.position.x;                                 // Holds x coordiance
-  y_ = pose_.position.y;                                 // Holds y coordinance
+  x_     = pose_.position.x;                             // Holds x coordiance
+  y_     = pose_.position.y;                             // Holds y coordinance
 }
 
 // Stores the latest image

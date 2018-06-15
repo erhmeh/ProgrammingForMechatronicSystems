@@ -14,6 +14,7 @@
  #include "sensor_msgs/LaserScan.h"
  #include "sensor_msgs/image_encodings.h"
  #include "nav_msgs/Odometry.h"
+ #include "a5_help/RequestGoal.h"
  #include <opencv2/imgproc/imgproc.hpp>
  #include <image_transport/image_transport.h>
  #include <opencv2/highgui/highgui.hpp>
@@ -38,29 +39,30 @@
 
 namespace enc = sensor_msgs::image_encodings;
 
-struct pixel { int x; int y; double distance = -1; }; // Basic structure for a pixel
+struct pixel { int x; int y; double distance = -1; double distancex = -1; double distancey = -1; }; // Basic structure for a pixel
 
-// Prototype Functions
 struct goalPx { pixel                  p;
                 std::queue<cv::Point2f>visibleFrontiers;
                 double                 bearing;
                 std::queue<cv::Point2f>viewablePixels; };
 
-void               callbackOdom(const nav_msgs::OdometryConstPtr& msg);
-bool               sortByDist(const pixel& lhs,
-                              const pixel& rhs);
-void               sortFrontierPixels();
-void               computegoalPx();
-bool               sortByViewableFrontiers(const goalPx& lhs,
-                                           const goalPx& rhs);
-void               sortGoalCandidates();
-void               addPossiblepxPose(int         x,
-                                     int         y,
-                                     cv::Point2f pt);
-void               callbackImg(const sensor_msgs::ImageConstPtr& msg);
-void               bufTh();
-void               goalTh();
-cv_bridge::CvImage generateNewImg(cv::Mat oldImg);
+// Prototype Functions
+void                callbackOdom(const nav_msgs::OdometryConstPtr& msg);
+bool                sortByDist(const pixel& lhs,
+                               const pixel& rhs);
+void                sortFrontierPixels();
+void                computegoalPx();
+bool                sortByViewableFrontiers(const goalPx& lhs,
+                                            const goalPx& rhs);
+void                sortGoalCandidates();
+void                addPossiblepxPose(int         x,
+                                      int         y,
+                                      cv::Point2f pt);
+void                callbackImg(const sensor_msgs::ImageConstPtr& msg);
+void                bufTh();
+void                goalTh();
+geometry_msgs::Pose pixelToPose(goalPx gPx);
+cv_bridge::CvImage  generateNewImg(cv::Mat oldImg);
 
 // Global variables and data structures that are shared between threads and nodes
 std::stack<instant> buf;               // Buffer for several 'instants' stored as a stack. This way the most recent instant is always on the top
@@ -308,20 +310,19 @@ void goalTh()
 
       // Calculate the distance for every fronter between it and the middle pixel (where the robot is)
       for (unsigned int i = 0; i < frontiers.size(); i++) {
-        pixel  q         = frontiers[i];
-        double distancex = pow(q.x - 100.0, 2);         // X distance squared
-        double distancey = pow(q.y - 100.0, 2);         // Y distance squared
-        double distance  = sqrt(distancex + distancey); // Square root of the sum of the two above values (pythag)
-        q.distance   = distance;                        // Set this value to the frontier
-        frontiers[i] = q;                               // Copy the frontier back into the data structure
+        pixel q = frontiers[i];
+        q.distancex  = q.x - 100.0;                                     // X distance
+        q.distancey  = q.y - 100.0;                                     // Y distance
+        q.distance   = sqrt(pow(q.distancex, 2) + pow(q.distancey, 2)); // Square root of the sum of the two above values (pythag)
+        frontiers[i] = q;                                               // Copy the frontier back into the data structure
       }
-      sortFrontierPixels();                             // Sort the frontier pixels by their
-      pixel closestFrontier = frontiers[0];             // The closest frontier will be the first one in the data structure
-      computegoalPx();                                  // Calculate the goal posed based of the closest frontier cell
-      generateNewImg(oldImg);                           // Generate a new image taking into account the new calculated information
+      sortFrontierPixels();                                             // Sort the frontier pixels by their
+      pixel closestFrontier = frontiers[0];                             // The closest frontier will be the first one in the data structure
+      computegoalPx();                                                  // Calculate the goal posed based of the closest frontier cell
+      generateNewImg(oldImg);                                           // Generate a new image taking into account the new calculated information
     }
-    buf.empty();                                        // Empty the buffer since we are done with these readings
-    rate_limiter.sleep();                               // Sleep for the remaining cycle
+    buf.empty();                                                        // Empty the buffer since we are done with these readings
+    rate_limiter.sleep();                                               // Sleep for the remaining cycle
   }
 }
 
@@ -349,6 +350,18 @@ cv_bridge::CvImage generateNewImg(cv::Mat oldImg)
   cv_image.header   = std_msgs::Header();    // Append the message header
   image_pub_.publish(cv_image.toImageMsg()); // Publish the image
   return cv_image;                           // Return the image
+}
+
+// This function takes in a goal pixel and returns a Pose message
+geometry_msgs::Pose pixelToPose(goalPx gPx) {
+  geometry_msgs::Pose output;
+  double xDif = (gPx.p.distancex - 100.0) * 0.1;
+  double yDif = (gPx.p.distancey - 100.0) * 0.1;
+
+  output.position.x = latest.x_ + xDif;
+  output.position.y = latest.y_ + yDif;
+  tf::quaternionTFToMsg(tf::createQuaternionFromYaw(gPx.bearing), output.orientation);
+  return output;
 }
 
 // Project main
