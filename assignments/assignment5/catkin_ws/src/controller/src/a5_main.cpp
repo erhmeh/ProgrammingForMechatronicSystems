@@ -143,10 +143,25 @@ bool sortByViewableFrontiers(const goalPx& lhs, const goalPx& rhs)
   return lhs.visibleFrontiers.size() > rhs.visibleFrontiers.size();
 }
 
-// Sorts all the possible goal cells so that the one with the most visible frontier cells is at the front
+bool sortByDistGoal(const goalPx& lhs, const goalPx& rhs)
+{
+  return lhs.p.distance < rhs.p.distance;
+}
+
+// Sorts all the possible goal cells so that the one with the most visible frontier cells is at the front. When there is a tie, the closest will be at the front
 void sortGoalCandidates()
 {
   sort(possiblegoalPx.begin(), possiblegoalPx.end(), sortByViewableFrontiers);
+  unsigned int mostFrontiers = possiblegoalPx.at(0).viewablePixels.size();
+
+  for (unsigned i = 0; i != possiblegoalPx.size(); i++) {
+    if (possiblegoalPx.at(i).viewablePixels.size() != mostFrontiers) {
+      possiblegoalPx.at(i).p.distance  = 1000;
+      possiblegoalPx.at(i).p.distancex = 1000;
+      possiblegoalPx.at(i).p.distancey = 1000;
+    }
+  }
+  sort(possiblegoalPx.begin(), possiblegoalPx.end(), sortByDistGoal);
 }
 
 // Tests is a specified point is a possible goal cell
@@ -317,23 +332,25 @@ void goalTh()
       // Calculate the distance for every fronter between it and the middle pixel (where the robot is)
       for (unsigned int i = 0; i < frontiers.size(); i++) {
         pixel q = frontiers[i];
-        q.distancex  = q.x - 100.0;                                     // X distance
-        q.distancey  = q.y - 100.0;                                     // Y distance
-        q.distance   = sqrt(pow(q.distancex, 2) + pow(q.distancey, 2)); // Square root of the sum of the two above values (pythag)
-        frontiers[i] = q;                                               // Copy the frontier back into the data structure
+        q.distancex  = q.x - 100.0;                                                            // X distance
+        q.distancey  = q.y - 100.0;                                                            // Y distance
+        q.distance   = sqrt(pow(q.distancex, 2) + pow(q.distancey, 2));                        // Square root of the sum of the two above values (pythag)
+        frontiers[i] = q;                                                                      // Copy the frontier back into the data structure
       }
-      sortFrontierPixels();                                             // Sort the frontier pixels by their
-      pixel closestFrontier = frontiers[0];                             // The closest frontier will be the first one in the data structure
-      computegoalPx();                                                  // Calculate the goal posed based of the closest frontier cell
-      generateNewImg(oldImg);                                           // Generate a new image taking into account the new calculated information
-      geometry_msgs::Pose latestPose = pixelToPose(goal);               // Calculate the goal pose in global coordiance
-      goalPoses.header.stamp    = ros::Time::now();                     // append timestamp
-      goalPoses.header.frame_id = "/path";                              // as /path to the header for
-      goalPoses.poses.push_back(latestPose);                            // pushback the latest pose
-      pathPosePub.publish(goalPoses);                                   // publish to topic
+      sortFrontierPixels();                                                                    // Sort the frontier pixels by their
+      pixel closestFrontier = frontiers[0];                                                    // The closest frontier will be the first one in the data structure
+      computegoalPx();                                                                         // Calculate the goal posed based of the closest frontier cell
+      generateNewImg(oldImg);                                                                  // Generate a new image taking into account the new calculated information
+      geometry_msgs::Pose latestPose = pixelToPose(goal);                                      // Calculate the goal pose in global coordiance
+      goalPoses.header.stamp    = ros::Time::now();                                            // append timestamp
+      goalPoses.header.frame_id = "/path";                                                     // as /path to the header for
+      goalPoses.poses.push_back(latestPose);                                                   // pushback the latest pose
+      pathPosePub.publish(goalPoses);                                                          // publish to topic
+      std::cout << "Goal Pose- x: " << latestPose.position.x << " y: "
+                << latestPose.position.y << " Yaw: " << latestPose.orientation.z << std::endl; // Print info about the Goal pose to the console
     }
-    buf.empty();                                                        // Empty the buffer since we are done with these readings
-    rate_limiter.sleep();                                               // Sleep for the remaining cycle
+    buf.empty();                                                                               // Empty the buffer since we are done with these readings
+    rate_limiter.sleep();                                                                      // Sleep for the remaining cycle
   }
 }
 
