@@ -141,10 +141,10 @@ target_link_libraries(a5_main ${catkin_LIBRARIES} instant ${OpenCV_LIBRARIES})
 
 ## Add gtest based cpp test target and link libraries
 #catkin_add_gtest(${PROJECT_NAME}-test test/utest.cpp src/raytracer.cpp)
-#catkin_add_gtest(${PROJECT_NAME}-test test/utest.cpp )
-#if(TARGET ${PROJECT_NAME}-test)
-#   target_link_libraries(${PROJECT_NAME}-test ${catkin_LIBRARIES} drawing_tools)
-#endif()
+catkin_add_gtest(${PROJECT_NAME}-test test/utest.cpp src/a5_main.cpp)
+if(TARGET ${PROJECT_NAME}-test)
+   target_link_libraries(${PROJECT_NAME}-test ${catkin_LIBRARIES} drawing_tools)
+endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

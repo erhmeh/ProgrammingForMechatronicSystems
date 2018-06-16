@@ -1128,147 +1128,17 @@ a5_help_genpy/fast:
 .PHONY : a5_help_genpy/fast
 
 #=============================================================================
-# Target rules for targets named a5_main
+# Target rules for targets named controller_gennodejs
 
 # Build rule for target.
-a5_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 a5_main
-.PHONY : a5_main
+controller_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_gennodejs
+.PHONY : controller_gennodejs
 
 # fast build rule for target.
-a5_main/fast:
-	$(MAKE) -f controller/CMakeFiles/a5_main.dir/build.make controller/CMakeFiles/a5_main.dir/build
-.PHONY : a5_main/fast
-
-#=============================================================================
-# Target rules for targets named instant
-
-# Build rule for target.
-instant: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 instant
-.PHONY : instant
-
-# fast build rule for target.
-instant/fast:
-	$(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/build
-.PHONY : instant/fast
-
-#=============================================================================
-# Target rules for targets named controller_genpy
-
-# Build rule for target.
-controller_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_genpy
-.PHONY : controller_genpy
-
-# fast build rule for target.
-controller_genpy/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_genpy.dir/build.make controller/CMakeFiles/controller_genpy.dir/build
-.PHONY : controller_genpy/fast
-
-#=============================================================================
-# Target rules for targets named controller_generate_messages_eus
-
-# Build rule for target.
-controller_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_eus
-.PHONY : controller_generate_messages_eus
-
-# fast build rule for target.
-controller_generate_messages_eus/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
-.PHONY : controller_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named controller_gencpp
-
-# Build rule for target.
-controller_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_gencpp
-.PHONY : controller_gencpp
-
-# fast build rule for target.
-controller_gencpp/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_gencpp.dir/build.make controller/CMakeFiles/controller_gencpp.dir/build
-.PHONY : controller_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named controller_geneus
-
-# Build rule for target.
-controller_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_geneus
-.PHONY : controller_geneus
-
-# fast build rule for target.
-controller_geneus/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_geneus.dir/build.make controller/CMakeFiles/controller_geneus.dir/build
-.PHONY : controller_geneus/fast
-
-#=============================================================================
-# Target rules for targets named controller_generate_messages_cpp
-
-# Build rule for target.
-controller_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_cpp
-.PHONY : controller_generate_messages_cpp
-
-# fast build rule for target.
-controller_generate_messages_cpp/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_cpp.dir/build.make controller/CMakeFiles/controller_generate_messages_cpp.dir/build
-.PHONY : controller_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named controller_generate_messages
-
-# Build rule for target.
-controller_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages
-.PHONY : controller_generate_messages
-
-# fast build rule for target.
-controller_generate_messages/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_generate_messages.dir/build.make controller/CMakeFiles/controller_generate_messages.dir/build
-.PHONY : controller_generate_messages/fast
-
-#=============================================================================
-# Target rules for targets named controller_generate_messages_py
-
-# Build rule for target.
-controller_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_py
-.PHONY : controller_generate_messages_py
-
-# fast build rule for target.
-controller_generate_messages_py/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_py.dir/build.make controller/CMakeFiles/controller_generate_messages_py.dir/build
-.PHONY : controller_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named controller_genlisp
-
-# Build rule for target.
-controller_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_genlisp
-.PHONY : controller_genlisp
-
-# fast build rule for target.
-controller_genlisp/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_genlisp.dir/build.make controller/CMakeFiles/controller_genlisp.dir/build
-.PHONY : controller_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named controller_generate_messages_lisp
-
-# Build rule for target.
-controller_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_lisp
-.PHONY : controller_generate_messages_lisp
-
-# fast build rule for target.
-controller_generate_messages_lisp/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_lisp.dir/build.make controller/CMakeFiles/controller_generate_messages_lisp.dir/build
-.PHONY : controller_generate_messages_lisp/fast
+controller_gennodejs/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_gennodejs.dir/build.make controller/CMakeFiles/controller_gennodejs.dir/build
+.PHONY : controller_gennodejs/fast
 
 #=============================================================================
 # Target rules for targets named controller_generate_messages_nodejs
@@ -1284,17 +1154,251 @@ controller_generate_messages_nodejs/fast:
 .PHONY : controller_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named controller_gennodejs
+# Target rules for targets named controller_generate_messages_lisp
 
 # Build rule for target.
-controller_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 controller_gennodejs
-.PHONY : controller_gennodejs
+controller_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_lisp
+.PHONY : controller_generate_messages_lisp
 
 # fast build rule for target.
-controller_gennodejs/fast:
-	$(MAKE) -f controller/CMakeFiles/controller_gennodejs.dir/build.make controller/CMakeFiles/controller_gennodejs.dir/build
-.PHONY : controller_gennodejs/fast
+controller_generate_messages_lisp/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_lisp.dir/build.make controller/CMakeFiles/controller_generate_messages_lisp.dir/build
+.PHONY : controller_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named controller_generate_messages_py
+
+# Build rule for target.
+controller_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_py
+.PHONY : controller_generate_messages_py
+
+# fast build rule for target.
+controller_generate_messages_py/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_py.dir/build.make controller/CMakeFiles/controller_generate_messages_py.dir/build
+.PHONY : controller_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_controller_gtest
+
+# Build rule for target.
+run_tests_controller_gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_controller_gtest
+.PHONY : run_tests_controller_gtest
+
+# fast build rule for target.
+run_tests_controller_gtest/fast:
+	$(MAKE) -f controller/CMakeFiles/run_tests_controller_gtest.dir/build.make controller/CMakeFiles/run_tests_controller_gtest.dir/build
+.PHONY : run_tests_controller_gtest/fast
+
+#=============================================================================
+# Target rules for targets named controller_generate_messages_cpp
+
+# Build rule for target.
+controller_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_cpp
+.PHONY : controller_generate_messages_cpp
+
+# fast build rule for target.
+controller_generate_messages_cpp/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_cpp.dir/build.make controller/CMakeFiles/controller_generate_messages_cpp.dir/build
+.PHONY : controller_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_controller_gtest_controller-test
+
+# Build rule for target.
+_run_tests_controller_gtest_controller-test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_controller_gtest_controller-test
+.PHONY : _run_tests_controller_gtest_controller-test
+
+# fast build rule for target.
+_run_tests_controller_gtest_controller-test/fast:
+	$(MAKE) -f controller/CMakeFiles/_run_tests_controller_gtest_controller-test.dir/build.make controller/CMakeFiles/_run_tests_controller_gtest_controller-test.dir/build
+.PHONY : _run_tests_controller_gtest_controller-test/fast
+
+#=============================================================================
+# Target rules for targets named clean_test_results_controller
+
+# Build rule for target.
+clean_test_results_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_controller
+.PHONY : clean_test_results_controller
+
+# fast build rule for target.
+clean_test_results_controller/fast:
+	$(MAKE) -f controller/CMakeFiles/clean_test_results_controller.dir/build.make controller/CMakeFiles/clean_test_results_controller.dir/build
+.PHONY : clean_test_results_controller/fast
+
+#=============================================================================
+# Target rules for targets named controller_geneus
+
+# Build rule for target.
+controller_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_geneus
+.PHONY : controller_geneus
+
+# fast build rule for target.
+controller_geneus/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_geneus.dir/build.make controller/CMakeFiles/controller_geneus.dir/build
+.PHONY : controller_geneus/fast
+
+#=============================================================================
+# Target rules for targets named controller_gencpp
+
+# Build rule for target.
+controller_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_gencpp
+.PHONY : controller_gencpp
+
+# fast build rule for target.
+controller_gencpp/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_gencpp.dir/build.make controller/CMakeFiles/controller_gencpp.dir/build
+.PHONY : controller_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named controller_generate_messages_eus
+
+# Build rule for target.
+controller_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages_eus
+.PHONY : controller_generate_messages_eus
+
+# fast build rule for target.
+controller_generate_messages_eus/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
+.PHONY : controller_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_controller_gtest
+
+# Build rule for target.
+_run_tests_controller_gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_controller_gtest
+.PHONY : _run_tests_controller_gtest
+
+# fast build rule for target.
+_run_tests_controller_gtest/fast:
+	$(MAKE) -f controller/CMakeFiles/_run_tests_controller_gtest.dir/build.make controller/CMakeFiles/_run_tests_controller_gtest.dir/build
+.PHONY : _run_tests_controller_gtest/fast
+
+#=============================================================================
+# Target rules for targets named controller_genpy
+
+# Build rule for target.
+controller_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_genpy
+.PHONY : controller_genpy
+
+# fast build rule for target.
+controller_genpy/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_genpy.dir/build.make controller/CMakeFiles/controller_genpy.dir/build
+.PHONY : controller_genpy/fast
+
+#=============================================================================
+# Target rules for targets named instant
+
+# Build rule for target.
+instant: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 instant
+.PHONY : instant
+
+# fast build rule for target.
+instant/fast:
+	$(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/build
+.PHONY : instant/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_controller
+
+# Build rule for target.
+run_tests_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_controller
+.PHONY : run_tests_controller
+
+# fast build rule for target.
+run_tests_controller/fast:
+	$(MAKE) -f controller/CMakeFiles/run_tests_controller.dir/build.make controller/CMakeFiles/run_tests_controller.dir/build
+.PHONY : run_tests_controller/fast
+
+#=============================================================================
+# Target rules for targets named a5_main
+
+# Build rule for target.
+a5_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 a5_main
+.PHONY : a5_main
+
+# fast build rule for target.
+a5_main/fast:
+	$(MAKE) -f controller/CMakeFiles/a5_main.dir/build.make controller/CMakeFiles/a5_main.dir/build
+.PHONY : a5_main/fast
+
+#=============================================================================
+# Target rules for targets named controller_genlisp
+
+# Build rule for target.
+controller_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_genlisp
+.PHONY : controller_genlisp
+
+# fast build rule for target.
+controller_genlisp/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_genlisp.dir/build.make controller/CMakeFiles/controller_genlisp.dir/build
+.PHONY : controller_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named controller-test
+
+# Build rule for target.
+controller-test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller-test
+.PHONY : controller-test
+
+# fast build rule for target.
+controller-test/fast:
+	$(MAKE) -f controller/CMakeFiles/controller-test.dir/build.make controller/CMakeFiles/controller-test.dir/build
+.PHONY : controller-test/fast
+
+#=============================================================================
+# Target rules for targets named controller_generate_messages
+
+# Build rule for target.
+controller_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controller_generate_messages
+.PHONY : controller_generate_messages
+
+# fast build rule for target.
+controller_generate_messages/fast:
+	$(MAKE) -f controller/CMakeFiles/controller_generate_messages.dir/build.make controller/CMakeFiles/controller_generate_messages.dir/build
+.PHONY : controller_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_controller
+
+# Build rule for target.
+_run_tests_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_controller
+.PHONY : _run_tests_controller
+
+# fast build rule for target.
+_run_tests_controller/fast:
+	$(MAKE) -f controller/CMakeFiles/_run_tests_controller.dir/build.make controller/CMakeFiles/_run_tests_controller.dir/build
+.PHONY : _run_tests_controller/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_controller_gtest_controller-test
+
+# Build rule for target.
+run_tests_controller_gtest_controller-test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_controller_gtest_controller-test
+.PHONY : run_tests_controller_gtest_controller-test
+
+# fast build rule for target.
+run_tests_controller_gtest_controller-test/fast:
+	$(MAKE) -f controller/CMakeFiles/run_tests_controller_gtest_controller-test.dir/build.make controller/CMakeFiles/run_tests_controller_gtest_controller-test.dir/build
+.PHONY : run_tests_controller_gtest_controller-test/fast
 
 #=============================================================================
 # Target rules for targets named image_publisher
@@ -2332,19 +2436,27 @@ help:
 	@echo "... a5_help_gennodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... a5_help_genpy"
-	@echo "... a5_main"
-	@echo "... instant"
-	@echo "... controller_genpy"
-	@echo "... controller_generate_messages_eus"
-	@echo "... controller_gencpp"
-	@echo "... controller_geneus"
-	@echo "... controller_generate_messages_cpp"
-	@echo "... controller_generate_messages"
-	@echo "... controller_generate_messages_py"
-	@echo "... controller_genlisp"
-	@echo "... controller_generate_messages_lisp"
-	@echo "... controller_generate_messages_nodejs"
 	@echo "... controller_gennodejs"
+	@echo "... controller_generate_messages_nodejs"
+	@echo "... controller_generate_messages_lisp"
+	@echo "... controller_generate_messages_py"
+	@echo "... run_tests_controller_gtest"
+	@echo "... controller_generate_messages_cpp"
+	@echo "... _run_tests_controller_gtest_controller-test"
+	@echo "... clean_test_results_controller"
+	@echo "... controller_geneus"
+	@echo "... controller_gencpp"
+	@echo "... controller_generate_messages_eus"
+	@echo "... _run_tests_controller_gtest"
+	@echo "... controller_genpy"
+	@echo "... instant"
+	@echo "... run_tests_controller"
+	@echo "... a5_main"
+	@echo "... controller_genlisp"
+	@echo "... controller-test"
+	@echo "... controller_generate_messages"
+	@echo "... _run_tests_controller"
+	@echo "... run_tests_controller_gtest_controller-test"
 	@echo "... image_publisher"
 	@echo "... image_subscriber"
 	@echo "... lama_msgs_genpy"

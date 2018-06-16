@@ -56,17 +56,26 @@ CMAKE_BINARY_DIR = /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignmen
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -79,6 +88,18 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -89,27 +110,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -122,16 +122,16 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : rebuild_cache/fast
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,169 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-controller/CMakeFiles/a5_main.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/a5_main.dir/rule
-.PHONY : controller/CMakeFiles/a5_main.dir/rule
+controller/CMakeFiles/controller_gennodejs.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_gennodejs.dir/rule
+.PHONY : controller/CMakeFiles/controller_gennodejs.dir/rule
 
 # Convenience name for target.
-a5_main: controller/CMakeFiles/a5_main.dir/rule
+controller_gennodejs: controller/CMakeFiles/controller_gennodejs.dir/rule
 
-.PHONY : a5_main
+.PHONY : controller_gennodejs
 
 # fast build rule for target.
-a5_main/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/a5_main.dir/build.make controller/CMakeFiles/a5_main.dir/build
-.PHONY : a5_main/fast
-
-# Convenience name for target.
-controller/CMakeFiles/instant.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/instant.dir/rule
-.PHONY : controller/CMakeFiles/instant.dir/rule
-
-# Convenience name for target.
-instant: controller/CMakeFiles/instant.dir/rule
-
-.PHONY : instant
-
-# fast build rule for target.
-instant/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/build
-.PHONY : instant/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_genpy.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_genpy.dir/rule
-.PHONY : controller/CMakeFiles/controller_genpy.dir/rule
-
-# Convenience name for target.
-controller_genpy: controller/CMakeFiles/controller_genpy.dir/rule
-
-.PHONY : controller_genpy
-
-# fast build rule for target.
-controller_genpy/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_genpy.dir/build.make controller/CMakeFiles/controller_genpy.dir/build
-.PHONY : controller_genpy/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_generate_messages_eus.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_eus.dir/rule
-.PHONY : controller/CMakeFiles/controller_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-controller_generate_messages_eus: controller/CMakeFiles/controller_generate_messages_eus.dir/rule
-
-.PHONY : controller_generate_messages_eus
-
-# fast build rule for target.
-controller_generate_messages_eus/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
-.PHONY : controller_generate_messages_eus/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_gencpp.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_gencpp.dir/rule
-.PHONY : controller/CMakeFiles/controller_gencpp.dir/rule
-
-# Convenience name for target.
-controller_gencpp: controller/CMakeFiles/controller_gencpp.dir/rule
-
-.PHONY : controller_gencpp
-
-# fast build rule for target.
-controller_gencpp/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_gencpp.dir/build.make controller/CMakeFiles/controller_gencpp.dir/build
-.PHONY : controller_gencpp/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_geneus.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_geneus.dir/rule
-.PHONY : controller/CMakeFiles/controller_geneus.dir/rule
-
-# Convenience name for target.
-controller_geneus: controller/CMakeFiles/controller_geneus.dir/rule
-
-.PHONY : controller_geneus
-
-# fast build rule for target.
-controller_geneus/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_geneus.dir/build.make controller/CMakeFiles/controller_geneus.dir/build
-.PHONY : controller_geneus/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_generate_messages_cpp.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
-.PHONY : controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-controller_generate_messages_cpp: controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
-
-.PHONY : controller_generate_messages_cpp
-
-# fast build rule for target.
-controller_generate_messages_cpp/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_cpp.dir/build.make controller/CMakeFiles/controller_generate_messages_cpp.dir/build
-.PHONY : controller_generate_messages_cpp/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_generate_messages.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages.dir/rule
-.PHONY : controller/CMakeFiles/controller_generate_messages.dir/rule
-
-# Convenience name for target.
-controller_generate_messages: controller/CMakeFiles/controller_generate_messages.dir/rule
-
-.PHONY : controller_generate_messages
-
-# fast build rule for target.
-controller_generate_messages/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages.dir/build.make controller/CMakeFiles/controller_generate_messages.dir/build
-.PHONY : controller_generate_messages/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_generate_messages_py.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_py.dir/rule
-.PHONY : controller/CMakeFiles/controller_generate_messages_py.dir/rule
-
-# Convenience name for target.
-controller_generate_messages_py: controller/CMakeFiles/controller_generate_messages_py.dir/rule
-
-.PHONY : controller_generate_messages_py
-
-# fast build rule for target.
-controller_generate_messages_py/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_py.dir/build.make controller/CMakeFiles/controller_generate_messages_py.dir/build
-.PHONY : controller_generate_messages_py/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_genlisp.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_genlisp.dir/rule
-.PHONY : controller/CMakeFiles/controller_genlisp.dir/rule
-
-# Convenience name for target.
-controller_genlisp: controller/CMakeFiles/controller_genlisp.dir/rule
-
-.PHONY : controller_genlisp
-
-# fast build rule for target.
-controller_genlisp/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_genlisp.dir/build.make controller/CMakeFiles/controller_genlisp.dir/build
-.PHONY : controller_genlisp/fast
-
-# Convenience name for target.
-controller/CMakeFiles/controller_generate_messages_lisp.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
-.PHONY : controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-controller_generate_messages_lisp: controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
-
-.PHONY : controller_generate_messages_lisp
-
-# fast build rule for target.
-controller_generate_messages_lisp/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_lisp.dir/build.make controller/CMakeFiles/controller_generate_messages_lisp.dir/build
-.PHONY : controller_generate_messages_lisp/fast
+controller_gennodejs/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_gennodejs.dir/build.make controller/CMakeFiles/controller_gennodejs.dir/build
+.PHONY : controller_gennodejs/fast
 
 # Convenience name for target.
 controller/CMakeFiles/controller_generate_messages_nodejs.dir/rule:
@@ -346,19 +196,289 @@ controller_generate_messages_nodejs/fast:
 .PHONY : controller_generate_messages_nodejs/fast
 
 # Convenience name for target.
-controller/CMakeFiles/controller_gennodejs.dir/rule:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_gennodejs.dir/rule
-.PHONY : controller/CMakeFiles/controller_gennodejs.dir/rule
+controller/CMakeFiles/controller_generate_messages_lisp.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-controller_gennodejs: controller/CMakeFiles/controller_gennodejs.dir/rule
+controller_generate_messages_lisp: controller/CMakeFiles/controller_generate_messages_lisp.dir/rule
 
-.PHONY : controller_gennodejs
+.PHONY : controller_generate_messages_lisp
 
 # fast build rule for target.
-controller_gennodejs/fast:
-	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_gennodejs.dir/build.make controller/CMakeFiles/controller_gennodejs.dir/build
-.PHONY : controller_gennodejs/fast
+controller_generate_messages_lisp/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_lisp.dir/build.make controller/CMakeFiles/controller_generate_messages_lisp.dir/build
+.PHONY : controller_generate_messages_lisp/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_generate_messages_py.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_py.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_py.dir/rule
+
+# Convenience name for target.
+controller_generate_messages_py: controller/CMakeFiles/controller_generate_messages_py.dir/rule
+
+.PHONY : controller_generate_messages_py
+
+# fast build rule for target.
+controller_generate_messages_py/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_py.dir/build.make controller/CMakeFiles/controller_generate_messages_py.dir/build
+.PHONY : controller_generate_messages_py/fast
+
+# Convenience name for target.
+controller/CMakeFiles/run_tests_controller_gtest.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/run_tests_controller_gtest.dir/rule
+.PHONY : controller/CMakeFiles/run_tests_controller_gtest.dir/rule
+
+# Convenience name for target.
+run_tests_controller_gtest: controller/CMakeFiles/run_tests_controller_gtest.dir/rule
+
+.PHONY : run_tests_controller_gtest
+
+# fast build rule for target.
+run_tests_controller_gtest/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/run_tests_controller_gtest.dir/build.make controller/CMakeFiles/run_tests_controller_gtest.dir/build
+.PHONY : run_tests_controller_gtest/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_generate_messages_cpp.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+controller_generate_messages_cpp: controller/CMakeFiles/controller_generate_messages_cpp.dir/rule
+
+.PHONY : controller_generate_messages_cpp
+
+# fast build rule for target.
+controller_generate_messages_cpp/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_cpp.dir/build.make controller/CMakeFiles/controller_generate_messages_cpp.dir/build
+.PHONY : controller_generate_messages_cpp/fast
+
+# Convenience name for target.
+controller/CMakeFiles/_run_tests_controller_gtest_controller-test.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/_run_tests_controller_gtest_controller-test.dir/rule
+.PHONY : controller/CMakeFiles/_run_tests_controller_gtest_controller-test.dir/rule
+
+# Convenience name for target.
+_run_tests_controller_gtest_controller-test: controller/CMakeFiles/_run_tests_controller_gtest_controller-test.dir/rule
+
+.PHONY : _run_tests_controller_gtest_controller-test
+
+# fast build rule for target.
+_run_tests_controller_gtest_controller-test/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/_run_tests_controller_gtest_controller-test.dir/build.make controller/CMakeFiles/_run_tests_controller_gtest_controller-test.dir/build
+.PHONY : _run_tests_controller_gtest_controller-test/fast
+
+# Convenience name for target.
+controller/CMakeFiles/clean_test_results_controller.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/clean_test_results_controller.dir/rule
+.PHONY : controller/CMakeFiles/clean_test_results_controller.dir/rule
+
+# Convenience name for target.
+clean_test_results_controller: controller/CMakeFiles/clean_test_results_controller.dir/rule
+
+.PHONY : clean_test_results_controller
+
+# fast build rule for target.
+clean_test_results_controller/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/clean_test_results_controller.dir/build.make controller/CMakeFiles/clean_test_results_controller.dir/build
+.PHONY : clean_test_results_controller/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_geneus.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_geneus.dir/rule
+.PHONY : controller/CMakeFiles/controller_geneus.dir/rule
+
+# Convenience name for target.
+controller_geneus: controller/CMakeFiles/controller_geneus.dir/rule
+
+.PHONY : controller_geneus
+
+# fast build rule for target.
+controller_geneus/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_geneus.dir/build.make controller/CMakeFiles/controller_geneus.dir/build
+.PHONY : controller_geneus/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_gencpp.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_gencpp.dir/rule
+.PHONY : controller/CMakeFiles/controller_gencpp.dir/rule
+
+# Convenience name for target.
+controller_gencpp: controller/CMakeFiles/controller_gencpp.dir/rule
+
+.PHONY : controller_gencpp
+
+# fast build rule for target.
+controller_gencpp/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_gencpp.dir/build.make controller/CMakeFiles/controller_gencpp.dir/build
+.PHONY : controller_gencpp/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_generate_messages_eus.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages_eus.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+controller_generate_messages_eus: controller/CMakeFiles/controller_generate_messages_eus.dir/rule
+
+.PHONY : controller_generate_messages_eus
+
+# fast build rule for target.
+controller_generate_messages_eus/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages_eus.dir/build.make controller/CMakeFiles/controller_generate_messages_eus.dir/build
+.PHONY : controller_generate_messages_eus/fast
+
+# Convenience name for target.
+controller/CMakeFiles/_run_tests_controller_gtest.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/_run_tests_controller_gtest.dir/rule
+.PHONY : controller/CMakeFiles/_run_tests_controller_gtest.dir/rule
+
+# Convenience name for target.
+_run_tests_controller_gtest: controller/CMakeFiles/_run_tests_controller_gtest.dir/rule
+
+.PHONY : _run_tests_controller_gtest
+
+# fast build rule for target.
+_run_tests_controller_gtest/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/_run_tests_controller_gtest.dir/build.make controller/CMakeFiles/_run_tests_controller_gtest.dir/build
+.PHONY : _run_tests_controller_gtest/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_genpy.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_genpy.dir/rule
+.PHONY : controller/CMakeFiles/controller_genpy.dir/rule
+
+# Convenience name for target.
+controller_genpy: controller/CMakeFiles/controller_genpy.dir/rule
+
+.PHONY : controller_genpy
+
+# fast build rule for target.
+controller_genpy/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_genpy.dir/build.make controller/CMakeFiles/controller_genpy.dir/build
+.PHONY : controller_genpy/fast
+
+# Convenience name for target.
+controller/CMakeFiles/instant.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/instant.dir/rule
+.PHONY : controller/CMakeFiles/instant.dir/rule
+
+# Convenience name for target.
+instant: controller/CMakeFiles/instant.dir/rule
+
+.PHONY : instant
+
+# fast build rule for target.
+instant/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/build
+.PHONY : instant/fast
+
+# Convenience name for target.
+controller/CMakeFiles/run_tests_controller.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/run_tests_controller.dir/rule
+.PHONY : controller/CMakeFiles/run_tests_controller.dir/rule
+
+# Convenience name for target.
+run_tests_controller: controller/CMakeFiles/run_tests_controller.dir/rule
+
+.PHONY : run_tests_controller
+
+# fast build rule for target.
+run_tests_controller/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/run_tests_controller.dir/build.make controller/CMakeFiles/run_tests_controller.dir/build
+.PHONY : run_tests_controller/fast
+
+# Convenience name for target.
+controller/CMakeFiles/a5_main.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/a5_main.dir/rule
+.PHONY : controller/CMakeFiles/a5_main.dir/rule
+
+# Convenience name for target.
+a5_main: controller/CMakeFiles/a5_main.dir/rule
+
+.PHONY : a5_main
+
+# fast build rule for target.
+a5_main/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/a5_main.dir/build.make controller/CMakeFiles/a5_main.dir/build
+.PHONY : a5_main/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_genlisp.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_genlisp.dir/rule
+.PHONY : controller/CMakeFiles/controller_genlisp.dir/rule
+
+# Convenience name for target.
+controller_genlisp: controller/CMakeFiles/controller_genlisp.dir/rule
+
+.PHONY : controller_genlisp
+
+# fast build rule for target.
+controller_genlisp/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_genlisp.dir/build.make controller/CMakeFiles/controller_genlisp.dir/build
+.PHONY : controller_genlisp/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller-test.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller-test.dir/rule
+.PHONY : controller/CMakeFiles/controller-test.dir/rule
+
+# Convenience name for target.
+controller-test: controller/CMakeFiles/controller-test.dir/rule
+
+.PHONY : controller-test
+
+# fast build rule for target.
+controller-test/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller-test.dir/build.make controller/CMakeFiles/controller-test.dir/build
+.PHONY : controller-test/fast
+
+# Convenience name for target.
+controller/CMakeFiles/controller_generate_messages.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/controller_generate_messages.dir/rule
+.PHONY : controller/CMakeFiles/controller_generate_messages.dir/rule
+
+# Convenience name for target.
+controller_generate_messages: controller/CMakeFiles/controller_generate_messages.dir/rule
+
+.PHONY : controller_generate_messages
+
+# fast build rule for target.
+controller_generate_messages/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller_generate_messages.dir/build.make controller/CMakeFiles/controller_generate_messages.dir/build
+.PHONY : controller_generate_messages/fast
+
+# Convenience name for target.
+controller/CMakeFiles/_run_tests_controller.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/_run_tests_controller.dir/rule
+.PHONY : controller/CMakeFiles/_run_tests_controller.dir/rule
+
+# Convenience name for target.
+_run_tests_controller: controller/CMakeFiles/_run_tests_controller.dir/rule
+
+.PHONY : _run_tests_controller
+
+# fast build rule for target.
+_run_tests_controller/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/_run_tests_controller.dir/build.make controller/CMakeFiles/_run_tests_controller.dir/build
+.PHONY : _run_tests_controller/fast
+
+# Convenience name for target.
+controller/CMakeFiles/run_tests_controller_gtest_controller-test.dir/rule:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 controller/CMakeFiles/run_tests_controller_gtest_controller-test.dir/rule
+.PHONY : controller/CMakeFiles/run_tests_controller_gtest_controller-test.dir/rule
+
+# Convenience name for target.
+run_tests_controller_gtest_controller-test: controller/CMakeFiles/run_tests_controller_gtest_controller-test.dir/rule
+
+.PHONY : run_tests_controller_gtest_controller-test
+
+# fast build rule for target.
+run_tests_controller_gtest_controller-test/fast:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/run_tests_controller_gtest_controller-test.dir/build.make controller/CMakeFiles/run_tests_controller_gtest_controller-test.dir/build
+.PHONY : run_tests_controller_gtest_controller-test/fast
 
 src/a5_main.o: src/a5_main.cpp.o
 
@@ -367,6 +487,7 @@ src/a5_main.o: src/a5_main.cpp.o
 # target to build an object file
 src/a5_main.cpp.o:
 	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/a5_main.dir/build.make controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller-test.dir/build.make controller/CMakeFiles/controller-test.dir/src/a5_main.cpp.o
 .PHONY : src/a5_main.cpp.o
 
 src/a5_main.i: src/a5_main.cpp.i
@@ -376,6 +497,7 @@ src/a5_main.i: src/a5_main.cpp.i
 # target to preprocess a source file
 src/a5_main.cpp.i:
 	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/a5_main.dir/build.make controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.i
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller-test.dir/build.make controller/CMakeFiles/controller-test.dir/src/a5_main.cpp.i
 .PHONY : src/a5_main.cpp.i
 
 src/a5_main.s: src/a5_main.cpp.s
@@ -385,6 +507,7 @@ src/a5_main.s: src/a5_main.cpp.s
 # target to generate assembly for a file
 src/a5_main.cpp.s:
 	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/a5_main.dir/build.make controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.s
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller-test.dir/build.make controller/CMakeFiles/controller-test.dir/src/a5_main.cpp.s
 .PHONY : src/a5_main.cpp.s
 
 src/instant.o: src/instant.cpp.o
@@ -414,38 +537,76 @@ src/instant.cpp.s:
 	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/instant.dir/build.make controller/CMakeFiles/instant.dir/src/instant.cpp.s
 .PHONY : src/instant.cpp.s
 
+test/utest.o: test/utest.cpp.o
+
+.PHONY : test/utest.o
+
+# target to build an object file
+test/utest.cpp.o:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller-test.dir/build.make controller/CMakeFiles/controller-test.dir/test/utest.cpp.o
+.PHONY : test/utest.cpp.o
+
+test/utest.i: test/utest.cpp.i
+
+.PHONY : test/utest.i
+
+# target to preprocess a source file
+test/utest.cpp.i:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller-test.dir/build.make controller/CMakeFiles/controller-test.dir/test/utest.cpp.i
+.PHONY : test/utest.cpp.i
+
+test/utest.s: test/utest.cpp.s
+
+.PHONY : test/utest.s
+
+# target to generate assembly for a file
+test/utest.cpp.s:
+	cd /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/build && $(MAKE) -f controller/CMakeFiles/controller-test.dir/build.make controller/CMakeFiles/controller-test.dir/test/utest.cpp.s
+.PHONY : test/utest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... test"
-	@echo "... install/local"
-	@echo "... a5_main"
-	@echo "... edit_cache"
-	@echo "... instant"
-	@echo "... controller_genpy"
-	@echo "... controller_generate_messages_eus"
 	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... controller_gencpp"
-	@echo "... controller_geneus"
-	@echo "... controller_generate_messages_cpp"
 	@echo "... rebuild_cache"
-	@echo "... controller_generate_messages"
-	@echo "... controller_generate_messages_py"
-	@echo "... controller_genlisp"
-	@echo "... controller_generate_messages_lisp"
-	@echo "... controller_generate_messages_nodejs"
+	@echo "... test"
 	@echo "... controller_gennodejs"
+	@echo "... controller_generate_messages_nodejs"
+	@echo "... controller_generate_messages_lisp"
+	@echo "... install"
+	@echo "... controller_generate_messages_py"
+	@echo "... run_tests_controller_gtest"
+	@echo "... controller_generate_messages_cpp"
+	@echo "... install/local"
+	@echo "... _run_tests_controller_gtest_controller-test"
+	@echo "... clean_test_results_controller"
+	@echo "... controller_geneus"
+	@echo "... controller_gencpp"
+	@echo "... install/strip"
+	@echo "... edit_cache"
+	@echo "... controller_generate_messages_eus"
+	@echo "... _run_tests_controller_gtest"
+	@echo "... controller_genpy"
+	@echo "... instant"
+	@echo "... run_tests_controller"
+	@echo "... a5_main"
+	@echo "... controller_genlisp"
+	@echo "... controller-test"
+	@echo "... controller_generate_messages"
+	@echo "... _run_tests_controller"
+	@echo "... run_tests_controller_gtest_controller-test"
 	@echo "... src/a5_main.o"
 	@echo "... src/a5_main.i"
 	@echo "... src/a5_main.s"
 	@echo "... src/instant.o"
 	@echo "... src/instant.i"
 	@echo "... src/instant.s"
+	@echo "... test/utest.o"
+	@echo "... test/utest.i"
+	@echo "... test/utest.s"
 .PHONY : help
 
 

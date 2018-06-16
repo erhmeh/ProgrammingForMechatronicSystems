@@ -1,0 +1,21 @@
+actions: []
+authors: ''
+brief: ''
+bugtracker: ''
+depends:
+- catkin
+- roscpp
+- sensor_msgs
+- message_runtime
+- std_msgs
+- image_transport
+- message_generation
+- cv_bridge
+description: The a5_help package
+license: TODO
+maintainers: student <student@todo.todo>
+msgs: []
+package_type: package
+repo_url: ''
+srvs: []
+url: ''

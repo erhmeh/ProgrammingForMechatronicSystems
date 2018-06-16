@@ -7,80 +7,10 @@
  * @date: Due 17th June 2018
  */
 
- #include "ros/ros.h"
- #include "std_msgs/String.h"
- #include <std_msgs/Float64.h>
- #include "tf/transform_datatypes.h"
- #include "sensor_msgs/LaserScan.h"
- #include "sensor_msgs/image_encodings.h"
- #include "nav_msgs/Odometry.h"
- #include <geometry_msgs/PoseArray.h>
- #include <geometry_msgs/Pose.h>
-
-// #include "a5_help/RequestGoal.h"
- #include <opencv2/imgproc/imgproc.hpp>
- #include <image_transport/image_transport.h>
- #include <opencv2/highgui/highgui.hpp>
- #include <cv_bridge/cv_bridge.h>
- #include <sstream>
- #include <iostream>
- #include <string>
- #include <cmath>
- #include <math.h>
- #include <thread>
- #include <chrono>
- #include <deque>
- #include <string>
- #include <mutex>
- #include <random>
- #include <stack>
- #include <queue>
- #include <unistd.h>
- #include <algorithm>
-
+ #include "a5_main.h"
  #include "instant.h"
 
 namespace enc = sensor_msgs::image_encodings;
-
-struct pixel { int x; int y; double distance = -1; double distancex = -1; double distancey = -1; }; // Basic structure for a pixel
-
-struct goalPx { pixel                  p;
-                std::queue<cv::Point2f>visibleFrontiers;
-                double                 bearing;
-                std::queue<cv::Point2f>viewablePixels; };
-
-// Prototype Functions
-void                callbackOdom(const nav_msgs::OdometryConstPtr& msg);
-bool                sortByDist(const pixel& lhs,
-                               const pixel& rhs);
-void                sortFrontierPixels();
-void                computegoalPx();
-bool                sortByViewableFrontiers(const goalPx& lhs,
-                                            const goalPx& rhs);
-void                sortGoalCandidates();
-void                addPossiblepxPose(int         x,
-                                      int         y,
-                                      cv::Point2f pt);
-void                callbackImg(const sensor_msgs::ImageConstPtr& msg);
-void                bufTh();
-void                goalTh();
-geometry_msgs::Pose pixelToPose(goalPx gPx);
-cv_bridge::CvImage  generateNewImg(cv::Mat oldImg);
-
-// Global variables and data structures that are shared between threads and nodes
-std::stack<instant> buf;               // Buffer for several 'instants' stored as a stack. This way the most recent instant is always on the top
-std::mutex          buf_mutex_;        // Mutex for buffer access
-std::mutex          inst_mutex_;       // Mutex for instant access
-image_transport::Publisher image_pub_; // Manages the image topic that is being published to
-ros::Publisher pathPosePub;            // Manages publishing to the path topic
-instant i;                             // Local instant for multi node access
-cv::Mat oldImg;                        // Holds the last image recieved from the Og Map topic
-cv::Mat newImg;                        // Manipulated version of the oldImg with changes made to show required information
-std::vector<pixel>  frontiers;         // A vector of frontiers. It is stored as a vector as random access is required for searching and sorting
-std::vector<goalPx> possiblegoalPx;    // A vector of possible goal cells adjacent to the closest frontier
-instant latest;                        // The latest instant being processed. A copy is stored so that the buffer can be written to while processing is taking place
-goalPx  goal;                          // Holds the latest calculated global variable
-geometry_msgs::PoseArray goalPoses;    // Array of all goal poses
 
 // Callback for the odom subscriber
 void callbackOdom(const nav_msgs::OdometryConstPtr& msg)
@@ -302,55 +232,62 @@ void bufTh()
   }
 }
 
+// Tests every pixel to determine if it is a frontier cell
+void findFrontiers() {
+  for (int x = 1; x < 200; x++) {
+    for (int y = 1; y < 200; y++) {
+      cv::Point2f pt(x, y);            // Create a point object
+
+      if (isFrontier(pt)) {            // Test if the point in question is a frontier cell
+        pixel frontier;
+        frontier.x = x;
+        frontier.y = y; buf.empty();   // Empty the buffer since we are done with these readings
+        frontiers.push_back(frontier); // Store the frontier cell for later use
+      }
+    }
+  }
+}
+
+void findGoal() {
+  if ((latest.img_.rows == 200) && (latest.img_.rows == 200)) { // Only find the goal if the image is valid
+    oldImg = latest.img_;                                       // store the image
+    frontiers.clear();                                          // Clear any existing readings in the frontiers data structure
+
+    // Let's test every pixel to determine if it is a frontier cell
+    findFrontiers();
+
+    // Calculate the distance for every fronter between it and the middle pixel (where the robot is)
+    for (unsigned int i = 0; i < frontiers.size(); i++) {
+      pixel q = frontiers[i];
+      q.distancex  = q.x - 100.0;                                                            // X distance
+      q.distancey  = q.y - 100.0;                                                            // Y distance
+      q.distance   = sqrt(pow(q.distancex, 2) + pow(q.distancey, 2));                        // Square root of the sum of the two above values (pythag)
+      frontiers[i] = q;                                                                      // Copy the frontier back into the data structure
+    }
+    sortFrontierPixels();                                                                    // Sort the frontier pixels by their
+    computegoalPx();                                                                         // Calculate the goal posed based of the closest frontier cell
+    generateNewImg(oldImg);                                                                  // Generate a new image taking into account the new calculated information
+    geometry_msgs::Pose latestPose = pixelToPose(goal);                                      // Calculate the goal pose in global coordiance
+    goalPoses.header.stamp    = ros::Time::now();                                            // append timestamp
+    goalPoses.header.frame_id = "/path";                                                     // as /path to the header for
+    goalPoses.poses.push_back(latestPose);                                                   // pushback the latest pose
+    pathPosePub.publish(goalPoses);                                                          // publish to topic
+    std::cout << "Goal Pose- x: " << latestPose.position.x << " y: "
+              << latestPose.position.y << " Yaw: " << latestPose.orientation.z << std::endl; // Print info about the Goal pose to the console
+  }
+}
+
 void goalTh()
 {
-  ros::Rate rate_limiter(1. / 10.);                               // Limit the update rate to once every ten seconds
+  ros::Rate rate_limiter(1. / 10.); // Limit the update rate to once every ten seconds
 
-  while (ros::ok()) {                                             // Loop while ros::okay returns true
-    buf_mutex_.lock();                                            // Lock the buffer
-    latest = buf.top();                                           // take the latest reading from the top of the stack
-    buf_mutex_.unlock();                                          // Unlock the buffer
-
-    if ((latest.img_.rows == 200) && (latest.img_.rows == 200)) { // Only find the goal if the image is valid
-      oldImg = latest.img_;                                       // store the image
-      frontiers.clear();                                          // Clear any existing readings in the frontiers data structure
-
-      // Let's test every pixel to determine if it is a frontier cell
-      for (int x = 1; x < 200; x++) {
-        for (int y = 1; y < 200; y++) {
-          cv::Point2f pt(x, y);            // Create a point object
-
-          if (isFrontier(pt)) {            // Test if the point in question is a frontier cell
-            pixel frontier;
-            frontier.x = x;
-            frontier.y = y; buf.empty();   // Empty the buffer since we are done with these readings
-            frontiers.push_back(frontier); // Store the frontier cell for later use
-          }
-        }
-      }
-
-      // Calculate the distance for every fronter between it and the middle pixel (where the robot is)
-      for (unsigned int i = 0; i < frontiers.size(); i++) {
-        pixel q = frontiers[i];
-        q.distancex  = q.x - 100.0;                                                            // X distance
-        q.distancey  = q.y - 100.0;                                                            // Y distance
-        q.distance   = sqrt(pow(q.distancex, 2) + pow(q.distancey, 2));                        // Square root of the sum of the two above values (pythag)
-        frontiers[i] = q;                                                                      // Copy the frontier back into the data structure
-      }
-      sortFrontierPixels();                                                                    // Sort the frontier pixels by their
-      pixel closestFrontier = frontiers[0];                                                    // The closest frontier will be the first one in the data structure
-      computegoalPx();                                                                         // Calculate the goal posed based of the closest frontier cell
-      generateNewImg(oldImg);                                                                  // Generate a new image taking into account the new calculated information
-      geometry_msgs::Pose latestPose = pixelToPose(goal);                                      // Calculate the goal pose in global coordiance
-      goalPoses.header.stamp    = ros::Time::now();                                            // append timestamp
-      goalPoses.header.frame_id = "/path";                                                     // as /path to the header for
-      goalPoses.poses.push_back(latestPose);                                                   // pushback the latest pose
-      pathPosePub.publish(goalPoses);                                                          // publish to topic
-      std::cout << "Goal Pose- x: " << latestPose.position.x << " y: "
-                << latestPose.position.y << " Yaw: " << latestPose.orientation.z << std::endl; // Print info about the Goal pose to the console
-    }
-    buf.empty();                                                                               // Empty the buffer since we are done with these readings
-    rate_limiter.sleep();                                                                      // Sleep for the remaining cycle
+  while (ros::ok()) {               // Loop while ros::okay returns true
+    buf_mutex_.lock();              // Lock the buffer
+    latest = buf.top();             // take the latest reading from the top of the stack
+    buf_mutex_.unlock();            // Unlock the buffer
+    findGoal();
+    buf.empty();                    // Empty the buffer since we are done with these readings
+    rate_limiter.sleep();           // Sleep for the remaining cycle
   }
 }
 

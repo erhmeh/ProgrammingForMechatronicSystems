@@ -48,8 +48,8 @@ public:
   void storeCVImg();                             // Takes a copy of the image from the pointer
   cv::Mat img_;                                  // Latest image available at the instant
   double  angle_;                                // Angle of the robot in degrees
-  float   x_;                                    // Position of the robot on x axis
-  float   y_;                                    // Position of the robot on y axis
+  float   x_ = 0;                                // Position of the robot on x axis
+  float   y_ = 0;                                // Position of the robot on y axis
   cv_bridge::CvImagePtr currentImgPtr_;          // Holds pointer of current image
 
 private:

@@ -3,6 +3,7 @@
 
 controller/CMakeFiles/a5_main.dir/src/a5_main.cpp.o
  /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src/controller/src/a5_main.cpp
+ /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src/controller/src/a5_main.h
  /home/yoda/Desktop/ProgrammingForMechatronicSystems/assignments/assignment5/catkin_ws/src/controller/src/instant.h
  /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
  /opt/ros/kinetic/include/geometry_msgs/Point.h
